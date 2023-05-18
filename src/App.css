@@ -1,0 +1,31 @@
+
+
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+#mainInfo {
+  background: url("../public/assets/main3.jpg") no-repeat center top;
+  /*padding-top: 180px;*/
+  min-height: 800px;
+  max-height: 900px;
+  width: 100%;
+  color: white;
+
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+
+}
+
+.diaryInfo{
+  background: url("../public/assets/diary.jpg") no-repeat center top;
+  min-height: 500px;
+  width: 100%;
+
+}
+
+

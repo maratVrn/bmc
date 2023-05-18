@@ -1,0 +1,120 @@
+.navDiv
+{
+
+    border-width: 2px;
+
+    border-bottom-color: #a5adb2;
+    border-bottom-style: solid;
+    width: 100%;
+    background-color:white;
+}
+
+.nmy {
+    display: flex;
+    align-items: center;
+
+
+    padding: 1em;
+
+    /*box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,*/
+    /*rgba(0, 0, 0, 0.3) 0px 20px 20px -30px;*/
+
+}
+.cc {
+    /*text-align: center;*/
+}
+
+.nmy img {
+    width: 250px;
+    /*padding-left: 20px;*/
+}
+
+
+.navbar_icon {
+    width: 28px;
+    height: 28px;
+
+    color: #3a7e7b;
+}
+
+.nmy ul {
+    display: flex;
+    margin-bottom: 0;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5em;
+}
+
+.nmy ul a  {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: lighter;
+}
+
+.nmy ul li  {
+    cursor: pointer;
+    list-style-type: none;
+
+    font-weight: 600;
+}
+
+
+
+.navbarIcon {
+    /*display: none;*/
+    display: none;
+    cursor: pointer;
+
+    width: 28px;
+    height: 28px;
+
+}
+
+/* Mobile Responsive CSS */
+
+@media  (max-width: 1000px) {
+    .nmy {
+        justify-content: space-between;
+        height: 70px !important;
+    }
+
+    .nmy h1{
+        margin-left: 20px;
+    }
+    .nmy ul {
+        display: none;
+    }
+
+    .navbarIcon {
+        display: block;
+        cursor: pointer;
+
+        width: 28px;
+        height: 28px;
+
+    }
+
+    .navbarMobile {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        gap: 1.5em;
+        padding: 20px;
+        justify-content: flex-start;
+        border-bottom: 1px solid #ccc;
+    }
+    .navbarMobile a  {
+        text-decoration: none;
+        color: black;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    .navbarMobile p {
+        font-size: 18px;
+        cursor: pointer;
+        font-weight: 600;
+    }
+}
