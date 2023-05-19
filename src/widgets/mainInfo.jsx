@@ -30,7 +30,7 @@ const MainInfo = () => {
                           </div>
                           <div className= {allClass} >
                               <h1 style={{color:'white'}}>
-                                  12%
+                                  44%
                               </h1>
                               <p >   Доходность лучшего инструмента с начала 2023 года </p>
                           </div>
