@@ -3,10 +3,18 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BookmarksViewState">
+    <option name="rewriteBookmarkType" value="true" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="0acd7c56-3109-4553-abe5-6a02aea33c4c" name="Changes" comment="1">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/http/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/http/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/briefcaseStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/briefcaseStore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/strategyStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/strategyStore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/userStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/userStore.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +63,7 @@
       <workItem from="1684487868918" duration="641000" />
       <workItem from="1684490324020" duration="2498000" />
       <workItem from="1684507600710" duration="4575000" />
-      <workItem from="1684570239707" duration="1577000" />
+      <workItem from="1684570239707" duration="8112000" />
     </task>
     <task id="LOCAL-00001" summary="new perec">
       <created>1684487907098</created>
@@ -85,7 +93,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684570950071</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="1">
+      <created>1684571836357</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1684571836357</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -34,6 +34,7 @@ function App() {
         )
 
         briefcaseStore.getAllAdminBriefcase().then(()=>{
+
             briefcaseStore.getBestBriefCaseData()
         })
 

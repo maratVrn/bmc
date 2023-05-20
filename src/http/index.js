@@ -31,6 +31,7 @@ $api.interceptors.response.use((config)=>{return config},
             originalRequest._isRetry = true
             try {
                 const response = await axios.get(`${API_URL}/refresh`, {withCredentials:true})
+                // const response = await axios.get(`${API_URL}/refresh`)
                 localStorage.setItem('token', response.data.accessToken)
                 return $api.request(originalRequest)
             } catch (e) {

@@ -109,6 +109,7 @@ export default class UserStore {
 
     async checkAuth(){
         try {
+
             const response = await axios.get(`${API_URL}/refresh`, {withCredentials:true})
 
             // console.log('response  '+ JSON.stringify(response));
@@ -119,6 +120,7 @@ export default class UserStore {
             this.setUser(user)
 
         } catch (e) {
+            console.log('kos');
             console.log(e.response?.data?.message);
         }
 

@@ -35,8 +35,8 @@ export default class BriefcaseStore {
 
             let currProfit = 0
             for (let i = 0; i < this.allSBriefcaseAdmin.length; i++) {
-                if (this.allSBriefcaseAdmin[i].aboutData.currProfit){
 
+                if (this.allSBriefcaseAdmin[i].aboutData.currProfit){
                     const profit = this.allSBriefcaseAdmin[i].aboutData.currProfit
                     if (currProfit < parseFloat(profit)){
                             currProfit = parseFloat(profit)
@@ -44,6 +44,10 @@ export default class BriefcaseStore {
                     }
                 }
             }
+            //TODO: Заглушка на вариант если нет данных о доходности портфелей
+            // TODO: такое возможно если сервер не сгенерировал и не обновляет данные aboutData
+            // TODO: ставим просто первую в списке стратегию
+            if ((this.bestBriefcaseI<0) && (this.allSBriefcaseAdmin.length>0)) this.setBestBriefcaseI(0)
 
             if (this.bestBriefcaseI>-1){
 
