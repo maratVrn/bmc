@@ -208,7 +208,10 @@ export default class StrategyStore {
 
     async  getAllStrategy(){
         try{
+            console.log('getAllStrategy');
             const response = await StrategyService.getAllStrategy()
+            console.log(response.data);
+
             this.setAllStrategy(response.data)
         } catch (e) {
             this.setErrorMessage(e.response?.data?.message)

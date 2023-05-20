@@ -41,7 +41,10 @@ function App() {
         console.log('Загрузка стартовых данных');
 
         // Проверяем если пользователь ранее логинился то рефрешим его
+
+        console.log(localStorage.getItem('token'));
         if (localStorage.getItem('token')){
+
             userStore.checkAuth()
         }
 

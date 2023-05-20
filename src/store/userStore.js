@@ -76,8 +76,12 @@ export default class UserStore {
     async registration(email, password){
         try {
             this.setErrorMessage(null)
+            console.log('tut');
+            console.log('email  '+email);
+            console.log('password  '+password);
+
             const response = await AuthService.registration(email, password)
-            // console.log('response  '+ JSON.stringify(response));
+            console.log('response  '+ JSON.stringify(response));
             const accessToken = response?.data?.accessToken
             localStorage.setItem('token',accessToken )
             this.setAuth(true)
@@ -109,6 +113,7 @@ export default class UserStore {
 
             // console.log('response  '+ JSON.stringify(response));
             localStorage.setItem('token', response?.data?.accessToken )
+
             this.setAuth(true)
             const user = response?.data?.user
             this.setUser(user)

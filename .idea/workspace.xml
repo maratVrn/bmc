@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0acd7c56-3109-4553-abe5-6a02aea33c4c" name="Changes" comment="new perec">
+    <list default="true" id="0acd7c56-3109-4553-abe5-6a02aea33c4c" name="Changes" comment="установка сервера ддя деплой">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/http/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/http/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/strategyStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/strategyStore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/userStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/userStore.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +57,9 @@
       <workItem from="1684434957722" duration="2228000" />
       <workItem from="1684487738753" duration="10000" />
       <workItem from="1684487868918" duration="641000" />
-      <workItem from="1684490324020" duration="138000" />
+      <workItem from="1684490324020" duration="2498000" />
+      <workItem from="1684507600710" duration="4575000" />
+      <workItem from="1684570239707" duration="186000" />
     </task>
     <task id="LOCAL-00001" summary="new perec">
       <created>1684487907098</created>
@@ -63,7 +68,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684487907098</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="установка сервера ддя деплой">
+      <created>1684490497815</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1684490497815</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -83,6 +95,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="start" />
     <MESSAGE value="new perec" />
-    <option name="LAST_COMMIT_MESSAGE" value="new perec" />
+    <MESSAGE value="установка сервера ддя деплой" />
+    <option name="LAST_COMMIT_MESSAGE" value="установка сервера ддя деплой" />
   </component>
 </project>
