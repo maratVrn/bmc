@@ -7,11 +7,8 @@
     <option name="rewriteBookmarkType" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0acd7c56-3109-4553-abe5-6a02aea33c4c" name="Changes" comment="ушли от куки совсем">
-      <change afterPath="$PROJECT_DIR$/src/components/adminCompinents/UsersSettings.jsx" afterDir="false" />
+    <list default="true" id="0acd7c56-3109-4553-abe5-6a02aea33c4c" name="Changes" comment="Добавид таблицу с пользователями">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/userStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/userStore.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/Admin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Admin.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +67,7 @@
       <workItem from="1684584421246" duration="21000" />
       <workItem from="1684584547064" duration="1807000" />
       <workItem from="1684741341300" duration="8628000" />
-      <workItem from="1684770326885" duration="194000" />
+      <workItem from="1684770326885" duration="1070000" />
     </task>
     <task id="LOCAL-00001" summary="new perec">
       <created>1684487907098</created>
@@ -177,7 +174,21 @@
       <option name="project" value="LOCAL" />
       <updated>1684758137162</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Добавид таблицу с пользователями">
+      <created>1684770574341</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1684770574341</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Добавид таблицу с пользователями">
+      <created>1684770793985</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1684770793985</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,6 +212,7 @@
     <MESSAGE value="1" />
     <MESSAGE value="dep" />
     <MESSAGE value="ушли от куки совсем" />
-    <option name="LAST_COMMIT_MESSAGE" value="ушли от куки совсем" />
+    <MESSAGE value="Добавид таблицу с пользователями" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавид таблицу с пользователями" />
   </component>
 </project>

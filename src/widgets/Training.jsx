@@ -11,30 +11,30 @@ const Training = () => {
             <div className='container ' style={{marginTop:'70px', marginBottom:'70px'}} >
                 <h3> Вам доступен авторский курс, который позволит научится совершать выгодные сделки на фондовом рынке использую наши торговые сигналы . </h3>
                 <div className='row' style={{marginTop:'70px'}}>
-                    {/*<div className= {allClass} >*/}
-                    {/*    <iframe width="100%" height="300" className='border_r' src="https://www.youtube.com/embed/j1JVeZDN3yQ"*/}
-                    {/*            title="YouTube video player"*/}
-                    {/*            // allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"*/}
-                    {/*            allowFullScreen*/}
-                    {/*    >*/}
-                    {/*    </iframe>*/}
-                    {/*</div>*/}
-                    {/*<div className={allClass}>*/}
-                    {/*    <iframe width="100%" height="300"className='border_r' src="https://www.youtube.com/embed/Lu1cN76n5jg"*/}
-                    {/*            title="YouTube video player"*/}
-                    {/*            // allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"*/}
-                    {/*            allowFullScreen*/}
-                    {/*    >*/}
-                    {/*    </iframe>*/}
-                    {/*</div>*/}
-                    {/*<div className={allClass} >*/}
-                    {/*    <iframe width="100%" height="300" className='border_r' src="https://www.youtube.com/embed/5ZvPhx2Ql4Q"*/}
-                    {/*            title="YouTube video player"*/}
-                    {/*            // allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"*/}
-                    {/*            allowFullScreen*/}
-                    {/*    >*/}
-                    {/*    </iframe>*/}
-                    {/*</div>*/}
+                    <div className= {allClass} >
+                        <iframe width="100%" height="300" className='border_r' src="https://www.youtube.com/embed/j1JVeZDN3yQ"
+                                title="YouTube video player"
+                                // allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowFullScreen
+                        >
+                        </iframe>
+                    </div>
+                    <div className={allClass}>
+                        <iframe width="100%" height="300"className='border_r' src="https://www.youtube.com/embed/Lu1cN76n5jg"
+                                title="YouTube video player"
+                                // allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowFullScreen
+                        >
+                        </iframe>
+                    </div>
+                    <div className={allClass} >
+                        <iframe width="100%" height="300" className='border_r' src="https://www.youtube.com/embed/5ZvPhx2Ql4Q"
+                                title="YouTube video player"
+                                // allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowFullScreen
+                        >
+                        </iframe>
+                    </div>
 
                 </div>
                 <div className='text-center pt-5'>
