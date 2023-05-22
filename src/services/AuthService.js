@@ -16,8 +16,8 @@ export default class AuthService{
         return $api.post('/registration', {email, password})
     }
 
-    static async logout():Promise{
-        return $api.post('/logout')
+    static async logout(refreshToken):Promise{
+        return $api.post('/logout',{refreshToken})
     }
 
 
