@@ -6,9 +6,12 @@ import {API_URL} from "../http";
 
 
 export default class UserStore {
+    allUsers= []   // Список пользователей
     user = {}
     isAuth = false
     errorMessage = null
+    isNew = false
+    selectedOne = {}
 
     constructor() {
         makeAutoObservable((this))
@@ -28,30 +31,7 @@ export default class UserStore {
     }
 
 
-    async login(email, password){
-        try {
-            this.setErrorMessage(null)
-            const response = await AuthService.login(email, password)
-            localStorage.setItem('token', response?.data?.accessToken )
-            localStorage.setItem('refreshToken', response?.data?.refreshToken )
-            this.setAuth(true)
-            const user = response?.data?.user
 
-            this.setUser(user)
-
-        } catch (e) {
-            const errorMessage = e.message
-
-            this.setErrorMessage(null)
-            if (errorMessage) {
-                if (errorMessage ==='Network Error') {this.setErrorMessage('Нет соединения с сервером')}
-                else  this.setErrorMessage(e?.response?.data?.message)
-
-            } {this.setErrorMessage('Непредвиденная ошибка')}
-             console.log(e.message)
-
-        }
-    }
 
     async saveUser(user){
         try {
@@ -66,7 +46,6 @@ export default class UserStore {
     async sendEmailConfirm(email){
         try {
             const response = await AuthService.sendEmailConfirm(email)
-
         } catch (e) {
             console.log(e.response?.data?.message);
         }
@@ -75,14 +54,10 @@ export default class UserStore {
     async registration(email, password){
         try {
             this.setErrorMessage(null)
-            // console.log('tut');
-            // console.log('email  '+email);
-            // console.log('password  '+password);
-
             const response = await AuthService.registration(email, password)
-            console.log('response  '+ JSON.stringify(response));
-            localStorage.setItem('token', response?.data?.accessToken )
-            localStorage.setItem('refreshToken', response?.data?.refreshToken )
+            // console.log('response  '+ JSON.stringify(response));
+            const accessToken = response?.data?.accessToken
+            localStorage.setItem('token',accessToken )
             this.setAuth(true)
             const user = response?.data?.user
             this.setUser(user)
@@ -95,13 +70,11 @@ export default class UserStore {
 
     async logout(){
         try {
-            const refreshToken = localStorage.getItem('refreshToken')
-             const response = await AuthService.logout(refreshToken)
+            const response = await AuthService.logout()
 
-             localStorage.removeItem('token' )
-             localStorage.removeItem('refreshToken' )
-             this.setAuth(false)
-             this.setUser({})
+            localStorage.removeItem('token' )
+            this.setAuth(false)
+            this.setUser({})
 
         } catch (e) {
             console.log(e.response?.data?.message);
@@ -110,6 +83,7 @@ export default class UserStore {
 
     async checkAuth(){
         try {
+
 
             // const response = await axios.get(`${API_URL}/refresh`, {withCredentials:true})
             const refreshToken = localStorage.getItem('refreshToken')
@@ -128,10 +102,59 @@ export default class UserStore {
             this.setUser(user)
 
         } catch (e) {
-            console.log('kos');
             console.log(e.response?.data?.message);
         }
 
+    }
+
+    async login(email, password){
+        try {
+            this.setErrorMessage(null)
+            const response = await AuthService.login(email, password)
+
+
+            // console.log('login accessToken on res '+response?.data?.accessToken);
+            // console.log('refreshToken');
+            // console.log(response.data.refreshToken);
+            localStorage.setItem('token', response?.data?.accessToken )
+            localStorage.setItem('refreshToken', response?.data?.refreshToken )
+
+            this.setAuth(true)
+            const user = response?.data?.user
+
+            this.setUser(user)
+
+        } catch (e) {
+            const errorMessage = e.message
+
+            this.setErrorMessage(null)
+            if (errorMessage) {
+                if (errorMessage ==='Network Error') {this.setErrorMessage('Нет соединения с сервером')}
+                else  this.setErrorMessage(e?.response?.data?.message)
+
+            } {this.setErrorMessage('Непредвиденная ошибка')}
+            console.log(e.message)
+
+        }
+    }
+
+    //***************
+    async  getAllUsers(){
+        try{
+            const response = await AuthService.getUsers()
+            this.setAllUsers(response.data);
+        } catch (e) {
+            this.setErrorMessage(e.response?.data?.message)
+            console.log(e)
+        }
+    }
+
+    setAllUsers(allUsers){
+        this.allUsers = allUsers
+    }
+
+    setSelectedOne(oneData){
+        this.selectedOne = oneData
     }
 
 }

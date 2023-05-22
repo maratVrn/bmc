@@ -1,7 +1,6 @@
 import React from 'react';
 import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
-import StrategyInfo from "../components/StrategyInfo";
-import StrategyDeals from "../components/StrategyDeals";
+import UsersSettings from "../components/adminCompinents/UsersSettings";
 import StrategySettings from "../components/adminCompinents/StrategySettings";
 import BriefcaseSettings from "../components/adminCompinents/BriefcaseSettings";
 
@@ -25,7 +24,7 @@ const Admin = () => {
                         <BriefcaseSettings/>
                     </TabPanel>
                     <TabPanel>
-                        <StrategyDeals/>
+                        <UsersSettings/>
                     </TabPanel>
                 </Tabs>
             </div>
