@@ -107,10 +107,12 @@ export default class UserStore {
         }
     }
 
-    async checkAuth(){
+    async checkAuth(ctx){
         try {
 
-            const response = await axios.get(`${API_URL}/refresh`, {withCredentials:true})
+            const response = await axios.get(`${API_URL}/refresh`, {withCredentials:true,
+                headers: ctx.req ? { cookie: ctx.req.headers.cookie } : undefined
+            })
 
             // console.log('response  '+ JSON.stringify(response));
             localStorage.setItem('token', response?.data?.accessToken )
