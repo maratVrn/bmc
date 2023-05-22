@@ -107,11 +107,12 @@ export default class UserStore {
         }
     }
 
-    async checkAuth(ctx){
+    async checkAuth(){
         try {
 
-            const response = await axios.get(`${API_URL}/refresh`, {withCredentials:true,
-                headers: ctx.req ? { cookie: ctx.req.headers.cookie } : undefined
+            const response = await axios.get(`${API_URL}/refresh`, {withCredentials:true
+                // ,
+                // headers: ctx.req ? { cookie: ctx.req.headers.cookie } : undefined
             })
 
             // console.log('response  '+ JSON.stringify(response));

@@ -43,8 +43,11 @@ function App() {
 
         // Проверяем если пользователь ранее логинился то рефрешим его
 
-        console.log(localStorage.getItem('token'));
+
         if (localStorage.getItem('token')){
+
+            console.log('token  '+localStorage.getItem('token'));
+            console.log('refreshToken  '+localStorage.getItem('refreshToken'));
 
             userStore.checkAuth()
         }
