@@ -26,6 +26,11 @@ export default class UserStore {
 
     }
 
+
+    setIsNew(isNew){
+        this.isNew = isNew
+    }
+
     setErrorMessage(errorMessage){
         this.errorMessage = errorMessage
     }
