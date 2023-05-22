@@ -26,6 +26,19 @@ function App() {
 
     useEffect(()=>{
 
+        // Загружаем стратегии
+        strategyStore.getAllStrategy().then(() => {
+           // После загрузки вычиляем лучшую стратегию
+            strategyStore.getBestStrategyData()
+        }
+        )
+
+        briefcaseStore.getAllAdminBriefcase().then(()=>{
+
+            briefcaseStore.getBestBriefCaseData()
+        })
+
+
         console.log('Загрузка стартовых данных');
 
         // Проверяем если пользователь ранее логинился то рефрешим его
