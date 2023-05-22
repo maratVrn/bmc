@@ -32,9 +32,8 @@ export default class UserStore {
         try {
             this.setErrorMessage(null)
             const response = await AuthService.login(email, password)
-            const accessToken = response?.data?.accessToken
-
-            localStorage.setItem('token',accessToken )
+            localStorage.setItem('token', response?.data?.accessToken )
+            localStorage.setItem('refreshToken', response?.data?.refreshToken )
             this.setAuth(true)
             const user = response?.data?.user
 
@@ -76,14 +75,14 @@ export default class UserStore {
     async registration(email, password){
         try {
             this.setErrorMessage(null)
-            console.log('tut');
-            console.log('email  '+email);
-            console.log('password  '+password);
+            // console.log('tut');
+            // console.log('email  '+email);
+            // console.log('password  '+password);
 
             const response = await AuthService.registration(email, password)
             console.log('response  '+ JSON.stringify(response));
-            const accessToken = response?.data?.accessToken
-            localStorage.setItem('token',accessToken )
+            localStorage.setItem('token', response?.data?.accessToken )
+            localStorage.setItem('refreshToken', response?.data?.refreshToken )
             this.setAuth(true)
             const user = response?.data?.user
             this.setUser(user)
@@ -110,14 +109,18 @@ export default class UserStore {
     async checkAuth(){
         try {
 
-            const response = await axios.get(`${API_URL}/refresh`, {withCredentials:true
-                // ,
-                // headers: ctx.req ? { cookie: ctx.req.headers.cookie } : undefined
-            })
+            // const response = await axios.get(`${API_URL}/refresh`, {withCredentials:true})
+            const refreshToken = localStorage.getItem('refreshToken')
+            // console.log('Отправили refreshToken '+refreshToken);
+            const response = await axios.post(`${API_URL}/refresh`, {refreshToken})
+
 
             // console.log('response  '+ JSON.stringify(response));
+            // console.log('checkAuth accessToken on res '+response?.data?.accessToken);
+            // console.log('refreshToken');
+            // console.log(response.data.refreshToken);
             localStorage.setItem('token', response?.data?.accessToken )
-
+            localStorage.setItem('refreshToken', response?.data?.refreshToken )
             this.setAuth(true)
             const user = response?.data?.user
             this.setUser(user)
