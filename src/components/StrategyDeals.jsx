@@ -3,7 +3,9 @@ import Table from 'react-bootstrap/Table';
 import {observer} from "mobx-react-lite";
 
 
+
 const StrategyDeals = (props) => {
+
 
     return (
         <div className='container'>
@@ -46,6 +48,7 @@ const StrategyDeals = (props) => {
                 }
 
                 </tbody>
+
             </Table>
             </div>
         </div>

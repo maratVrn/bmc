@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import ReactApexChart from "react-apexcharts";
 
 import ApexCharts from 'apexcharts'
@@ -9,7 +9,10 @@ import 'react-tabs/style/react-tabs.css';
 import StrategyInfo from "./StrategyInfo";
 import StrategyDeals from "./StrategyDeals";
 import StrategyCurrDeal from "./StrategyCurrDeal";
-import {dataGetDeals, rounded2} from "../bmfunctions";
+import {dataGetDeals} from "../bmfunctions";
+import {Context} from "../index";
+import NoAuthUser from "./noAuthUser";
+import {Link} from "react-router-dom";
 
 
 
@@ -25,8 +28,11 @@ const StrategyChart =  observer((props) =>{
     const [strategyInfoOpt, setStrategyInfo] = useState(0);             // Информация о стратегии
     const [strategyCurDeal, setStrategyDeal] = useState('');            // Информация о текущей сделке
 
+    const {userStore} = useContext(Context)
 
     useEffect(() =>{ SetChartData(buttonKey)
+        if (!userStore.isAuth)  setShowPointsChecked(false)
+
     },[showPriseChecked,showProfitChecked, showPointsChecked])
 
     const SetChartData = (id) => {
@@ -112,10 +118,23 @@ const StrategyChart =  observer((props) =>{
             <div className='container'>
                 <div className='row' style={{marginTop:'70px', marginBottom:'50px'}}>
                     <div className='col-md-4 px-4 text-center' >
-                        <label>
-                            <input type="checkbox" checked={showPointsChecked}  onChange={handleChangeShowPoints}  />
-                            Отображать сделки
-                        </label>
+
+                        {
+                            userStore.isAuth ?
+                                <label>
+                                    <input type="checkbox" checked={showPointsChecked}  onChange={handleChangeShowPoints}  />
+                                    Отображать сделки
+                                </label>
+                                :
+                                <>
+                                <label>
+                                    <input type="checkbox" disabled={true} checked={showPointsChecked}  onChange={handleChangeShowPoints}  />
+                                    Отображать сделки
+
+                                </label>
+                                <p style={{fontSize:'16px'}}><Link to='/login'>Доступно после регистрации</Link></p>
+                                </>
+                        }
 
                     </div>
                     <div className='col-md-4 px-4 text-center'>
@@ -163,7 +182,7 @@ const StrategyChart =  observer((props) =>{
                 <Tabs>
                     <TabList>
                         <Tab>Общая инфомация</Tab>
-                        <Tab>История сделкок</Tab>
+                        <Tab>История сделок</Tab>
                         <Tab>Активная сделка</Tab>
                     </TabList>
 
@@ -171,11 +190,20 @@ const StrategyChart =  observer((props) =>{
                         <StrategyInfo opt = {strategyInfoOpt}/>
                     </TabPanel>
                     <TabPanel>
-                       <StrategyDeals data = {dealStory}/>
+                        {
+                            userStore.isAuth ?
+                            <StrategyDeals data = {dealStory}/>
+                            : <NoAuthUser/>
+                        }
 
                     </TabPanel>
                     <TabPanel>
-                        <StrategyCurrDeal data = {strategyCurDeal} />
+                        {
+                            userStore.isAuth ?
+                                <StrategyCurrDeal data = {strategyCurDeal} />
+                                : <NoAuthUser/>
+                        }
+
 
                     </TabPanel>
                 </Tabs>

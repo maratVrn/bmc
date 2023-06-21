@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import ReactApexChart from "react-apexcharts";
 
 import ApexCharts from 'apexcharts'
@@ -11,6 +11,9 @@ import BriefcaseCurrDeal from "./BriefcaseCurrDeal"
 import Table from "react-bootstrap/Table";
 import {dataGetViewOneBriefcaseDataLevel, rounded2} from "../bmfunctions";
 import {Form} from "react-bootstrap";
+import StrategyDeals from "./StrategyDeals";
+import NoAuthUser from "./noAuthUser";
+import {Context} from "../index";
 
 
 
@@ -25,6 +28,7 @@ const BriefCaseChart =  observer((props) =>{
     const [briefcasePoints, setBriefcasePoints] = useState({})            // Данные для отображения на графике
     const [strategyArray, setStrategyArray] = useState([])                // Стратегия в списке в портфелей
 
+    const {userStore} = useContext(Context)
 
     useEffect(() =>{ SetChartData(buttonKey)
 
@@ -85,7 +89,7 @@ const BriefCaseChart =  observer((props) =>{
 
     const handleChangeCapital = () => { setCapitalizationCalc(!capitalizationCalc)};
     const handleChangeLevel = () => { setLevelCalc(!levelCalc)};
-    // Сделать расчет относительно плеча и капитализации
+
     return (
 
         <div>
@@ -149,35 +153,42 @@ const BriefCaseChart =  observer((props) =>{
 
                     </TabPanel>
 
-
                     <TabPanel>
-                        <Table className="table border  table-hover h-25  m-2"  style={{lineHeight: 1, fontSize: 14}}>
-                            <thead>
-                            <tr>
-                                <th>№</th>
-                                <th>Стратегия</th>
-                                <th>% капитала</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            {
+                        {
+                            userStore.isAuth ?
+                                <Table className="table border  table-hover h-25  m-2"  style={{lineHeight: 1, fontSize: 14}}>
+                                    <thead>
+                                    <tr>
+                                        <th>№</th>
+                                        <th>Стратегия</th>
+                                        <th>% капитала</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {
 
-                                strategyArray.map((oneData,idx) =>
-                                    <tr
-                                        key={idx}  className="col-lg"
-                                        // style={{backgroundColor: idx === selectedNum ? 'LightGray' : 'white', cursor: 'pointer'}}
-                                        // onClick={() => {setSelectedNum(idx)}}
-                                    >
-                                        <td>{idx+1}</td>
-                                        <td>{oneData.strategy}</td>
-                                        <td>{oneData.capital} %</td>
-                                    </tr>)
-                            }
-                            </tbody>
-                        </Table>
+                                        strategyArray.map((oneData,idx) =>
+                                            <tr
+                                                key={idx}  className="col-lg"
+                                                // style={{backgroundColor: idx === selectedNum ? 'LightGray' : 'white', cursor: 'pointer'}}
+                                                // onClick={() => {setSelectedNum(idx)}}
+                                            >
+                                                <td>{idx+1}</td>
+                                                <td>{oneData.strategy}</td>
+                                                <td>{oneData.capital} %</td>
+                                            </tr>)
+                                    }
+                                    </tbody>
+                                </Table>
+                                : <NoAuthUser/>
+                        }
                     </TabPanel>
                     <TabPanel>
-                        <BriefcaseCurrDeal  data = {briefcasePoints} />
+                        {
+                            userStore.isAuth ?
+                                <BriefcaseCurrDeal  data = {briefcasePoints} />
+                                : <NoAuthUser/>
+                        }
                     </TabPanel>
                 </Tabs>
             </div>
