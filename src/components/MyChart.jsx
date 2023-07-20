@@ -65,14 +65,8 @@ const MyChart = (props) => {
 
                 setShowData(newShoData)
 
-
                 ChartParam.setYAxisParam(Y_ax)
-                //
-                // if (props.name) ChartParam.main_options.chart.id  = props.name
-                // setChartParam(ChartParam.main_options)
 
-                // const chartName = props.name
-                // ApexCharts.exec(chartName, 'updateOptions', chartParam);
                 ApexCharts.exec('area-datetime', 'updateOptions', ChartParam.main_options);
 
                 setButtonKey(id)

@@ -11,7 +11,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/MainBriefCaseChart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainBriefCaseChart.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/MyChart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MyChart.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/MainStrategy.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/MainStrategy.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +88,7 @@
       <workItem from="1689611409752" duration="8197000" />
       <workItem from="1689664382755" duration="16859000" />
       <workItem from="1689792810220" duration="1567000" />
-      <workItem from="1689856679735" duration="7587000" />
+      <workItem from="1689856679735" duration="8391000" />
     </task>
     <task id="LOCAL-00001" summary="new perec">
       <created>1684487907098</created>
@@ -357,7 +356,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689868205695</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Обновил внешний вид">
+      <created>1689868421809</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1689868421809</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

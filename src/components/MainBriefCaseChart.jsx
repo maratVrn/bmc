@@ -24,32 +24,32 @@ const MainBriefCaseChart =  (props) =>{
 
         if (props.data[id]) {
 
-            const newProfitData = dataGetViewOneBriefcaseDataLevel(props.data[id].profitData[0],2, false)
-
-            const maxPrice = Math.max(...newProfitData[0].data.map(o => o[1]));
-            const minPrice = Math.min(...newProfitData[0].data.map(o => o[1]));
-            const Y_ax_prise = {
-                title: {
-                    text: "Прибыль портфеля, %"
-                },
-                min: minPrice,
-                max: maxPrice
-
-            }
-            const endProfit = newProfitData[0].data.at(-1)
-            if (endProfit[1]) setShowProfit(endProfit[1])
-
-            if (props.data[id].year) setShowYear(props.data[id].year)
-
-            setShowData(newProfitData)
-
-            if (props.cOpt){
-                props.cOpt.yaxis = Y_ax_prise;
-                // ApexCharts.exec(props.cOpt?.chart.id, 'updateOptions',props.cOpt);
-            }
-
-
-            setButtonKey(id)
+            // const newProfitData = dataGetViewOneBriefcaseDataLevel(props.data[id].profitData[0],2, false)
+            //
+            // const maxPrice = Math.max(...newProfitData[0].data.map(o => o[1]));
+            // const minPrice = Math.min(...newProfitData[0].data.map(o => o[1]));
+            // const Y_ax_prise = {
+            //     title: {
+            //         text: "Прибыль портфеля, %"
+            //     },
+            //     min: minPrice,
+            //     max: maxPrice
+            //
+            // }
+            // const endProfit = newProfitData[0].data.at(-1)
+            // if (endProfit[1]) setShowProfit(endProfit[1])
+            //
+            // if (props.data[id].year) setShowYear(props.data[id].year)
+            //
+            // setShowData(newProfitData)
+            //
+            // if (props.cOpt){
+            //     props.cOpt.yaxis = Y_ax_prise;
+            //     ApexCharts.exec(props.cOpt?.chart.id, 'updateOptions',props.cOpt);
+            // }
+            //
+            //
+            // setButtonKey(id)
         }
     }
 
