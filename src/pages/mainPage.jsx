@@ -9,11 +9,11 @@ import Questions from "../widgets/Questions";
 const MainPage = () => {
     return (
         <div>
-            {/*<MainInfo/>*/}
+            <MainInfo/>
             {/*<MainStrategy/>*/}
-            {/*<Training/>*/}
-            {/*<Subscription/>*/}
-            {/*<Questions/>*/}
+            <Training/>
+            <Subscription/>
+            <Questions/>
         </div>
     );
 };
