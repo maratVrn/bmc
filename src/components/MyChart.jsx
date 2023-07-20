@@ -8,7 +8,7 @@ const MyChart = (props) => {
     const [buttonKey, setButtonKey] = useState(-1);
     const [showData, setShowData]= useState([])
     const [showName, setShowName]= useState('')
-    const [showProfit, setShowProfit]= useState('0')
+    const [showProfit, setShowProfit]= useState(-1)
     const [showYear, setShowYear]= useState('0000')
     const [chartParam, setChartParam]= useState(ChartParam.main_options)
 
@@ -41,7 +41,7 @@ const MyChart = (props) => {
                 Y_ax.push(Y_ax_prise)
 
                 // const endProfit = props.data[id].dealData[1].data.at(-1)
-                // if (endProfit[1]) setShowProfit(endProfit[1])
+                if (props.data[id].dealData[1].data.at(-1)) setShowProfit(parseFloat(props.data[id].dealData[1].data.at(-1)[1]))
 
 
                 if (props.data[id].year) setShowYear(props.data[id].year)
