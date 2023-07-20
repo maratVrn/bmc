@@ -53,6 +53,7 @@ const MainStrategy = () => {
                         {/*    <div style={{display: 'flex', justifyContent:'center'}}>*/}
                         {/*        <button className='button2'  onClick={() => navigate('/strategy', { state: { id: strategyStore.bestStrategyI} })}>Подробнее</button> </div>*/}
                         {/*</div>*/}
+
                     </div>
                     <div className='col-md-6  my-3 text-center' >
                         <h3 className='pt-5'> Результаты работы торговых стратегий  </h3>
