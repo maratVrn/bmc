@@ -36,11 +36,14 @@ const MainBriefCaseChart =  (props) =>{
                 max: maxPrice
 
             }
-            const endProfit = newProfitData[0].data.at(-1)
+
+            if (newProfitData[0])
+                if (newProfitData[0].data) {
+                    const endProfit = newProfitData[0].data.at(-1)
+                    if (endProfit[1]) setShowProfit(endProfit[1])
+                }
 
 
-            // if (endProfit[1]) setShowProfit(endProfit[1])
-            //
             // if (props.data[id].year) setShowYear(props.data[id].year)
             //
             // setShowData(newProfitData)
