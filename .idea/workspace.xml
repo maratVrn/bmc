@@ -8,7 +8,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0acd7c56-3109-4553-abe5-6a02aea33c4c" name="Changes" comment="Обновил внешний вид">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/MainBriefCaseChart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainBriefCaseChart.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -87,14 +86,7 @@
       <workItem from="1689611409752" duration="8197000" />
       <workItem from="1689664382755" duration="16859000" />
       <workItem from="1689792810220" duration="1567000" />
-      <workItem from="1689856679735" duration="9867000" />
-    </task>
-    <task id="LOCAL-00002" summary="установка сервера ддя деплой">
-      <created>1684490497815</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1684490497815</updated>
+      <workItem from="1689856679735" duration="9982000" />
     </task>
     <task id="LOCAL-00003" summary="1">
       <created>1684570514543</created>
@@ -432,7 +424,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689872587730</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Обновил внешний вид">
+      <created>1689872666188</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1689872666188</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

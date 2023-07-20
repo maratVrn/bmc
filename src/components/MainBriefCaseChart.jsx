@@ -42,7 +42,7 @@ const MainBriefCaseChart =  (props) =>{
                     // const endProfit = newProfitData[0].data.at(-1)
                     // console.log(endProfit);
 
-                    if (newProfitData[0].data.at(-1)) setShowProfit(newProfitData[0].data.at(-1)[1].toString())
+                 //   if (newProfitData[0].data.at(-1)) setShowProfit(newProfitData[0].data.at(-1)[1].toString())
 
                 }
 
