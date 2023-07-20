@@ -36,15 +36,8 @@ const MainBriefCaseChart =  (props) =>{
                 max: maxPrice
 
             }
-
-            // if (newProfitData[0])
-            //     if (newProfitData[0].data) {
-            //         // const endProfit = newProfitData[0].data.at(-1)
-            //         // console.log(endProfit);
-            //
-            //      //   if (newProfitData[0].data.at(-1)) setShowProfit(newProfitData[0].data.at(-1)[1].toString())
-            //
-            //     }
+            // TODO: Вот тут косяк с отображение на iphone что это я хз
+            if (newProfitData[0].data.at(-1)) setShowProfit(newProfitData[0].data.at(-1)[1].toString())
 
 
 

@@ -41,6 +41,7 @@ const MyChart = (props) => {
                 Y_ax.push(Y_ax_prise)
 
                 // const endProfit = props.data[id].dealData[1].data.at(-1)
+                // TODO: Вот тут косяк с отображение на iphone что это я хз
                 if (props.data[id].dealData[1].data.at(-1)) setShowProfit(parseFloat(props.data[id].dealData[1].data.at(-1)[1]))
 
 
