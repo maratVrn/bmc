@@ -80,20 +80,20 @@ const MainStrategy = () => {
                     {/*</div>*/}
                     <div className='col-md-6 px-4 text-center' >
 {/*4*/}
-                        {/*<div className='border_r' style={{backgroundColor:'white'}}>*/}
-                        {/*    {*/}
-                        {/*        briefcaseStore.bestBriefcaseI >-1 ?*/}
-                        {/*            <MainBriefCaseChart data = {data3YearsViewBriefcaseData(briefcaseStore.allSBriefcaseAdmin[briefcaseStore.bestBriefcaseI]?.allBriefcaseData)}*/}
-                        {/*                                // points = {briefcasePoints}*/}
-                        {/*                                name =  { briefcaseStore.allSBriefcaseAdmin[briefcaseStore.bestBriefcaseI]?.name}*/}
-                        {/*                                cOpt = {getBOpt( briefcaseStore.allSBriefcaseAdmin[briefcaseStore.bestBriefcaseI]?.name)}*/}
-                        {/*            />*/}
-                        {/*         : ''*/}
-                        {/*    }*/}
+                        <div className='border_r' style={{backgroundColor:'white'}}>
+                            {
+                                briefcaseStore.bestBriefcaseI >-1 ?
+                                    <MainBriefCaseChart data = {data3YearsViewBriefcaseData(briefcaseStore.allSBriefcaseAdmin[briefcaseStore.bestBriefcaseI]?.allBriefcaseData)}
+                                                        // points = {briefcasePoints}
+                                                        name =  { briefcaseStore.allSBriefcaseAdmin[briefcaseStore.bestBriefcaseI]?.name}
+                                                        cOpt = {getBOpt( briefcaseStore.allSBriefcaseAdmin[briefcaseStore.bestBriefcaseI]?.name)}
+                                    />
+                                 : ''
+                            }
 
-                        {/*    <div style={{display: 'flex', justifyContent:'center'}}>*/}
-                        {/*        <button className='button2'  onClick={() => navigate('/briefcase', { state: { id: briefcaseStore.bestBriefcaseI} })}>Подробнее</button> </div>*/}
-                        {/*</div>*/}
+                            <div style={{display: 'flex', justifyContent:'center'}}>
+                                <button className='button2'  onClick={() => navigate('/briefcase', { state: { id: briefcaseStore.bestBriefcaseI} })}>Подробнее</button> </div>
+                        </div>
                     </div>
                 </div>
 
