@@ -48,17 +48,17 @@ const MainBriefCaseChart =  (props) =>{
 
 
 
-            // if (props.data[id].year) setShowYear(props.data[id].year)
-            //
-            // setShowData(newProfitData)
-            //
-            // if (props.cOpt){
-            //     props.cOpt.yaxis = Y_ax_prise;
-            //     ApexCharts.exec(props.cOpt?.chart.id, 'updateOptions',props.cOpt);
-            // }
-            //
-            //
-            //  setButtonKey(id)
+            if (props.data[id].year) setShowYear(props.data[id].year)
+
+            setShowData(newProfitData)
+
+            if (props.cOpt){
+                props.cOpt.yaxis = Y_ax_prise;
+                ApexCharts.exec(props.cOpt?.chart.id, 'updateOptions',props.cOpt);
+            }
+
+
+             setButtonKey(id)
         }
     }
 

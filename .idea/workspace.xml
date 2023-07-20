@@ -86,21 +86,7 @@
       <workItem from="1689611409752" duration="8197000" />
       <workItem from="1689664382755" duration="16859000" />
       <workItem from="1689792810220" duration="1567000" />
-      <workItem from="1689856679735" duration="9982000" />
-    </task>
-    <task id="LOCAL-00003" summary="1">
-      <created>1684570514543</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1684570514543</updated>
-    </task>
-    <task id="LOCAL-00004" summary="1">
-      <created>1684570950071</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1684570950071</updated>
+      <workItem from="1689856679735" duration="10135000" />
     </task>
     <task id="LOCAL-00005" summary="1">
       <created>1684571836357</created>
@@ -431,7 +417,21 @@
       <option name="project" value="LOCAL" />
       <updated>1689872666188</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Обновил внешний вид">
+      <created>1689872782501</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1689872782501</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Обновил внешний вид">
+      <created>1689872817208</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1689872817208</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
