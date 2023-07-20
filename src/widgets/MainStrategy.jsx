@@ -16,20 +16,20 @@ const MainStrategy = () => {
 
     return (
 <>
-        <div className='container ' style={{paddingTop:'100px', marginBottom:'70px'}} >
+        <div className='container ' style={{paddingTop:'50px', marginBottom:'70px'}} >
         <h3> Мы разработали сигналы для торговли акцииями на фондовом рынке России и США. Все стратегии являются результатом алгоритмического анализа исторических данных</h3>
         <div className='row' style={{marginTop:'70px'}}>
             <div className= {allClass} >
-                <img className='img_K' src='./assets/ico/icons1.png' alt='' />
+                <img className='img_K' src='/assets/1.jpg' alt='' />
                 <h5> Вы можете просматривать истории сделок, риски и доходность по выбранной стратегии </h5>
             </div>
             <div className={allClass}>
-                <img className='img_K' src='./assets/ico/icons2.png' alt='' />
+                <img className='img_K' src='/assets/2.jpg' alt='' />
                 <h5> Используйте наши видео уроки для освоения навыков трейдинга </h5>
             </div>
             <div className={allClass} >
 
-                <img className='img_K' src='./assets/ico/icons3.png' alt='' />
+                <img className='img_K' src='/assets/3.jpg' alt='' />
                 <h5>  Создайте свой портфель инвестиций и зарабатывайте используя наши сигналы</h5>
             </div>
 

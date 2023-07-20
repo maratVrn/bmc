@@ -4,7 +4,7 @@ const MainInfo = () => {
 
     return (
         <div className='pt-5 align-middle ' id='mainInfo'>
-          <div className='container' style={{paddingTop:'40px'}}>
+          <div className='container' style={{paddingTop:'00px'}}>
               <div className=" m2 row justify-content-center align-items-center">
                   <div className= {'col-md-7 col-sm-7 pt-5 '} >
 
@@ -13,9 +13,6 @@ const MainInfo = () => {
                           до 100 % годовых
                       </h1>
                       <p id='m2' className='pt-5'>Торговые стратегии проверенные с 2017 года</p>
-
-                        {/*<div className='border' style={{textAlign:'center'}}><button className='btn-a_blue'>Выбрать стратегию</button></div>*/}
-
                       <button className='btn-a_blue mt-5'>Выбрать стратегию</button>
 
                   </div>

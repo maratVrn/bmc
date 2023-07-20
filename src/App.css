@@ -32,7 +32,7 @@ a {
 }
 
 #m2f {
-  background: url("../public/assets/banner-photo2.png") no-repeat center top;
+  background: url("../public/assets/banner-photo2.jpg") no-repeat center top;
   margin-top: 100px;
   min-height: 492px;
   max-height: 492px;
@@ -47,9 +47,9 @@ a {
 
 #mainInfo {
   background: url("../public/assets/main4.jpg") no-repeat center top;
-  padding-top: 180px;
+  /*padding-top: 0px;*/
   min-height: 800px;
-  max-height: 900px;
+
   width: 100%;
   color: white;
 
