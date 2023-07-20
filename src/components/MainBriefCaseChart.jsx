@@ -57,7 +57,7 @@ const MainBriefCaseChart =  (props) =>{
         <div>
             {/* Рисуем график с данными в соответсвии с нажатой кнопкой*/}
 
-            <p style={{textAlign:'center', color:'black'}}>Прибыль портфеля {props?.name} за {showYear} г. составляет {showProfit} %  </p>
+            {/*<p style={{textAlign:'center', color:'black'}}>Прибыль портфеля {props?.name} за {showYear} г. составляет {showProfit} %  </p>*/}
             {/*<div className='mainChartData'>*/}
             {/*        <div  >*/}
 
@@ -72,9 +72,9 @@ const MainBriefCaseChart =  (props) =>{
             {/*        </div>*/}
             {/*</div>*/}
 
-            {props.cOpt?
-              ''//  <ReactApexChart height={350} options={props.cOpt}  series={ showData } type="line" />
-                : ''}
+            {/*{props.cOpt?*/}
+            {/*  ''//  <ReactApexChart height={350} options={props.cOpt}  series={ showData } type="line" />*/}
+            {/*    : ''}*/}
 
 
         </div>

@@ -13,19 +13,7 @@ const MyChart = (props) => {
     const [chartParam, setChartParam]= useState(ChartParam.main_options)
 
     useEffect(() =>{
-
          SetChartData(2)
-
-        // console.log('---tut--'+props.name);
-        // chartParam.chart.id = props.name
-        // setChartParam(chartParam)
-        // const newOptions = {}
-        // Object.assign(newOptions, ChartParam.main_options)
-        // console.log('было'+newOptions.chart.id);
-        // if (props.name) newOptions.chart.id  = props.name
-        // console.log(ChartParam.main_options.chart.id);
-
-
     },[props])
 
 
