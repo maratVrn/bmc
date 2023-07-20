@@ -56,7 +56,7 @@ const MainBriefCaseChart =  (props) =>{
     return (
 
         <div>
-             Рисуем график с данными в соответсвии с нажатой кнопкой
+             {/*Рисуем график с данными в соответсвии с нажатой кнопкой*/}
 
             <p style={{textAlign:'center', color:'black'}}>Прибыль портфеля {props?.name} за {showYear} г. составляет {showProfit} %  </p>
             <div className='mainChartData'>

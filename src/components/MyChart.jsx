@@ -13,7 +13,7 @@ const MyChart = (props) => {
     const [chartParam, setChartParam]= useState(ChartParam.main_options)
 
     useEffect(() =>{
-         SetChartData(2)
+         // SetChartData(2)
     },[props])
 
 
@@ -73,7 +73,7 @@ const MyChart = (props) => {
 
                 // const chartName = props.name
                 // ApexCharts.exec(chartName, 'updateOptions', chartParam);
-            //    ApexCharts.exec('area-datetime', 'updateOptions', ChartParam.main_options);
+                ApexCharts.exec('area-datetime', 'updateOptions', ChartParam.main_options);
 
                 setButtonKey(id)
             }
@@ -101,9 +101,7 @@ const MyChart = (props) => {
             </div>
 
             {/* Рисуем график с данными в соответсвии с нажатой кнопкой*/}
-
-
-            {/*<ReactApexChart height={300} options={ChartParam.main_options}  series={ showData } type="line" />*/}
+            <ReactApexChart height={300} options={ChartParam.main_options}  series={ showData } type="line" />
             {/*<ReactApexChart height={300} options={chartParam}   series={ showData } type="line" />*/}
 
         </div>

@@ -41,18 +41,18 @@ const MainStrategy = () => {
             <div className='container'>
                 <div className='row' >
                     <div className='col-md-6  text-center' >
-{/*1*/}
-{/*                        <div className='border_r' style={{backgroundColor:'white'}}>*/}
-{/*                            {*/}
-{/*                                strategyStore.bestStrategyI >-1 ?*/}
-{/*                                     <MyChart data = {data3YearsViewOneData(strategyStore.allStrategy[strategyStore.bestStrategyI].strategyData)} name =  {strategyStore.allStrategy[strategyStore.bestStrategyI].name} />*/}
-{/*                                : ''*/}
-{/*                            }*/}
+
+                        <div className='border_r' style={{backgroundColor:'white'}}>
+                            {
+                                strategyStore.bestStrategyI >-1 ?
+                                     <MyChart data = {data3YearsViewOneData(strategyStore.allStrategy[strategyStore.bestStrategyI].strategyData)} name =  {strategyStore.allStrategy[strategyStore.bestStrategyI].name} />
+                                : ''
+                            }
 
 
-{/*                            <div style={{display: 'flex', justifyContent:'center'}}>*/}
-{/*                                <button className='button2'  onClick={() => navigate('/strategy', { state: { id: strategyStore.bestStrategyI} })}>Подробнее</button> </div>*/}
-{/*                        </div>*/}
+                            <div style={{display: 'flex', justifyContent:'center'}}>
+                                <button className='button2'  onClick={() => navigate('/strategy', { state: { id: strategyStore.bestStrategyI} })}>Подробнее</button> </div>
+                        </div>
 
                     </div>
                     {/*2*/}
