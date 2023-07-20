@@ -16,7 +16,7 @@ const MainBriefCaseChart =  (props) =>{
 
 
     useEffect(() =>{
-        // SetChartData(2)
+         SetChartData(2)
 
     },[props])
 
