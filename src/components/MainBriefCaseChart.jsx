@@ -36,9 +36,9 @@ const MainBriefCaseChart =  (props) =>{
                 max: maxPrice
 
             }
-            const endProfit = newProfitData[0].data.at(-1)
-            console.log('--tut--');
-            console.log(endProfit[1])
+            // const endProfit = newProfitData[0].data.at(-1)
+            // console.log('--tut--');
+            // console.log(endProfit[1])
 
             // if (endProfit[1]) setShowProfit(endProfit[1])
             //
