@@ -115,7 +115,7 @@ const MyChart = (props) => {
             {/* Рисуем график с данными в соответсвии с нажатой кнопкой*/}
 
 
-            <ReactApexChart height={300} options={ChartParam.main_options}  series={ showData } type="line" />
+            {/*<ReactApexChart height={300} options={ChartParam.main_options}  series={ showData } type="line" />*/}
             {/*<ReactApexChart height={300} options={chartParam}   series={ showData } type="line" />*/}
 
         </div>
