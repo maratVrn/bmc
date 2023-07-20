@@ -56,26 +56,26 @@ const MainBriefCaseChart =  (props) =>{
     return (
 
         <div>
-            {/* Рисуем график с данными в соответсвии с нажатой кнопкой*/}
+             Рисуем график с данными в соответсвии с нажатой кнопкой
 
-            {/*<p style={{textAlign:'center', color:'black'}}>Прибыль портфеля {props?.name} за {showYear} г. составляет {showProfit} %  </p>*/}
-            {/*<div className='mainChartData'>*/}
-            {/*        <div  >*/}
+            <p style={{textAlign:'center', color:'black'}}>Прибыль портфеля {props?.name} за {showYear} г. составляет {showProfit} %  </p>
+            <div className='mainChartData'>
+                    <div  >
 
-            {/*            {*/}
-            {/*                props?.data.length?*/}
-            {/*                    props?.data?.map((value, id) =>*/}
-            {/*                        <button key={id} className= {buttonKey === id? "button3_down" : "button3"}*/}
-            {/*                                onClick={() =>{ SetChartData(id)}}>{value.year}</button>)*/}
-            {/*                    : ''*/}
+                        {
+                            props?.data.length?
+                                props?.data?.map((value, id) =>
+                                    <button key={id} className= {buttonKey === id? "button3_down" : "button3"}
+                                            onClick={() =>{ SetChartData(id)}}>{value.year}</button>)
+                                : ''
 
-            {/*            }*/}
-            {/*        </div>*/}
-            {/*</div>*/}
+                        }
+                    </div>
+            </div>
 
-            {/*{props.cOpt?*/}
-            {/*  ''//  <ReactApexChart height={350} options={props.cOpt}  series={ showData } type="line" />*/}
-            {/*    : ''}*/}
+            {props.cOpt?
+                <ReactApexChart height={350} options={props.cOpt}  series={ showData } type="line" />
+                : ''}
 
 
         </div>
