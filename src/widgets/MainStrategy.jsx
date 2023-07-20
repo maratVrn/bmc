@@ -42,52 +42,53 @@ const MainStrategy = () => {
                 <div className='row' >
                     <div className='col-md-6  text-center' >
 {/*1*/}
-                        {/*<div className='border_r' style={{backgroundColor:'white'}}>*/}
-                        {/*    {*/}
-                        {/*        strategyStore.bestStrategyI >-1 ?*/}
-                        {/*             <MyChart data = {data3YearsViewOneData(strategyStore.allStrategy[strategyStore.bestStrategyI].strategyData)} name =  {strategyStore.allStrategy[strategyStore.bestStrategyI].name} />*/}
-                        {/*        : ''*/}
-                        {/*    }*/}
+{/*                        <div className='border_r' style={{backgroundColor:'white'}}>*/}
+{/*                            {*/}
+{/*                                strategyStore.bestStrategyI >-1 ?*/}
+{/*                                     <MyChart data = {data3YearsViewOneData(strategyStore.allStrategy[strategyStore.bestStrategyI].strategyData)} name =  {strategyStore.allStrategy[strategyStore.bestStrategyI].name} />*/}
+{/*                                : ''*/}
+{/*                            }*/}
 
 
-                        {/*    <div style={{display: 'flex', justifyContent:'center'}}>*/}
-                        {/*        <button className='button2'  onClick={() => navigate('/strategy', { state: { id: strategyStore.bestStrategyI} })}>Подробнее</button> </div>*/}
-                        {/*</div>*/}
+{/*                            <div style={{display: 'flex', justifyContent:'center'}}>*/}
+{/*                                <button className='button2'  onClick={() => navigate('/strategy', { state: { id: strategyStore.bestStrategyI} })}>Подробнее</button> </div>*/}
+{/*                        </div>*/}
 
                     </div>
                     {/*2*/}
-                    {/*<div className='col-md-6  my-3 text-center' >*/}
-                    {/*    <h3 className='pt-5'> Результаты работы торговых стратегий  </h3>*/}
-                    {/*    <p className='p-5' style={{color:'black'}}>На графике представлены результаты работы стратегии по*/}
-                    {/*        акциям {strategyStore?.allStrategy[strategyStore.bestStrategyI]?.name} за*/}
-                    {/*        послдение 3 года.  Вы можете получить более подробную информацию или посмотреть все возможные стратегии .</p>*/}
+                    <div className='col-md-6  my-3 text-center' >
+                        <h3 className='pt-5'> Результаты работы торговых стратегий  </h3>
+                        <p className='p-5' style={{color:'black'}}>На графике представлены результаты работы стратегии по
+                            акциям {strategyStore?.allStrategy[strategyStore.bestStrategyI]?.name} за
+                            послдение 3 года.  Вы можете получить более подробную информацию или посмотреть все возможные стратегии .</p>
 
 
-                    {/*    <button onClick={() => navigate('/allStrategy')} className='btn-a_blue' >Смотреть все стратегии</button>*/}
-                    {/*</div>*/}
+                        <button onClick={() => navigate('/allStrategy')} className='btn-a_blue' >Смотреть все стратегии</button>
+                    </div>
                 </div>
 
                 <div className='row' style={{paddingTop:'70px'}}>
  {/*3                   */}
-                    {/*<div className='col-md-6  my-3 text-center' >*/}
-                    {/*    <h3 className='pt-5'> Портфельные стратегии  </h3>*/}
+                    <div className='col-md-6  my-3 text-center' >
+                        <h3 className='pt-5'> Портфельные стратегии  </h3>
 
-                    {/*    <p className='p-5' style={{color:'black'}}>Использование нескольких торговых инструментов позволяет уменьшить риски*/}
-                    {/*        т.к. итоговый результат усредняется по показателям отдельных стратегий.*/}
-                    {/*        При этом возможно рациональное использование торговых плечей для увеличения прибыли.*/}
-                    {/*        На графике показаны результаты портфельной стратегии “{ briefcaseStore.allSBriefcaseAdmin[briefcaseStore.bestBriefcaseI]?.name}” с торговым плечом 2</p>*/}
-                    {/*    <button onClick={() => navigate('/allBriefcase')} className='btn-a_blue'>Все потрфельные стратегии</button>*/}
-                    {/*</div>*/}
+                        <p className='p-5' style={{color:'black'}}>Использование нескольких торговых инструментов позволяет уменьшить риски
+                            т.к. итоговый результат усредняется по показателям отдельных стратегий.
+                            При этом возможно рациональное использование торговых плечей для увеличения прибыли.
+                            На графике показаны результаты портфельной стратегии “{ briefcaseStore.allSBriefcaseAdmin[briefcaseStore.bestBriefcaseI]?.name}” с торговым плечом 2</p>
+                        <button onClick={() => navigate('/allBriefcase')} className='btn-a_blue'>Все потрфельные стратегии</button>
+                    </div>
                     <div className='col-md-6 px-4 text-center' >
 {/*4*/}
                         <div className='border_r' style={{backgroundColor:'white'}}>
                             {
                                 briefcaseStore.bestBriefcaseI >-1 ?
-                                    <MainBriefCaseChart data = {data3YearsViewBriefcaseData(briefcaseStore.allSBriefcaseAdmin[briefcaseStore.bestBriefcaseI]?.allBriefcaseData)}
-                                                        // points = {briefcasePoints}
-                                                        name =  { briefcaseStore.allSBriefcaseAdmin[briefcaseStore.bestBriefcaseI]?.name}
-                                                        cOpt = {getBOpt( briefcaseStore.allSBriefcaseAdmin[briefcaseStore.bestBriefcaseI]?.name)}
-                                    />
+                                    ''
+                                    // <MainBriefCaseChart data = {data3YearsViewBriefcaseData(briefcaseStore.allSBriefcaseAdmin[briefcaseStore.bestBriefcaseI]?.allBriefcaseData)}
+                                    //                     // points = {briefcasePoints}
+                                    //                     name =  { briefcaseStore.allSBriefcaseAdmin[briefcaseStore.bestBriefcaseI]?.name}
+                                    //                     cOpt = {getBOpt( briefcaseStore.allSBriefcaseAdmin[briefcaseStore.bestBriefcaseI]?.name)}
+                                    // />
                                  : ''
                             }
 
