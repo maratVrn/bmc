@@ -28,18 +28,18 @@ const MainBriefCaseChart =  (props) =>{
 
             const maxPrice = Math.max(...newProfitData[0].data.map(o => o[1]));
             const minPrice = Math.min(...newProfitData[0].data.map(o => o[1]));
-            // const Y_ax_prise = {
-            //     title: {
-            //         text: "Прибыль портфеля, %"
-            //     },
-            //     min: minPrice,
-            //     max: maxPrice
-            //
-            // }
-            // const endProfit = newProfitData[0].data.at(-1)
-            // if (endProfit[1]) setShowProfit(endProfit[1])
-            //
-            // if (props.data[id].year) setShowYear(props.data[id].year)
+            const Y_ax_prise = {
+                title: {
+                    text: "Прибыль портфеля, %"
+                },
+                min: minPrice,
+                max: maxPrice
+
+            }
+            const endProfit = newProfitData[0].data.at(-1)
+            if (endProfit[1]) setShowProfit(endProfit[1])
+
+            if (props.data[id].year) setShowYear(props.data[id].year)
             //
             // setShowData(newProfitData)
             //
