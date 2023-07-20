@@ -86,7 +86,7 @@
       <workItem from="1689611409752" duration="8197000" />
       <workItem from="1689664382755" duration="16859000" />
       <workItem from="1689792810220" duration="1567000" />
-      <workItem from="1689856679735" duration="9457000" />
+      <workItem from="1689856679735" duration="9639000" />
     </task>
     <task id="LOCAL-00001" summary="new perec">
       <created>1684487907098</created>
@@ -410,7 +410,21 @@
       <option name="project" value="LOCAL" />
       <updated>1689872004998</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Обновил внешний вид">
+      <created>1689872286775</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1689872286775</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Обновил внешний вид">
+      <created>1689872304303</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1689872304303</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
