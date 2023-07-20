@@ -83,12 +83,12 @@ const MainStrategy = () => {
                         <div className='border_r' style={{backgroundColor:'white'}}>
                             {
                                 briefcaseStore.bestBriefcaseI >-1 ?
-                                    ''
-                                    // <MainBriefCaseChart data = {data3YearsViewBriefcaseData(briefcaseStore.allSBriefcaseAdmin[briefcaseStore.bestBriefcaseI]?.allBriefcaseData)}
-                                    //                     // points = {briefcasePoints}
-                                    //                     name =  { briefcaseStore.allSBriefcaseAdmin[briefcaseStore.bestBriefcaseI]?.name}
-                                    //                     cOpt = {getBOpt( briefcaseStore.allSBriefcaseAdmin[briefcaseStore.bestBriefcaseI]?.name)}
-                                    // />
+
+                                    <MainBriefCaseChart data = {data3YearsViewBriefcaseData(briefcaseStore.allSBriefcaseAdmin[briefcaseStore.bestBriefcaseI]?.allBriefcaseData)}
+                                                        // points = {briefcasePoints}
+                                                        name =  { briefcaseStore.allSBriefcaseAdmin[briefcaseStore.bestBriefcaseI]?.name}
+                                                        cOpt = {getBOpt( briefcaseStore.allSBriefcaseAdmin[briefcaseStore.bestBriefcaseI]?.name)}
+                                    />
                                  : ''
                             }
 
