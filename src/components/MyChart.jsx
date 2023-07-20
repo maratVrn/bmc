@@ -13,7 +13,7 @@ const MyChart = (props) => {
     const [chartParam, setChartParam]= useState(ChartParam.main_options)
 
     useEffect(() =>{
-         // SetChartData(2)
+          SetChartData(2)
     },[props])
 
 
@@ -40,8 +40,10 @@ const MyChart = (props) => {
                 }
                 Y_ax.push(Y_ax_prise)
 
-                const endProfit = props.data[id].dealData[1].data.at(-1)
-                if (endProfit[1]) setShowProfit(endProfit[1])
+                // const endProfit = props.data[id].dealData[1].data.at(-1)
+                // if (endProfit[1]) setShowProfit(endProfit[1])
+
+
                 if (props.data[id].year) setShowYear(props.data[id].year)
 
                 newShoData.push(props.data[id].dealData[1])
