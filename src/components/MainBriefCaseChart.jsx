@@ -44,7 +44,7 @@ const MainBriefCaseChart =  (props) =>{
 
             if (props.cOpt){
                 props.cOpt.yaxis = Y_ax_prise;
-                ApexCharts.exec(props.cOpt?.chart.id, 'updateOptions',props.cOpt);
+                // ApexCharts.exec(props.cOpt?.chart.id, 'updateOptions',props.cOpt);
             }
 
 

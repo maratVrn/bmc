@@ -85,7 +85,7 @@ const MyChart = (props) => {
 
                 // const chartName = props.name
                 // ApexCharts.exec(chartName, 'updateOptions', chartParam);
-                ApexCharts.exec('area-datetime', 'updateOptions', ChartParam.main_options);
+            //    ApexCharts.exec('area-datetime', 'updateOptions', ChartParam.main_options);
 
                 setButtonKey(id)
             }
