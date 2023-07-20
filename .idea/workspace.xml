@@ -8,42 +8,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0acd7c56-3109-4553-abe5-6a02aea33c4c" name="Changes" comment="Обновил внешний вид">
-      <change afterPath="$PROJECT_DIR$/public/assets/banner-photo.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/banner-photo2 — копия.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/banner-photo2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/education.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/footer-bgd.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/howWork.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/main4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/Questions.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/img/allStrategy.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/img/arrow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/img/bot.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/img/cost.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/img/faq-img.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/img/howWork.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/img/icon_trading_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/img/icon_trading_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/img/icons8-trading-64.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/img/man.webp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/diary.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/home.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/main.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/main2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/main3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/adminCompinents/modal/StrategyDataEdit.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/adminCompinents/modal/StrategyDataEdit.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/adminCompinents/modal/StrategyEdit.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/adminCompinents/modal/StrategyEdit.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/http/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/http/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/mainPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/mainPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/navbar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/MainStrategy.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/MainStrategy.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/Subscription.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Subscription.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/Training.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Training.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/footer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/mainInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/mainInfo.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +88,7 @@
       <workItem from="1689611409752" duration="8197000" />
       <workItem from="1689664382755" duration="16859000" />
       <workItem from="1689792810220" duration="1567000" />
-      <workItem from="1689856679735" duration="513000" />
+      <workItem from="1689856679735" duration="3633000" />
     </task>
     <task id="LOCAL-00001" summary="new perec">
       <created>1684487907098</created>
@@ -270,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687332164581</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Обновил внешний вид">
+      <created>1689857615539</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1689857615539</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
