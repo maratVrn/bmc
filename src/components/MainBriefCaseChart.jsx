@@ -24,10 +24,10 @@ const MainBriefCaseChart =  (props) =>{
 
         if (props.data[id]) {
 
-            // const newProfitData = dataGetViewOneBriefcaseDataLevel(props.data[id].profitData[0],2, false)
-            //
-            // const maxPrice = Math.max(...newProfitData[0].data.map(o => o[1]));
-            // const minPrice = Math.min(...newProfitData[0].data.map(o => o[1]));
+            const newProfitData = dataGetViewOneBriefcaseDataLevel(props.data[id].profitData[0],2, false)
+
+            const maxPrice = Math.max(...newProfitData[0].data.map(o => o[1]));
+            const minPrice = Math.min(...newProfitData[0].data.map(o => o[1]));
             // const Y_ax_prise = {
             //     title: {
             //         text: "Прибыль портфеля, %"
@@ -49,7 +49,7 @@ const MainBriefCaseChart =  (props) =>{
             // }
             //
             //
-            // setButtonKey(id)
+            //  setButtonKey(id)
         }
     }
 
