@@ -39,10 +39,10 @@ const MainBriefCaseChart =  (props) =>{
 
             if (newProfitData[0])
                 if (newProfitData[0].data) {
-                    const endProfit = newProfitData[0].data.at(-1)
-                    console.log(endProfit);
+                    // const endProfit = newProfitData[0].data.at(-1)
+                    // console.log(endProfit);
 
-                    //   if (endProfit[1]) setShowProfit(endProfit[1].toString())
+                    if (newProfitData[0].data.at(-1)) setShowProfit(newProfitData[0].data.at(-1)[1].toString())
 
                 }
 
