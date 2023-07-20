@@ -7,14 +7,43 @@
     <option name="rewriteBookmarkType" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0acd7c56-3109-4553-abe5-6a02aea33c4c" name="Changes" comment="Обновление параметров пользователя">
-      <change afterPath="$PROJECT_DIR$/src/components/noAuthUser.jsx" afterDir="false" />
+    <list default="true" id="0acd7c56-3109-4553-abe5-6a02aea33c4c" name="Changes" comment="Обновил внешний вид">
+      <change afterPath="$PROJECT_DIR$/public/assets/banner-photo.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/banner-photo2 — копия.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/banner-photo2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/education.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/footer-bgd.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/howWork.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/main4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/widgets/Questions.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/widgets/img/allStrategy.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/widgets/img/arrow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/widgets/img/bot.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/widgets/img/cost.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/widgets/img/faq-img.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/widgets/img/howWork.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/widgets/img/icon_trading_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/widgets/img/icon_trading_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/widgets/img/icons8-trading-64.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/widgets/img/man.webp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BriefCaseChart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BriefCaseChart.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/StrategyChart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StrategyChart.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/StrategyDeals.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StrategyDeals.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/diary.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/home.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/main.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/main2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/main3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/adminCompinents/modal/StrategyDataEdit.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/adminCompinents/modal/StrategyDataEdit.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/adminCompinents/modal/StrategyEdit.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/adminCompinents/modal/StrategyEdit.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/http/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/http/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/mainPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/mainPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/navbar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/MainStrategy.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/MainStrategy.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/Subscription.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Subscription.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/widgets/Training.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Training.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/footer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/mainInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/mainInfo.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,21 +64,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/JS_apps/test/client/src/components/adminCompinents/modal",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2022.2\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/JS_apps/test/client/src/components/adminCompinents/modal&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2022.2\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\JS_apps\test\client\src\components\adminCompinents\modal" />
@@ -82,6 +111,17 @@
       <workItem from="1684784395881" duration="1045000" />
       <workItem from="1687277945327" duration="38000" />
       <workItem from="1687278268606" duration="3823000" />
+      <workItem from="1687332119246" duration="4626000" />
+      <workItem from="1687419004142" duration="3246000" />
+      <workItem from="1687532524456" duration="678000" />
+      <workItem from="1687684581081" duration="1878000" />
+      <workItem from="1687850937782" duration="2366000" />
+      <workItem from="1688053642218" duration="1202000" />
+      <workItem from="1689506014980" duration="11248000" />
+      <workItem from="1689611409752" duration="8197000" />
+      <workItem from="1689664382755" duration="16859000" />
+      <workItem from="1689792810220" duration="1567000" />
+      <workItem from="1689856679735" duration="513000" />
     </task>
     <task id="LOCAL-00001" summary="new perec">
       <created>1684487907098</created>
@@ -223,7 +263,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684784848420</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Проверка авторизованного пользователя на отображение данных">
+      <created>1687332164581</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1687332164581</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,6 +296,8 @@
     <MESSAGE value="ушли от куки совсем" />
     <MESSAGE value="Добавид таблицу с пользователями" />
     <MESSAGE value="Обновление параметров пользователя" />
-    <option name="LAST_COMMIT_MESSAGE" value="Обновление параметров пользователя" />
+    <MESSAGE value="Проверка авторизованного пользователя на отображение данных" />
+    <MESSAGE value="Обновил внешний вид" />
+    <option name="LAST_COMMIT_MESSAGE" value="Обновил внешний вид" />
   </component>
 </project>

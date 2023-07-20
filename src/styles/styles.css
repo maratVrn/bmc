@@ -7,9 +7,10 @@
 p {
     margin-top: 0.5em; /* Отступ сверху */
     margin-bottom: 1em; /* Отступ снизу */
-    line-height : 1.5;
-    font-size: 18px;
-    font-weight: 400;
+    line-height : 1.4;
+    font-size: 1.25rem;
+    /*font-size: 18px;*/
+    font-weight: 500;
 }
 body {
     font-family: "Rubik", sans-serif;
@@ -53,6 +54,7 @@ body {
 @media (max-width: 849px) {
     h1 { font-size: 26px; }
     p {font-size: 16px;}
+    .m2 h1 {font-size: 26px;line-height: 40px;}
 
 
 }
@@ -111,7 +113,7 @@ h3 {
     color: rgb(0, 0, 0);;
     font-weight: 400;
     font-size: 22px;
-    text-align: center;
+    /*text-align: center;*/
     font-family: "Trebuchet MS", serif;
 
 }
@@ -124,13 +126,6 @@ h1 {
     font-weight: normal ;
 }
 
-h2 {
-
-    text-align: center;
-    font-family: 'Lato', Tahoma, sans-serif;
-    color: rgb(63, 38, 38);
-    font-weight: normal ;
-}
 
 button {
     background: none;
@@ -144,6 +139,34 @@ button {
     border-radius: 5px;
 
 }
+
+.fadeInLeft {
+    -webkit-animation-name: fadeInLeft;
+    animation-name: fadeInLeft;
+}
+
+.btn-a_blue {
+    background: -o-linear-gradient(358.65deg,#007bff 8.05%,#09b6ff 98.09%);
+    background: linear-gradient(91.35deg,#007bff 8.05%,#09b6ff 98.09%);
+    -webkit-box-shadow: 0 0 28px rgba(35,149,255,.85);
+    box-shadow: 0 0 28px rgba(35,149,255,.85);
+    border-radius: 28px;
+    padding: 16px 35px;
+    /*display: block;*/
+
+    width: -moz-fit-content;
+    width: fit-content;
+    font-weight: 500;
+    font-size: 19.32px;
+    line-height: 23px;
+    color: #fff;
+}
+
+.btn-a_blue:hover {
+    -webkit-box-shadow: 0 0 0 ;
+    box-shadow: 0 0 0;
+}
+
 
 .button1 {
     background-color: #48ada7;
@@ -235,7 +258,7 @@ button {
     padding-top: 50px;
     padding-bottom: 50px;
     /*background-color: #e9f1da;*/
-    background-color: #1e1e46;
+    background-color: #d1eafc;
 
 }
 .bgColorSilver h1{

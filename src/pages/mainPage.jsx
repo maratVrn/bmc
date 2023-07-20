@@ -4,6 +4,7 @@ import Training from "../widgets/Training";
 import MainStrategy from "../widgets/MainStrategy";
 
 import Subscription from "../widgets/Subscription";
+import Questions from "../widgets/Questions";
 
 const MainPage = () => {
     return (
@@ -12,6 +13,7 @@ const MainPage = () => {
             <MainStrategy/>
             <Training/>
             <Subscription/>
+            <Questions/>
         </div>
     );
 };

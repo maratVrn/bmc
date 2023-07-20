@@ -1,5 +1,10 @@
 import React from 'react';
-import MyChart from "../components/MyChart";
+import Image from './img/howWork.jpg'
+import ImageBot from './img/bot.jpg'
+import ImageCost from './img/cost.svg'
+import ImageAll from './img/allStrategy.jpg'
+
+
 
 import {useNavigate} from "react-router-dom";
 
@@ -41,26 +46,81 @@ const Training = () => {
             {/*        <button className='button1'>Все обучающие материалы</button>*/}
             {/*    </div>*/}
             {/*</div>*/}
-            <div className='bgColorBlue'>
+            <div className=''>
+                {/*Как это работает*/}
                 <div className='container'>
-                    <div className='row' >
-                        <div className='col-md-6 px-4 text-center' >
+                    <h3 style={{fontSize: '36px', fontWeight: '900', paddingTop: '30px'}}>Как это работает</h3>
 
-                            <div className='border_r diaryInfo' style={{backgroundColor:'white'}}>
+                    <div className='row'>
+                        <div className='col-md-6'>
+                            <h4> Зарабатывайте на акциях вместе с нами</h4>
 
+                            <div className='img_container'>
+
+                                <img src={Image} alt=""/>
 
                             </div>
+                            <button className='btn-a_blue'>Зарегестрироваться</button>
                         </div>
-                        <div className='col-md-6  my-3 text-center' >
-                            <h3 className='pt-5' style={{color:'white'}}> Дневник сделок трейдера  </h3>
-                            <p className='p-5' style={{color:'white'}}>Разработанный нами дневник трейдера позволит сохранить историю ваших сделок. При этом вы сможете проверить насколько правильным был выбор цены вашей сделки, рассчитать полученную прибыль. Анализ сделок трейдера является залогом успешной работы.</p>
+                        <div className='col-md-6 img_container'>
+                            <img style={{paddingTop:'40px'}} src={ImageBot} alt=""/>
 
-
-                            <button className='button1'>Перейти в дневник</button>
                         </div>
                     </div>
 
                 </div>
+                {/*Сколько стоит*/}
+                <div className='container' style={{paddingTop:'80px'}}>
+                    <h3 style={{fontSize: '36px', fontWeight: '900', paddingTop: '30px'}}>Сколько стоит</h3>
+
+                    <div className='row'>
+                        <div className='col-md-6'>
+                            <div className='row'  style={{paddingTop:'50px'}}>
+                                <div className='col-md-6 col-sm-6'>
+                                    <p>Сигналы на сайте</p>
+                                </div>
+                                <div className='col-md-6 col-sm-6' style={{display:"inline-block", textAlign:'right'}}>
+                                    <span className='spanInfo'>Бесплатно</span>
+                                </div>
+
+
+                            </div>
+                            <div className='row'  style={{paddingTop:'50px'}}>
+                                <div className='col-md-6 col-sm-6'>
+                                    <p>Online сделки акции РФ</p>
+                                </div>
+                                <div className='col-md-6 col-sm-6' style={{display:"inline-block", textAlign:'right'}}>
+                                    <span className='spanInfo'>1490 / месяц</span>
+                                </div>
+
+
+                            </div>
+                            <div className='row'  style={{paddingTop:'50px'}}>
+                                <div className='col-md-6 col-sm-6'>
+                                    <p>Online сделки акции РФ и США</p>
+                                </div>
+                                <div className='col-md-6 col-sm-6' style={{display:"inline-block", textAlign:'right'}}>
+                                    <span className='spanInfo'>2690 / месяц</span>
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+                        <div className='col-md-6 img_container' style={{height:'300px'}}>
+                            <img  src={ImageCost} alt=""/>
+
+                        </div>
+                    </div>
+                    {/*<div className='img_container' style={{height:'650px', paddingTop:'30px'}}>*/}
+                    {/*    <img  src={ImageAll} alt=""/>*/}
+
+                    {/*</div>*/}
+                    <h3 style={{fontSize: '36px', fontWeight: '900', paddingTop: '100px'}}>Научитесь инвестировать в акции</h3>
+                </div>
+
+
             </div>
 
 

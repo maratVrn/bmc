@@ -8,9 +8,46 @@ a {
   color: #000;
 }
 
+
+.m2 h1 {
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 60px;
+  color: #000000;
+  margin-bottom: 15px;
+  max-width: 1200px;
+  text-align: left;
+}
+
+
+
+.m2 p {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 40px;
+  color: #4f4f4f;
+  max-width: 430px;
+  margin-bottom: 23px;
+  font-family: Rubik, sans-serif;
+}
+
+#m2f {
+  background: url("../public/assets/banner-photo2.png") no-repeat center top;
+  margin-top: 100px;
+  min-height: 492px;
+  max-height: 492px;
+
+  width: 100%;
+  /*color: white;*/
+
+  /*-webkit-background-size: cover;*/
+  /*-moz-background-size: cover;*/
+
+}
+
 #mainInfo {
-  background: url("../public/assets/main3.jpg") no-repeat center top;
-  /*padding-top: 180px;*/
+  background: url("../public/assets/main4.jpg") no-repeat center top;
+  padding-top: 180px;
   min-height: 800px;
   max-height: 900px;
   width: 100%;
@@ -21,11 +58,48 @@ a {
 
 }
 
-.diaryInfo{
-  background: url("../public/assets/diary.jpg") no-repeat center top;
-  min-height: 500px;
-  width: 100%;
+.educationInfo{
+  background: url("../public/assets/education.jpg") no-repeat center top;
+
+  min-height: 670px;
+}
+
+.footerBack{
+  background: url("../public/assets/footer-bgd.png") no-repeat center top;
+
+  min-height: 370px;
+}
+
+.eduBlock{
+  background-color : white;
+  /*height: 200px;*/
+  width: 70%;
+  border-radius : 50px;
+  box-shadow: inset 0px 0px 2px 2px #e2e7f3;
 
 }
 
 
+.spanInfo {
+  background: linear-gradient(91.35deg, #007bff 8.05%, #09b6ff 98.09%);
+  color: #fff;
+
+  border-radius: 34.2442px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 10px;
+  padding: 6px 20px;
+}
+
+.img_container{
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img_container img {
+  min-width: 100%;
+  min-height: 100%;
+  flex-shrink: 0;
+}

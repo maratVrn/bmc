@@ -3,27 +3,19 @@
 
     border-width: 2px;
 
-    border-bottom-color: #a5adb2;
-    border-bottom-style: solid;
+    /*border-bottom-color: #a5adb2;*/
+    /*border-bottom-style: solid;*/
     width: 100%;
-    background-color:white;
+    /*box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,*/
+    /*rgba(0, 0, 0, 0.3) 0px 20px 20px -30px;*/
+    background-color: #ecf5fc;
 }
 
 .nmy {
     display: flex;
     align-items: center;
-
-
     padding: 1em;
-
-    /*box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,*/
-    /*rgba(0, 0, 0, 0.3) 0px 20px 20px -30px;*/
-
 }
-.cc {
-    /*text-align: center;*/
-}
-
 .nmy img {
     width: 250px;
     /*padding-left: 20px;*/
@@ -34,7 +26,7 @@
     width: 28px;
     height: 28px;
 
-    color: #3a7e7b;
+    color: #1969b9;
 }
 
 .nmy ul {
@@ -47,10 +39,12 @@
 
 .nmy ul a  {
     text-decoration: none;
-    color: black;
+    color: #332f2f;
     cursor: pointer;
-    font-size: 18px;
-    font-weight: lighter;
+    font-weight: 700;
+    font-size: 20.5px;
+    line-height: normal;
+    display: block;
 }
 
 .nmy ul li  {
@@ -100,7 +94,7 @@
         list-style-type: none;
         display: flex;
         flex-direction: column;
-        background-color: white;
+        background-color: #ebf4fb;
         gap: 1.5em;
         padding: 20px;
         justify-content: flex-start;
@@ -108,9 +102,14 @@
     }
     .navbarMobile a  {
         text-decoration: none;
-        color: black;
         cursor: pointer;
-        font-size: 16px;
+
+
+        color: #332f2f;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: normal;
+        display: block;
     }
     .navbarMobile p {
         font-size: 18px;

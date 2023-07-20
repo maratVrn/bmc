@@ -68,7 +68,7 @@ const StrategyEdit = ({show, onHide}) => {
 
                     <Form.Control
                         className="m-2"
-                        as="textarea" rows={3}
+                        as="textarea" rows={10}
                         value = {points}
                         onChange={e=>setPoints(e.target.value)}
                         placeholder={"Доступные данные.. "}

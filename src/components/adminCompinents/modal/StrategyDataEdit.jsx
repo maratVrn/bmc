@@ -104,17 +104,17 @@ const StrategyDataEdit = ({show, onHide}) => {
                         placeholder={"Год... "}    />
 
                     <Form.Label className="mt-2">Цены</Form.Label>
-                    <Form.Control as="textarea" rows={3}
+                    <Form.Control as="textarea" rows={6}
                                   value = {ticketData}
                                   onChange={e=>setTicketData(e.target.value)}  />
 
                     <Form.Label className="mt-2">Сделки</Form.Label>
-                    <Form.Control as="textarea" rows={3}
+                    <Form.Control as="textarea" rows={4}
                                   value = {dealsData}
                                   onChange={e=>setDealsData(e.target.value)}  />
 
                     <Form.Label className="mt-2">Доходность</Form.Label>
-                    <Form.Control as="textarea" rows={3}
+                    <Form.Control as="textarea" rows={4}
                                   value = {profitData}
                                   onChange={e=>setProfitData(e.target.value)}  />
 
@@ -128,7 +128,7 @@ const StrategyDataEdit = ({show, onHide}) => {
 
             </Modal.Body>
             <Modal.Footer>
-                <button className="button3" onClick={calcStrategyParam}>Расчитать параметры</button>
+                <button className="button3" onClick={calcStrategyParam}>Рассчитать параметры</button>
                 <button className="button3" onClick={onHide}>Закрыть</button>
                 {strategyStore.isNew
                     ? <button className="button3" onClick={addStrategyData}>Создать данные</button>
