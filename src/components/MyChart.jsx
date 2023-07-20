@@ -13,7 +13,7 @@ const MyChart = (props) => {
     const [chartParam, setChartParam]= useState(ChartParam.main_options)
 
     useEffect(() =>{
-          SetChartData(2)
+        if (props.data[2]) SetChartData(2)
     },[props])
 
 
