@@ -73,7 +73,7 @@ const MainBriefCaseChart =  (props) =>{
             </div>
 
             {props.cOpt?
-                <ReactApexChart height={350} options={props.cOpt}  series={ showData } type="line" />
+              ''//  <ReactApexChart height={350} options={props.cOpt}  series={ showData } type="line" />
                 : ''}
 
 

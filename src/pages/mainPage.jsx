@@ -10,7 +10,7 @@ const MainPage = () => {
     return (
         <div>
             <MainInfo/>
-            {/*<MainStrategy/>*/}
+            <MainStrategy/>
             <Training/>
             <Subscription/>
             <Questions/>
