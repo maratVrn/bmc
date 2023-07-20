@@ -16,26 +16,26 @@ const MainStrategy = () => {
 
     return (
 <>
-    {/*    <div className='container ' style={{paddingTop:'100px', marginBottom:'70px'}} >*/}
-    {/*    <h3> Мы разработали сигналы для торговли акцииями на фондовом рынке России и США. Все стратегии являются результатом алгоритмического анализа исторических данных</h3>*/}
-    {/*    <div className='row' style={{marginTop:'70px'}}>*/}
-    {/*        <div className= {allClass} >*/}
-    {/*            <img className='img_K' src='./assets/ico/icons1.png' alt='' />*/}
-    {/*            <h5> Вы можете просматривать истории сделок, риски и доходность по выбранной стратегии </h5>*/}
-    {/*        </div>*/}
-    {/*        <div className={allClass}>*/}
-    {/*            <img className='img_K' src='./assets/ico/icons2.png' alt='' />*/}
-    {/*            <h5> Используйте наши видео уроки для освоения навыков трейдинга </h5>*/}
-    {/*        </div>*/}
-    {/*        <div className={allClass} >*/}
+        <div className='container ' style={{paddingTop:'100px', marginBottom:'70px'}} >
+        <h3> Мы разработали сигналы для торговли акцииями на фондовом рынке России и США. Все стратегии являются результатом алгоритмического анализа исторических данных</h3>
+        <div className='row' style={{marginTop:'70px'}}>
+            <div className= {allClass} >
+                <img className='img_K' src='./assets/ico/icons1.png' alt='' />
+                <h5> Вы можете просматривать истории сделок, риски и доходность по выбранной стратегии </h5>
+            </div>
+            <div className={allClass}>
+                <img className='img_K' src='./assets/ico/icons2.png' alt='' />
+                <h5> Используйте наши видео уроки для освоения навыков трейдинга </h5>
+            </div>
+            <div className={allClass} >
 
-    {/*            <img className='img_K' src='./assets/ico/icons3.png' alt='' />*/}
-    {/*            <h5>  Создайте свой портфель инвестиций и зарабатывайте используя наши сигналы</h5>*/}
-    {/*        </div>*/}
+                <img className='img_K' src='./assets/ico/icons3.png' alt='' />
+                <h5>  Создайте свой портфель инвестиций и зарабатывайте используя наши сигналы</h5>
+            </div>
 
-    {/*    </div>*/}
+        </div>
 
-    {/*</div>*/}
+    </div>
 
     {/*    <div className='bgColorSilver' >*/}
     {/*        <div className='container'>*/}
