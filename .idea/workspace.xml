@@ -8,6 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0acd7c56-3109-4553-abe5-6a02aea33c4c" name="Changes" comment="Обновил внешний вид">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/widgets/MainStrategy.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/MainStrategy.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -86,7 +87,7 @@
       <workItem from="1689611409752" duration="8197000" />
       <workItem from="1689664382755" duration="16859000" />
       <workItem from="1689792810220" duration="1567000" />
-      <workItem from="1689856679735" duration="6115000" />
+      <workItem from="1689856679735" duration="6332000" />
     </task>
     <task id="LOCAL-00001" summary="new perec">
       <created>1684487907098</created>
@@ -291,7 +292,21 @@
       <option name="project" value="LOCAL" />
       <updated>1689866714567</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Обновил внешний вид">
+      <created>1689866957452</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1689866957452</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Обновил внешний вид">
+      <created>1689866977227</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1689866977227</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
