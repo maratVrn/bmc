@@ -26,15 +26,15 @@ function App() {
 
     useEffect(()=>{
 
-        // Загружаем стратегии
-        strategyStore.getAllStrategy().then(() => {
-           // После загрузки вычиляем лучшую стратегию
-            strategyStore.getBestStrategyData()
-        }
+            // Загружаем список стратегии
+            strategyStore.getAllStrategy().then(() => {
+               // Распределяем стратегии на РФ и США, выбираем лучшие на отображение 
+                strategyStore.getBestStrategyData()
+            }
         )
 
+        // Загружаем портфели
         briefcaseStore.getAllAdminBriefcase().then(()=>{
-
             briefcaseStore.getBestBriefCaseData()
         })
 
@@ -59,14 +59,14 @@ function App() {
 
               <Routes>
 
-                  <Route  path={'/'}        element={<MainPage />} exact />
-                  <Route  path={'/allStrategy'}   element={<AllStrategy/>} exact/>
-                  <Route  path={'/allBriefcase'}   element={<AllBriefcase/>} exact/>
-                  <Route  path={'/strategy'}element={<Strategy/>} exact/>
-                  <Route  path={'/briefcase'}element={<Briefcase/>} exact/>
-                  <Route  path={'/login'}   element={<LoginForm/>} exact/>
-                  <Route  path={'/settings'}element={<UserSettings/>} exact/>
-                  <Route  path={'/admin'}   element={<Admin/>} exact/>
+                  <Route  path={'/'}                element={<MainPage />} exact />
+                  <Route  path={'/allStrategy'}     element={<AllStrategy/>} exact/>
+                  <Route  path={'/allBriefcase'}    element={<AllBriefcase/>} exact/>
+                  <Route  path={'/strategy'}        element={<Strategy/>} exact/>
+                  <Route  path={'/briefcase'}       element={<Briefcase/>} exact/>
+                  <Route  path={'/login'}           element={<LoginForm/>} exact/>
+                  <Route  path={'/settings'}        element={<UserSettings/>} exact/>
+                  <Route  path={'/admin'}           element={<Admin/>} exact/>
 
               </Routes>
 

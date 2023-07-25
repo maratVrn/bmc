@@ -3,11 +3,11 @@ import StrategyService from "../services/StrategyService";
 import {dataGetObjFromArray} from "../bmfunctions";
 
 export default class StrategyStore {
-    allStrategy = []   // Список стратегий
+    allStrategy    = []   // Список стратегий
+    bestStrategyRF = []   // Список стратегий
     errorMessage = null
     isNew = false
     selectedOne = {}
-    bestStrategyI = -1
     selectedStrategyDataOne = {}
 
     constructor() {
@@ -20,11 +20,6 @@ export default class StrategyStore {
     setNewPoints(points){
         this.selectedOne.points = points
     }
-
-    setBestStrategyI(bestStrategyI){
-        this.bestStrategyI = bestStrategyI
-    }
-
 
 
     async deleteSelectedData(){
@@ -160,28 +155,24 @@ export default class StrategyStore {
 
     async getBestStrategyData(){
         try {
-
-            this.setBestStrategyI(-1)
-
-            let currProfit = 0
+            // TODO: Выделить акции РФ и США и потом выделить списки лучших
             for (let i = 0; i < this.allStrategy.length; i++) {
                 const dealData = dataGetObjFromArray(this.allStrategy[i].points)
-                if (dealData.nowProfit) {
-
-                    if (currProfit < parseFloat(dealData.nowProfit)){
-                        currProfit = parseFloat(dealData.nowProfit)
-                        this.setBestStrategyI(i)
-                    }
-                }
+                this.allStrategy[i].currProfit = 1
+                this.allStrategy[i].dealCount  = 0
+                if (dealData.nowProfit)  this.allStrategy[i].currProfit = parseFloat(dealData.nowProfit)
+                if (dealData.dealCount)  this.allStrategy[i].dealCount  = parseFloat(dealData.dealCount)
             }
-            if (this.bestStrategyI>-1){
-                const strategy = this.allStrategy[this.bestStrategyI]
+            this.allStrategy.sort((a, b) => a.currProfit > b.currProfit ? -1 : 1)
 
+            // Соберем массив на отображение нужного коллличества лучших стратегий на главной странице
+            const showStrategyCount = 4
+            for (let i = 0; i < showStrategyCount; i++){
+                if (i<this.allStrategy.length) this.bestStrategyRF.push(this.allStrategy[i])
 
-                if (strategy.name) this.getStrategyData(strategy.name).then()
             }
 
-        } catch (e) {
+                } catch (e) {
             this.setErrorMessage(e.response?.data?.message)
             console.log(e.response?.data?.message);
         }

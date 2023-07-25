@@ -3,9 +3,10 @@ import MyChart from "../components/MyChart";
 import { useNavigate } from "react-router-dom";
 import {Context} from "../index";
 import {observer} from "mobx-react-lite";
-import {data3YearsViewBriefcaseData, data3YearsViewOneData, dataAllViewBriefcaseData} from "../bmfunctions";
-import MainBriefCaseChart from "../components/MainBriefCaseChart";
-import {getBOpt} from "../store/bcChartParam";
+import {
+    dataGetObjFromArray
+} from "../bmfunctions";
+
 
 
 
@@ -13,10 +14,27 @@ const MainStrategy = () => {
     const navigate = useNavigate();
     const {strategyStore,briefcaseStore} = useContext(Context);
     const allClass = 'col-md-4  my-3 text-center'
+    const allClass2 = 'col-md-3 col-sm-6 text-center'
+
+    const imageSrc = (strategyName) => {
+        let res = '/assets/str/no_foto.jpg'
+        if (strategyName)
+            switch (strategyName) {
+                case  'Сбербанк' : res = '/assets/str/sber_rf.jpg'; break
+                case  'Газпром' : res = '/assets/str/gazp_rf.jpg'; break
+                case  'Лукойл' : res = '/assets/str/luk_rf.jpg'; break
+                case  'Роснефть' : res = '/assets/str/rosn_rf.jpg'; break
+                case  'Аэрофлот' : res = '/assets/str/aflt_rf.jpg'; break
+                default: break;
+
+            }
+        return res
+    }
+
 
     return (
-<>
-        <div className='container ' style={{paddingTop:'50px', marginBottom:'70px'}} >
+    <>
+        <div className='container text-center' style={{paddingTop:'50px', marginBottom:'70px'}} >
         <h3> Мы разработали сигналы для торговли акцииями на фондовом рынке России и США. Все стратегии являются результатом алгоритмического анализа исторических данных</h3>
         <div className='row' style={{marginTop:'70px'}}>
             <div className= {allClass} >
@@ -34,72 +52,74 @@ const MainStrategy = () => {
             </div>
 
         </div>
-
-    </div>
-
-        <div className='bgColorSilver' >
-            <div className='container'>
-                <div className='row' >
-                    <div className='col-md-6  text-center' >
-
-                        <div className='border_r' style={{backgroundColor:'white'}}>
-                            {
-                                strategyStore.bestStrategyI >-1 ?
-                                     <MyChart data = {data3YearsViewOneData(strategyStore.allStrategy[strategyStore.bestStrategyI].strategyData)} name =  {strategyStore.allStrategy[strategyStore.bestStrategyI].name} />
-                                : ''
-                            }
+            <h3 className='text-center' style={{fontSize: '36px', fontWeight: '900', paddingTop: '50px'}}>Прибыль стратегий за 2023 год акции РФ</h3>
+            {/*АКЦИИ РФ*/}
+            <div className='row' style={{paddingTop:'10px'}}>
+            {
+                strategyStore?.bestStrategyRF?.map((strategy,idx) =>
+                    <div key = {idx} className={allClass2} style={{paddingTop:'30px', marginTop:'30px'}}>
+                        <img className='img_str' onClick={() => navigate('/strategy', { state: { id: idx} })} src={imageSrc(strategy.name)} alt='' />
+                        <h2 style={{color:'green', marginTop:'-10px'}}>{strategy.currProfit} %</h2>
+                        <h5 style={{color:'green'}}>{strategy.dealCount} сделок</h5>
+                    </div>)
+            }
+            </div>
 
 
-                            <div style={{display: 'flex', justifyContent:'center'}}>
-                                <button className='button2'  onClick={() => navigate('/strategy', { state: { id: strategyStore.bestStrategyI} })}>Подробнее</button> </div>
-                        </div>
-
-                    </div>
-                    {/*2*/}
-                    <div className='col-md-6  my-3 text-center' >
-                        <h3 className='pt-5'> Результаты работы торговых стратегий  </h3>
-                        <p className='p-5' style={{color:'black'}}>На графике представлены результаты работы стратегии по
-                            акциям {strategyStore?.allStrategy[strategyStore.bestStrategyI]?.name} за
-                            послдение 3 года.  Вы можете получить более подробную информацию или посмотреть все возможные стратегии .</p>
-
-
-                        <button onClick={() => navigate('/allStrategy')} className='btn-a_blue' >Смотреть все стратегии</button>
-                    </div>
+            {/*АКЦИИ США*/}
+            <h3 className='text-center' style={{fontSize: '36px', fontWeight: '900', paddingTop: '150px'}}>Прибыль стратегий за 2023 год акции США</h3>
+            <div className='row' style={{paddingTop:'20px', paddingBottom:'70px'}}>
+                <div className= {allClass2} >
+                    <img className='img_str' src='/assets/str/sber_rf.jpg' alt='' />
+                    <h2 style={{color:'green', marginTop:'-10px'}}> 23 %</h2>
+                    <h5 style={{color:'green'}}>7 сделок</h5>
+                </div>
+                <div className={allClass2}>
+                    <img className='img_str' src='/assets/str/gazp_rf.jpg' alt='' />
+                    <h2 style={{color:'green', marginTop:'-10px'}}> 23 %</h2>
+                    <h5 style={{color:'green'}}>7 сделок</h5>
+                </div>
+                <div className={allClass2} >
+                    <img className='img_str' src='/assets/str/luk_rf.jpg' alt='' />
+                    <h2 style={{color:'green', marginTop:'-10px'}}> 23 %</h2>
+                    <h5 style={{color:'green'}}>7 сделок</h5>
+                </div>
+                <div className={allClass2} >
+                    <img className='img_str' src='/assets/str/rosn_rf.jpg' alt='' />
+                    <h2 style={{color:'green', marginTop:'-10px'}}> 23 %</h2>
+                    <h5 style={{color:'green'}}>7 сделок</h5>
                 </div>
 
-                <div className='row' style={{paddingTop:'70px'}}>
- {/*3                   */}
-                    <div className='col-md-6  my-3 text-center' >
-                        <h3 className='pt-5'> Портфельные стратегии  </h3>
-
-                        <p className='p-5' style={{color:'black'}}>Использование нескольких торговых инструментов позволяет уменьшить риски
-                            т.к. итоговый результат усредняется по показателям отдельных стратегий.
-                            При этом возможно рациональное использование торговых плечей для увеличения прибыли.
-                            На графике показаны результаты портфельной стратегии “{ briefcaseStore.allSBriefcaseAdmin[briefcaseStore.bestBriefcaseI]?.name}” с торговым плечом 2</p>
-                        <button onClick={() => navigate('/allBriefcase')} className='btn-a_blue'>Все потрфельные стратегии</button>
-                    </div>
-                    <div className='col-md-6 px-4 text-center' >
-{/*4*/}
-                        <div className='border_r' style={{backgroundColor:'white'}}>
-                            {
-                                briefcaseStore.bestBriefcaseI >-1 ?
-
-                                    <MainBriefCaseChart data = {data3YearsViewBriefcaseData(briefcaseStore.allSBriefcaseAdmin[briefcaseStore.bestBriefcaseI]?.allBriefcaseData)}
-                                                        // points = {briefcasePoints}
-                                                        name =  { briefcaseStore.allSBriefcaseAdmin[briefcaseStore.bestBriefcaseI]?.name}
-                                                        cOpt = {getBOpt( briefcaseStore.allSBriefcaseAdmin[briefcaseStore.bestBriefcaseI]?.name)}
-                                    />
-                                 : ''
-                            }
-
-                            <div style={{display: 'flex', justifyContent:'center'}}>
-                                <button className='button2'  onClick={() => navigate('/briefcase', { state: { id: briefcaseStore.bestBriefcaseI} })}>Подробнее</button> </div>
-                        </div>
-                    </div>
-                </div>
 
             </div>
 
+            {/*ПОРТФЕЛИ*/}
+            <h3 className='text-center' style={{fontSize: '36px', fontWeight: '900', paddingTop: '100px'}}>Прибыль портфелей за 2023 год</h3>
+            <div className='row' style={{paddingTop:'70px', paddingBottom:'70px'}}>
+                <div className= {allClass2} >
+                    <img className='img_str' src='/assets/str/sber_rf.jpg' alt='' />
+                    <h2 style={{color:'green', marginTop:'-10px'}}> 23 %</h2>
+                    <h5 style={{color:'green'}}>7 сделок</h5>
+                </div>
+                <div className={allClass2}>
+                    <img className='img_str' src='/assets/str/gazp_rf.jpg' alt='' />
+                    <h2 style={{color:'green', marginTop:'-10px'}}> 23 %</h2>
+                    <h5 style={{color:'green'}}>7 сделок</h5>
+                </div>
+                <div className={allClass2} >
+                    <img className='img_str' src='/assets/str/luk_rf.jpg' alt='' />
+                    <h2 style={{color:'green', marginTop:'-10px'}}> 23 %</h2>
+                    <h5 style={{color:'green'}}>7 сделок</h5>
+                </div>
+                <div className={allClass2} >
+                    <img className='img_str' src='/assets/str/rosn_rf.jpg' alt='' />
+                    <h2 style={{color:'green', marginTop:'-10px'}}> 23 %</h2>
+                    <h5 style={{color:'green'}}>7 сделок</h5>
+                </div>
+
+
+            </div>
+            <button className='btn-a_blue mt-5'>Смотреть все стратегии</button>
 
     </div>
 </>

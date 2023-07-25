@@ -73,6 +73,7 @@ a {
 .eduBlock{
   background-color : white;
   /*height: 200px;*/
+  cursor: pointer;
   width: 70%;
   border-radius : 50px;
   box-shadow: inset 0px 0px 2px 2px #e2e7f3;
