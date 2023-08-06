@@ -11,7 +11,6 @@ import BriefcaseCurrDeal from "./BriefcaseCurrDeal"
 import Table from "react-bootstrap/Table";
 import {dataGetViewOneBriefcaseDataLevel, rounded2} from "../bmfunctions";
 import {Form} from "react-bootstrap";
-import StrategyDeals from "./StrategyDeals";
 import NoAuthUser from "./noAuthUser";
 import {Context} from "../index";
 
@@ -40,9 +39,8 @@ const BriefCaseChart =  observer((props) =>{
         setBriefcasePoints(props?.points)
 
 
+
         if (props.data[id]) {
-
-
 
             if (props?.stArray) setStrategyArray(props?.stArray)
 
@@ -118,7 +116,7 @@ const BriefCaseChart =  observer((props) =>{
             <div style={{paddingTop:'00px'}} >
 
                 <div className='container border_r' style={{backgroundColor:'white', paddingTop:'40px', marginBottom:'0px'}}>
-                    <h2  style={{paddingBottom:'20px'}}>{props?.name}</h2>
+                    <h4 style={{paddingBottom:'30px'}}>{props.name}</h4>
 
                     <div  style={{marginTop:'0px', marginBottom:'20px', justifyContent:'left'}}>
 

@@ -1,11 +1,12 @@
 import React from 'react';
+
 import ImageFaq from "./img/faq-img.svg";
 import Accordion from 'react-bootstrap/Accordion';
 
 const Questions = () => {
     return (
         <div className='container' style={{paddingTop:'80px'}}>
-            <h3 style={{fontSize: '36px', fontWeight: '900', paddingTop: '30px'}}>Частые вопросы</h3>
+            <h3  style={{fontSize: '36px', fontWeight: '900', paddingTop: '30px'}}>Частые вопросы</h3>
 
             <div className='row'>
 

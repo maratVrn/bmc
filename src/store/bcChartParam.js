@@ -1,5 +1,4 @@
 import {makeAutoObservable} from "mobx";
-import {blue, red} from "@mui/material/colors";
 const ru = require("apexcharts/dist/locales/ru.json")
 
 export function getBOpt (briefcaseName) {

@@ -1,4 +1,4 @@
-import React, {useContext, useState} from "react";
+import React, {useContext, useRef, useState} from "react";
 import "../styles/navbar.css";
 import { GiHamburgerMenu } from "react-icons/gi";
 import {Link, useNavigate} from "react-router-dom";
@@ -9,7 +9,7 @@ import { AiFillProfile} from "react-icons/ai"
 import {Context} from "../index";
 import {observer} from "mobx-react-lite";
 
-const Navbar = () => {
+const Navbar = (questRef) => {
     const [show, setShow] = useState(false);
     const {userStore} = useContext(Context)
     const navigate = useNavigate();
@@ -18,6 +18,10 @@ const Navbar = () => {
         setShow(!show);
     };
 
+
+    const questClick = () => {
+        // questRef.current?.scrollIntoView({behavior:'smooth'})
+    }
     return (
 
         <div className='fixed-top navDiv' >
@@ -29,16 +33,16 @@ const Navbar = () => {
                 <div className='col-md-8 ' >
                     <ul >
                         <li>
-                            <Link to='/allStrategy'>Стратегии</Link>
+                            <Link to='/allStrategy'>Результаты</Link>
                         </li>
                         <li>
-                            <Link to='/'>Обучение</Link>
+                            <Link to='/'>Сколько стоит</Link>
                         </li>
                         <li>
-                            <Link to='/'>Тарифы</Link>
+                            <Link onClick={questClick} to='/'>Обучение</Link>
                         </li>
                         <li>
-                            <Link to='/'>Контакты</Link>
+                            <Link to='/'>Вопросы</Link>
                         </li>
                     </ul>
                 </div>
@@ -70,10 +74,10 @@ const Navbar = () => {
 
             {show && (
                 <section className="navbarMobile">
-                    <Link to='/allStrategy' onClick={() => handleNavbarDisplay()}>Стратегии</Link>
+                    <Link to='/allStrategy' onClick={() => handleNavbarDisplay()}>Результаты</Link>
+                    <Link to='/' onClick={() => handleNavbarDisplay()}>Сколько стоит</Link>
                     <Link to='/' onClick={() => handleNavbarDisplay()}>Обучение</Link>
-                    <Link to='/' onClick={() => handleNavbarDisplay()}>Тарифы</Link>
-                    <Link to='/' onClick={() => handleNavbarDisplay()}>Контакты</Link>
+                    <Link to='/' onClick={() => handleNavbarDisplay()}>Вопросы</Link>
                     <hr></hr>
                     {userStore.isAuth
 

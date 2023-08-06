@@ -1,5 +1,5 @@
 import './App.css';
-import React, {useContext, useEffect} from "react";
+import React, {useContext, useEffect, useRef} from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import AllStrategy from "./widgets/AllStrategy";
 import AllBriefcase from "./widgets/AllBriefcase";
@@ -28,7 +28,7 @@ function App() {
 
             // Загружаем список стратегии
             strategyStore.getAllStrategy().then(() => {
-               // Распределяем стратегии на РФ и США, выбираем лучшие на отображение 
+               // Распределяем стратегии на РФ и США, выбираем лучшие на отображение
                 strategyStore.getBestStrategyData()
             }
         )
@@ -51,15 +51,15 @@ function App() {
     },[])
 
 
-  return (
+    return (
       <>
           <BrowserRouter>
               <div>
-              <NavBar />
+              <NavBar  />
 
               <Routes>
 
-                  <Route  path={'/'}                element={<MainPage />} exact />
+                  <Route  path={'/'}                element={<MainPage/>} exact />
                   <Route  path={'/allStrategy'}     element={<AllStrategy/>} exact/>
                   <Route  path={'/allBriefcase'}    element={<AllBriefcase/>} exact/>
                   <Route  path={'/strategy'}        element={<Strategy/>} exact/>

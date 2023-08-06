@@ -1,8 +1,8 @@
 import React, {useContext, useState} from 'react';
-import {Button, Modal, Form} from "react-bootstrap";
+import {Modal, Form} from "react-bootstrap";
 import {Context} from "../../../../src/index";
 import {
-    dataCalcStrategyParam,
+    dataCalcStrategyDataParam,
     dataGetAboutData,
     dataGetDealsData,
     dataGetProfitData,
@@ -26,7 +26,7 @@ const StrategyDataEdit = ({show, onHide}) => {
         strategyData.ticketData   = dataGetTicketData(ticketData)
         strategyData.dealsData    = dataGetDealsData(dealsData)
         strategyData.profitData   = dataGetProfitData(profitData)
-        const strategyParam = dataCalcStrategyParam(strategyData)
+        const strategyParam = dataCalcStrategyDataParam(strategyData)
         setAboutData(strategyParam)
 
     }
@@ -104,7 +104,7 @@ const StrategyDataEdit = ({show, onHide}) => {
                         placeholder={"Год... "}    />
 
                     <Form.Label className="mt-2">Цены</Form.Label>
-                    <Form.Control as="textarea" rows={6}
+                    <Form.Control as="textarea" rows={4}
                                   value = {ticketData}
                                   onChange={e=>setTicketData(e.target.value)}  />
 

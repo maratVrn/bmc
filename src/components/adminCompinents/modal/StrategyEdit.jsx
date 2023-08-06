@@ -1,7 +1,11 @@
 import React, {useContext, useState} from 'react';
-import {Button, Modal, Form} from "react-bootstrap";
+import { Modal, Form} from "react-bootstrap";
 import {Context} from "../../../../src/index";
-import {dataGetAboutData, dataToStr} from "../../../bmfunctions";
+import {
+    dataCalcStrategyPoints,
+    dataGetAboutData,
+    dataToStr
+} from "../../../bmfunctions";
 
 
 const StrategyEdit = ({show, onHide}) => {
@@ -28,7 +32,7 @@ const StrategyEdit = ({show, onHide}) => {
         strategyStore.saveStrategy(strategy ).then(data => {
             if (data.status===200){
                 strategyStore.setNewName(name)
-                strategyStore.setNewPoints(points) }
+                strategyStore.setNewPoints(strategy.points) }
             onHide()
             } )
 
@@ -42,6 +46,16 @@ const StrategyEdit = ({show, onHide}) => {
 
 
 
+    const calcEndPoints = () => {
+        // Загружаем Данные и берем за последний год
+
+        if (strategyStore.selectedOne.name) strategyStore.getStrategyData(strategyStore.selectedOne.name).then(() => {
+            if (strategyStore.selectedOne.strategyData.at(-1)) {
+                const strategyPoints = dataCalcStrategyPoints(strategyStore.selectedOne.strategyData.at(-1))
+                setPoints(strategyPoints)
+            }
+        })
+    }
 
     return (
         <Modal
@@ -80,10 +94,12 @@ const StrategyEdit = ({show, onHide}) => {
 
             </Modal.Body>
             <Modal.Footer>
-                <Button className="button3" onClick={onHide}>Закрыть</Button>
+                <button className='button3' style={{marginRight:'380px'}} onClick={calcEndPoints}>Расчет ЕндПоинтов</button>
+                <button className="button3" onClick={onHide}>Закрыть</button>
+
                 {strategyStore.isNew
-                    ? <Button className="button3" onClick={addClient}>Создать стратегию</Button>
-                    : <Button className="button3" onClick={updateStrategy}>Изменить стратегию</Button>
+                    ? <button className="button3" onClick={addClient}>Создать стратегию</button>
+                    : <button className="button3" onClick={updateStrategy}>Изменить стратегию</button>
                 }
 
 

@@ -1,9 +1,8 @@
 import React, {useContext, useEffect, useState} from 'react';
 import { useLocation } from "react-router-dom";
-import StrategyChart from "../components/StrategyChart";
 import {Context} from "../index";
 import {observer} from "mobx-react-lite";
-import {dataAllViewBriefcaseData, dataAllViewOneData, dataGetBriefcaseParam, dataGetObjFromArray} from "../bmfunctions";
+import {dataAllViewBriefcaseData, dataGetBriefcaseParam, dataGetObjFromArray} from "../bmfunctions";
 import BriefCaseChart from "../components/BriefCaseChart";
 
 const Briefcase = () => {
@@ -14,6 +13,7 @@ const Briefcase = () => {
     const [showData, setShowData] = useState({})                    // Данные для отображения на графике
     const [briefcasePoints, setBriefcasePoints] = useState({})      // Данные по текущей сделке
     const [showName, setShowName]= useState('')
+    const [brName, setBrName]= useState('')
     const [strategyArray, setStrategyArray] = useState([])      // Стратегия в списке в портфелей
 
 
@@ -21,9 +21,8 @@ const Briefcase = () => {
         window.scrollTo(0, 0)
         console.log('Открыли '+id);
         setShowName('')
-        if (briefcaseStore.allSBriefcaseAdmin.length)
-            if ((id > -1) && (id<briefcaseStore.allSBriefcaseAdmin.length)) {
-                const briefcase = briefcaseStore.allSBriefcaseAdmin[id]
+        if (briefcaseStore.allSBriefcaseAdmin.length) {
+                const briefcase = briefcaseStore.getBriefcaseByID(id)
                 briefcaseStore.setSelectedOne(briefcase)
                 if (briefcase.id) briefcaseStore.getBriefcaseData(briefcase.id).then(()=>{
 
@@ -32,6 +31,12 @@ const Briefcase = () => {
                     // Получаем эндпоинты по портфелю чтобы отобразить текущие сделки
                     const stArray = dataGetBriefcaseParam(briefcaseStore.selectedOne.strategyIn)
                     setStrategyArray(stArray)
+
+                    let stName = 'Состав портфеля: '
+                    stArray.map((oneData,idx) =>{
+                        if (stName !== 'Состав портфеля: ') stName+=' + '
+                        stName+=oneData.strategy})
+                    setBrName(stName)
 
 
 
@@ -70,15 +75,17 @@ const Briefcase = () => {
             <div  style={{paddingTop:'130px'}}>
                   <div >
                      <h1> Подробная информация портфеля стратегий {showName} </h1>
-                     <p style={{marginTop: '40px'}}>На графиках приведены данные изменения цены выбранного инструмента и данные по изменению прибыли за выбранный период времени. Для зарегистрированных пользователей доступны данные по сделкам с отображением на графике цены, а также в виде таблицы сделок.  </p>
-                     <p style={{marginTop: '40px'}}>Сделки за последние 10 дней отображается только пользователям с подпиской на обновление данных. Используя графическое отображение результатов Вы можете оценить работу стратегии – количество сделок, частота сделок, уровень прибыли и возможные риски.  </p>
+                     <h4 style={{marginTop: '40px'}}>На графике приведены результаты работы выбранного портфеля – в виде изменения общей прибыли по портфелю.  Для зарегистрированных пользователей доступны данные по активным сделкам  </h4>
+                     <h4 style={{marginTop: '40px'}}>Важно, что при использовании нескольких инструментов уменьшаются общие риски. А также повышается вероятность стабильного дохода. Если вы хотите оценить возможности маржинальной торговли и соответствующие риски вам доступны расчеты с использованием торгового плеча  </h4>
                   </div>
 
 
 
             </div>
-            <BriefCaseChart key={dataKey} data = {showData} points = {briefcasePoints} name =  {briefcaseStore?.selectedOne?.name} stArray = {strategyArray} />
-
+            <BriefCaseChart key={dataKey} data = {showData} points = {briefcasePoints} name =  {brName} stArray = {strategyArray} />
+            <div className='text-center'>
+                <button  className='btn-a_blue mt-5' >Получать сигналы на телефон</button>
+            </div>
 
         </div>
     );

@@ -1,6 +1,3 @@
-import ChartParam from "./store/chartParam";
-const ru = require("apexcharts/dist/locales/ru.json")
-
 // Разбираем строку на массив график цен
 export function dataGetTicketData (ticketData) {
 
@@ -71,15 +68,15 @@ export function dataGetAboutData (aboutData) {
 export function dataToStr (data) {
 
     let res = ''
-    if (data)
-        if (data.length){
-            data.map(dc => {
-                res += dc[0]+'#'+dc[1]+'*\n'
-                return 'ok'
-            })
-        }
-
-
+    try {
+        if (data)
+            if (data.length){
+                data.map(dc => {
+                    res += dc[0]+'#'+dc[1]+'*\n'
+                    return 'ok'
+                })
+            }
+    } catch {console.log('Ошибка в dataToStr')}
 
     return res.slice(0, -2)
 }
@@ -88,12 +85,14 @@ export function dataToStr (data) {
 export function dealsToStr (dealsData) {
 
     let res = ''
-    dealsData.map(dc => {
-        res += dc.x+'#'+dc.y+'#'
-        dc.isLong ? res +='1' :  res +='0'
+    try {
+        dealsData.map(dc => {
+            res += dc.x + '#' + dc.y + '#'
+            dc.isLong ? res += '1' : res += '0'
             res += '*\n'
-        return 'ok'
-    })
+            return 'ok'
+        })
+    } catch {console.log('Ошибка в dealsToStr')}
 
 
     return res.slice(0, -2)
@@ -171,22 +170,27 @@ export function dataGetStrategyInfoNum (strategyData, count) {
 // Расшифровываем данные о портфеле
 export function dataGetBriefcaseInfo (aboutData) {
     const res = {}
+    try {
 
-    aboutData.map(dc => {
+        aboutData.map(dc => {
 
-        const a = dc[0]
-        switch(a) {
-            case 'profit':  res.profit = dc[1]
-                break
-            case 'dealCount':  res.dealCount = dc[1]
-                break
-            case 'maxMinus':  res.maxMinus = dc[1]
-                break
-            default :
-                break
-        }
+            const a = dc[0]
+            switch (a) {
+                case 'profit':
+                    res.profit = dc[1]
+                    break
+                case 'dealCount':
+                    res.dealCount = dc[1]
+                    break
+                case 'maxMinus':
+                    res.maxMinus = dc[1]
+                    break
+                default :
+                    break
+            }
 
-    })
+        })
+    } catch (e) { console.log('Ошибка в dataGetBriefcaseInfo:  ' +e);}
     return res;
 
 }
@@ -741,9 +745,69 @@ export function dataCalcBriefcaseParam (briefcaseData) {
 
     return res
 }
+export function dataToDelphiDataStr(dt){
+    let res = ''
+    const dtDtr = dt.toString()
 
-// Расчет параметров стратегии
-export function dataCalcStrategyParam (strategyData) {
+    try {
+        res = dtDtr.slice(8, 10) + '.'+ dtDtr.slice(5, 7)+'.'+dtDtr.slice(0, 4)+' '+dtDtr.slice(11, 20)
+    } catch {res = '01.01.2023 10:00:00'}
+    console.log(res);
+
+    return res
+}
+// Расчет ендпоинтов стратегии
+export function dataCalcStrategyPoints (strategyData) {
+
+    const dataInfo = dataGetObjFromArray(strategyData?.aboutData)
+    const endTicket = strategyData?.ticketData.at(-1);
+    const endDeal = strategyData?.dealsData.at(-1);
+    const endProfit = strategyData?.profitData.at(-1);
+    const endProfit2 = strategyData?.profitData.at(-2);
+
+    let nowProfit = endProfit[1] ? endProfit[1] : 0
+
+    if (endProfit2[1]) {
+        nowProfit = endProfit[1] - endProfit2[1]
+    }
+
+    const data = {
+        nowProfit : nowProfit,
+        profit : dataInfo?.profit,
+        dealCount : dataInfo?.dealCount,//strategyData.dealsData.length,
+        dealType : endDeal? endDeal.isLong : false ,
+        dateDealStart : endDeal? endDeal.x : 'no' ,
+        priseDealStart : endDeal? endDeal.y : 'no' ,
+        curPrise : endTicket[1]? endTicket[1] : 'no',
+        marketTicket : 'NO',
+        endTicketDataDate : endTicket[0]? dataToDelphiDataStr(endTicket[0]) : '01.01.2023 10:00:00'
+    }
+
+
+
+    let res = 'nowProfit#'+rounded2(data.nowProfit)+' %*\n'
+    res += 'profit#'+rounded2(data.profit)+' %*\n'
+    res += 'dealCount#'+data.dealCount+'*\ndealType#'
+    res += data.dealType? 'true' : 'false'
+    res += '*\n'
+    res += 'dateDealStart#'+data.dateDealStart+'*\n'
+    res += 'priseDealStart#'+data.priseDealStart+'*\n'
+    res += 'curPrise#'+data.curPrise+'*\n'
+    res += 'marketTicket#NO*\n'
+    res += 'endTicketDataDate#'+data.endTicketDataDate+'*\n'
+    return res
+}
+
+// Расчет ендпоинтов портфеля
+export function dataCalcBriefcasePoints (briefcaseAboutData) {
+    let res = 'nowProfit#'+parseFloat(briefcaseAboutData[0][1])*2+' %*\n'
+    res += 'dealCount#'+briefcaseAboutData[1][1]+'*\n'
+    res += 'maxMinus#'+parseFloat(briefcaseAboutData[2][1])*2+' %*\n'
+    res += 'finLevel#2*\n'
+    return res
+}
+// Расчет параметров данных стратегии
+export function dataCalcStrategyDataParam (strategyData) {
 
 
     const data = {
@@ -838,4 +902,34 @@ export function dataBriefcaseParamToStr (data) {
 
 
     return res.slice(0, -2)
+}
+
+export function  imageSrc  (strategyName)  {
+    let res = '/assets/str/no_foto.jpg'
+    if (strategyName)
+        switch (strategyName) {
+            // Акции РФ
+            case  'Сбербанк' : res = '/assets/str/sber_rf.jpg'; break
+            case  'Газпром'  : res = '/assets/str/gazp_rf.jpg'; break
+            case  'Лукойл'   : res = '/assets/str/luk_rf.jpg'; break
+            case  'Роснефть' : res = '/assets/str/rosn_rf.jpg'; break
+            case  'Аэрофлот' : res = '/assets/str/aflt_rf.jpg'; break
+            // Акции США
+            case  'ExxonMobil' : res = '/assets/str/exmob_usa.jpg'; break
+            case  'Tesla'      : res = '/assets/str/tesla_usa.jpg'; break
+            case  'Chevron'    : res = '/assets/str/chevron_usa.jpg'; break
+            case  'Banc of America' : res = '/assets/str/bac_usa.jpg'; break
+            case  'Apple'      : res = '/assets/str/apple_usa.jpg'; break
+            case  'ALCOA'      : res = '/assets/str/alcoa_usa.jpg'; break
+
+            // Портфели
+            case  'САЛРГ' : res = '/assets/str/a_g_s_l_r_rf.jpg'; break
+            case  'СГ' : res = '/assets/str/gzp_sb_rf.jpg'; break
+            case  'СА' : res = '/assets/str/sb_ae_rf.jpg'; break
+
+
+            default: break;
+
+        }
+    return res
 }

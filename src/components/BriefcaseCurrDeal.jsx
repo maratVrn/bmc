@@ -15,7 +15,7 @@ const BriefcaseCurrDeal = (props) => {
                         <h1 >{dealData.strategyName }</h1>
                         <div className= {allClass} >
                             <p>   Тип Сделки </p>
-                            <h1>{dealData.dealType? 'Лонг' : 'Шорт'}</h1>
+                            <h1>{dealData.dealType === 'true' ? 'Лонг' : 'Шорт'}</h1>
                         </div>
                         <div className={allClass}>
                             <p>   Дата/Время </p>

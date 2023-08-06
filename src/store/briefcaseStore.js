@@ -23,6 +23,10 @@ export default class BriefcaseStore {
      setNewName(name){
         this.selectedOne.name = name
     }
+
+    setNewPoints(points){
+        this.selectedOne.points = points
+    }
     setStrategyIn(strategyIn){
         this.selectedOne.strategyIn = strategyIn
     }
@@ -30,36 +34,14 @@ export default class BriefcaseStore {
     async getBestBriefCaseData(){
         try {
 
-
-            this.setBestBriefcaseI(-1)
-
-            let currProfit = 0
             for (let i = 0; i < this.allSBriefcaseAdmin.length; i++) {
-
-                if (this.allSBriefcaseAdmin[i].aboutData.currProfit){
-                    const profit = this.allSBriefcaseAdmin[i].aboutData.currProfit
-                    if (currProfit < parseFloat(profit)){
-                            currProfit = parseFloat(profit)
-                            this.setBestBriefcaseI(i)
-                    }
-                }
-            }
-            //TODO: Заглушка на вариант если нет данных о доходности портфелей
-            // TODO: такое возможно если сервер не сгенерировал и не обновляет данные aboutData
-            // TODO: ставим просто первую в списке стратегию
-            if ((this.bestBriefcaseI<0) && (this.allSBriefcaseAdmin.length>0)) this.setBestBriefcaseI(0)
-
-            if (this.bestBriefcaseI>-1){
-
-                const briefcase = this.allSBriefcaseAdmin[this.bestBriefcaseI]
-                this.setSelectedOne(briefcase)
-                if (briefcase.id) this.getBriefcaseData(briefcase.id).then(()=>{
-                    //
-                    // console.log(this.selectedOne?.allBriefcaseData);
-                })
+                const aboutData = dataGetObjFromArray(this.allSBriefcaseAdmin[i].aboutData)
+                this.allSBriefcaseAdmin[i].currProfit = 1
+                this.allSBriefcaseAdmin[i].dealCount  = 0
+                if (aboutData.nowProfit)  this.allSBriefcaseAdmin[i].currProfit = parseFloat(aboutData.nowProfit)
+                if (aboutData.dealCount)  this.allSBriefcaseAdmin[i].dealCount  = parseFloat(aboutData.dealCount)
 
             }
-
 
         } catch (e) {
             this.setErrorMessage(e.response?.data?.message)
@@ -115,14 +97,11 @@ export default class BriefcaseStore {
     setIsNew(isNew){
         this.isNew = isNew
     }
-   //
-   //
+
+
     setAllAdminBriefCase(allBriefCase){
         this.allSBriefcaseAdmin = allBriefCase
-
     }
-
-
 
     addBriefcase(newBriefcase){
         this.allSBriefcaseAdmin.push(newBriefcase)
@@ -134,22 +113,6 @@ export default class BriefcaseStore {
     setSelectedOne(oneData){
         this.selectedOne = oneData
     }
-   //
-   //  setSelectedStrategyDataOne(oneData){
-   //      this.selectedStrategyDataOne = oneData
-   //
-   //  }
-   //
-   //  async saveBriefcaseData(briefcaseData){
-   //      try {
-   //          this.setErrorMessage(null)
-   //          const response = await BriefcaseService.saveBriefcaseData(briefcaseData)
-   //          return response
-   //      } catch (e) {
-   //          this.setErrorMessage(e.response?.data?.message)
-   //          console.log(e.response?.data?.message);
-   //      }
-   //  }
 
    async saveBriefcase(briefcase){
         try {
@@ -181,9 +144,6 @@ export default class BriefcaseStore {
 
     addBriefcaseData(briefcaseData){
          this.selectedOne?.briefcaseData.push(briefcaseData)
-        console.log('---tut----');
-        console.log(this.selectedOne?.briefcaseData);
-
     }
 
 
@@ -217,11 +177,19 @@ export default class BriefcaseStore {
         }
     }
 
-
+    getBriefcaseByID(id){
+        let res = {}
+        if (this.allSBriefcaseAdmin.length)
+            for (let i = 0; i < this.allSBriefcaseAdmin.length; i++) {
+                if (this.allSBriefcaseAdmin[i].id === id){
+                    res = this.allSBriefcaseAdmin[i]
+                    break
+                }
+            }
+        return res
+    }
 
     async  getBriefcaseData(briefcaseID){
-        //TODO: Делать проверку - если данные были загружены НЕ грузить все трафик умрет
-
         try{
 
             let needI = -1

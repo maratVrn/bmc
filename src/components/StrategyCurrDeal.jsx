@@ -9,8 +9,6 @@ const StrategyCurrDeal = (props) => {
 
     const dealData = dataGetObjFromArray(props.data)
 
-
-
     const allClass = 'col-md-3 col-sm-6 col-6 my-3 text-center'
 
     return (
@@ -20,7 +18,7 @@ const StrategyCurrDeal = (props) => {
             <div className='row'>
                 <div className= {allClass} >
                     <p>   Тип Сделки </p>
-                    <h1>{dealData.dealType? 'Лонг' : 'Шорт'}</h1>
+                    <h1>{dealData.dealType === 'true' ?  'Лонг' : 'Шорт'}</h1>
                 </div>
                 <div className={allClass}>
                     <p>   Дата/Время </p>

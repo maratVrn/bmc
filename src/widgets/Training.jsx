@@ -87,20 +87,20 @@ const Training = () => {
                             </div>
                             <div className='row'  style={{paddingTop:'50px'}}>
                                 <div className='col-md-6 col-sm-6'>
-                                    <p>Online сделки акции РФ</p>
+                                    <p>Online сигналы акции РФ</p>
                                 </div>
                                 <div className='col-md-6 col-sm-6' style={{display:"inline-block", textAlign:'right'}}>
-                                    <span className='spanInfo'>1490 / месяц</span>
+                                    <span className='spanInfo'>990 / месяц</span>
                                 </div>
 
 
                             </div>
                             <div className='row'  style={{paddingTop:'50px'}}>
                                 <div className='col-md-6 col-sm-6'>
-                                    <p>Online сделки акции РФ и США</p>
+                                    <p>Online сигналы акции РФ и США</p>
                                 </div>
                                 <div className='col-md-6 col-sm-6' style={{display:"inline-block", textAlign:'right'}}>
-                                    <span className='spanInfo'>2690 / месяц</span>
+                                    <span className='spanInfo'>1690 / месяц</span>
                                 </div>
 
 

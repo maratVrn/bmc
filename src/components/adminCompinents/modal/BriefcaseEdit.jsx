@@ -4,8 +4,16 @@ import {Context} from "../../../../src/index";
 import Table from "react-bootstrap/Table";
 import {
 
-    dataBriefcaseParamToStr, dataCalcBriefcaseParam, dataCalcStrategyParam, dataGetAboutData,
-    dataGetBriefcaseParam, dataGetNewProfitData, dataGetNewProfitData2, rounded2
+    dataBriefcaseParamToStr,
+    dataCalcBriefcaseParam,
+    dataCalcBriefcasePoints,
+    dataCalcStrategyParam,
+    dataCalcStrategyPoints,
+    dataGetAboutData,
+    dataGetBriefcaseParam,
+    dataGetNewProfitData,
+    dataGetNewProfitData2, dataToStr,
+    rounded2
 } from "../../../bmfunctions";
 
 
@@ -18,6 +26,7 @@ const BriefcaseEdit = ({show, onHide}) => {
 
     const [selectedNum, setSelectedNum] = useState(0)           // Выбранный элемент таблицы
     const [isCalsData, setIsCalsData] = useState(false)         // Произведен ли перерасчет данных
+    const [points, setPoints] = useState('')                    // Енд поинты портфеля
 
     const {briefcaseStore, userStore, strategyStore} = useContext(Context)
 
@@ -67,7 +76,8 @@ const BriefcaseEdit = ({show, onHide}) => {
 
                     const userId = userStore.user?.id ? userStore.user.id : -1
                     const strategyIn = dataBriefcaseParamToStr(strategyArray)
-                    const briefcase = {name, userId, strategyIn}
+                    const aboutData = dataGetAboutData(points)
+                    const briefcase = {name, userId, strategyIn, aboutData}
                     briefcaseStore.newBriefcase(briefcase).then(data => {
                         //  Сохраняем данные портфеля!
                         if (data.id) {
@@ -79,7 +89,6 @@ const BriefcaseEdit = ({show, onHide}) => {
                                 })
                             }
                         }
-
                         onHide()
                     })
                 } else alert('Необходимо произвести расчет данных')
@@ -99,6 +108,7 @@ const BriefcaseEdit = ({show, onHide}) => {
                 newData.dealsData[k].strategyName = strategyData[i].strategyName
             }
             newData.profitData   = dataGetNewProfitData(strategyData[i], capital)
+            // console.log(newData.profitData);
             newData.aboutData    = dataGetAboutData(dataCalcBriefcaseParam(newData))
 
             tmpBriefcaseDataArray.push(newData)
@@ -175,14 +185,14 @@ const BriefcaseEdit = ({show, onHide}) => {
     }
 
     // TODO: Вынести в отдельный файл расчет данных портфеля
-    const CalsData = () => {
+
+  const CalsData = () => {
+
         // Создаем даные доходности на основе набранных стратегий
         if (strategyArray.length>0) {
             let strategyName = undefined
             let capital = 100
-
-
-            if (strategyArray.length > 0)  strategyName = strategyArray[0].strategy
+            strategyName = strategyArray[0].strategy
 
             if (strategyName) strategyStore.getStrategyData(strategyName).then(() => {
 
@@ -192,17 +202,17 @@ const BriefcaseEdit = ({show, onHide}) => {
                 addStartBriefcaseData(data, capital)
 
                 // Потом добавляем в цикле остальные данные
-                for (let i = 1; i < strategyArray.length; i++){
-                    strategyName = strategyArray[i].strategy
-                    capital = strategyArray[i].capital
+                // Загрузим все данные
+                strategyStore.getStrategyDataByArray(strategyArray,1).then(() => {
+                    console.log('tuta');
 
-                    strategyStore.getStrategyData(strategyName).then(() => {
-
-
+                // Произведем рассчет и обьединим данные
+                    for (let i = 1; i < strategyArray.length; i++){
+                        strategyName = strategyArray[i].strategy
+                        capital = strategyArray[i].capital
                         addBriefcaseData(strategyStore.getStrategyDataByName(strategyName), capital)
-                    })
-
-                }
+                    }
+                })
 
                 setBriefcaseDataArray(tmpBriefcaseDataArray)
             })
@@ -218,6 +228,7 @@ const BriefcaseEdit = ({show, onHide}) => {
             briefcase.name = name
             briefcase.strategyIn = dataBriefcaseParamToStr(strategyArray)
 
+            briefcase.aboutData = dataGetAboutData(points)
 
             // Записываем новые данные
             briefcaseStore.saveBriefcase(briefcase).then(data => {
@@ -227,6 +238,9 @@ const BriefcaseEdit = ({show, onHide}) => {
 
                     briefcaseStore.setNewName(name)
                     briefcaseStore.setStrategyIn(briefcase.strategyIn)
+                    briefcaseStore.setNewPoints(points)
+
+
                     // Удаляем предыдущие данные по портфелю
                     briefcaseStore.deleteSelectedData()
                     //  Записываем новые данные
@@ -255,9 +269,13 @@ const BriefcaseEdit = ({show, onHide}) => {
             setStrategyAddName(strategyStore.allStrategy[0].name)
 
         if (briefcaseStore.isNew) {  setName('');
+
+            setPoints('')
             setStrategyArray([])
             setSelectedNum(-1)
         } else {   setName(briefcaseStore.selectedOne.name);
+            console.log(briefcaseStore.selectedOne.aboutData);
+            setPoints(dataToStr(briefcaseStore.selectedOne.aboutData))
             const stArray = dataGetBriefcaseParam(briefcaseStore.selectedOne.strategyIn)
             setStrategyArray(stArray)
             stArray.length>0? setSelectedNum(0) : setSelectedNum(-1)
@@ -265,7 +283,14 @@ const BriefcaseEdit = ({show, onHide}) => {
         }}
 
 
-
+    const calcEndPoints = () => {
+        if (isCalsData) {
+            if (briefcaseDataArray.at(-1).aboutData) {
+                const briefPoints = dataCalcBriefcasePoints(briefcaseDataArray.at(-1).aboutData)
+                setPoints(briefPoints)
+            }  else alert('Нет данных для рассчета ендпоинтов')
+        }  else alert('Необходимо произвести расчет данных')
+    }
 
     return (
         <Modal  show={show} onHide={onHide} size="lg" centered onShow={SetParams}>
@@ -278,6 +303,13 @@ const BriefcaseEdit = ({show, onHide}) => {
                 <Form>
                     <Form.Control   className="m-2" value = {name} onChange={e=>setName(e.target.value)} placeholder={"Название портфеля... "} />
                 </Form>
+                <Form.Control
+                    className="m-2"
+                    as="textarea" rows={5}
+                    value = {points}
+                    onChange={e=>setPoints(e.target.value)}
+                    placeholder={"Доступные данные.. "}
+                />
 
                 <div className="input-group align-items-center m-2">
                     <span className="input-group-text col-2"  style={{height:'35px'}}>Стратегия</span>
@@ -328,7 +360,7 @@ const BriefcaseEdit = ({show, onHide}) => {
             {briefcaseStore.errorMessage? <h3 style={{color:'red'}}>{briefcaseStore.errorMessage}</h3>:''}
             <Modal.Footer>
 
-
+                <button className="button2" style={{marginRight:'180px'}} onClick={calcEndPoints}>Расчет ЕндПоинтов</button>
                 <button className="button2" onClick={onHide}>Закрыть</button>
                 <button className="button2" onClick={CalsData}>Расчет данных</button>
                 {briefcaseStore.isNew

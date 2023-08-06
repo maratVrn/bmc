@@ -1,11 +1,11 @@
-import React, {useState, useContext, useEffect,useRef} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import Table from "react-bootstrap/Table";
 import StrategyEdit from "./modal/StrategyEdit";
 import StrategyDataEdit from "./modal/StrategyDataEdit";
 import {Context} from "../../../src/index";
 import {observer} from "mobx-react-lite";
 import StrategyChart from "../StrategyChart";
-import {dataAllViewOneData, dataGetNewProfitData} from "../../bmfunctions";
+import {dataAllViewOneData, dataGetNewProfitData, dataGetViewOneData} from "../../bmfunctions";
 
 
 const StrategySettings = () => {
@@ -19,17 +19,15 @@ const StrategySettings = () => {
 
     const [showData, setShowData] = useState({}) // Данные для отображения на графике
 
-    const [curDeal, setСurDeal] = useState({})   // Данные по текущей сделке
+    const [curDeal, setCurDeal] = useState({})   // Данные по текущей сделке
 
     const setOneShowData = (strategyData) => {
-
         strategyStore.setSelectedStrategyDataOne(strategyData)
-        // const newData =dataGetViewOneData(strategyData)
-        // setShowData(newData)
 
     }
 
     const setSelectedStrategyDataToShow = (strategy) => {
+
         strategyStore.setSelectedOne(strategy)
 
         if (strategy.name) strategyStore.getStrategyData(strategy.name).then(() => {
@@ -37,7 +35,7 @@ const StrategySettings = () => {
 
             const newData =dataAllViewOneData(strategyStore.selectedOne?.strategyData)
             setShowData(newData)
-            setСurDeal(strategyStore.selectedOne?.points)
+            setCurDeal(strategyStore.selectedOne?.points)
             setDataKey(strategyStore.selectedOne?.id)
 
 
@@ -52,7 +50,9 @@ const StrategySettings = () => {
     }
 
     const changeStrategyData = () => {
+
         strategyStore.setIsNew(false)
+
         if (strategyStore.selectedStrategyDataOne.id) { setStrategyDataEdit(true) }
         else {alert('Необходимо выбрать данные')}
     }
@@ -92,6 +92,7 @@ const StrategySettings = () => {
             }
 
     }
+
 
     useEffect(() =>{
         strategyStore.setSelectedStrategyDataOne(null)

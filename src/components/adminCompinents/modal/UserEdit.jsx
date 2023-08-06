@@ -1,7 +1,6 @@
 import React, {useContext, useState} from 'react';
-import {Button, Modal, Form} from "react-bootstrap";
+import {Modal, Form} from "react-bootstrap";
 import {Context} from "../../../../src/index";
-import {dataGetAboutData, dataToStr} from "../../../bmfunctions";
 
 
 const UserEdit = ({show, onHide}) => {
@@ -124,10 +123,10 @@ const UserEdit = ({show, onHide}) => {
 
             </Modal.Body>
             <Modal.Footer>
-                <Button className="button3" onClick={onHide}>Закрыть</Button>
+                <button className="button3" onClick={onHide}>Закрыть</button>
                 {userStore.isNew
-                    ? <Button className="button3" onClick={addClient}>Создать пользователя</Button>
-                    : <Button className="button3" onClick={updateUser}>Изменить пользователя</Button>
+                    ? <button className="button3" onClick={addClient}>Создать пользователя</button>
+                    : <button className="button3" onClick={updateUser}>Изменить пользователя</button>
                 }
 
 

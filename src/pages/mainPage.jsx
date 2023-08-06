@@ -13,7 +13,7 @@ const MainPage = () => {
             <MainStrategy/>
             <Training/>
             <Subscription/>
-            <Questions/>
+            <Questions />
         </div>
     );
 };

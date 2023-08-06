@@ -38,10 +38,7 @@ const StrategyChart =  observer((props) =>{
     const SetChartData = (id) => {
 
         if (props.data[id]) {
-
             setStrategyDeal(props?.curDeal)
-
-
             setStrategyInfo(props.data[id].strategyInfo)
 
             // TODO: Сделать проверку на существование данных !!
@@ -157,7 +154,7 @@ const StrategyChart =  observer((props) =>{
             <div className='' >
 
                 <div className='container border_r' style={{backgroundColor:'white', paddingTop:'30px', marginBottom:'0px'}}>
-                    <h1  style={{paddingBottom:'30px'}}>{props?.name}</h1>
+                    <h3  style={{paddingBottom:'30px', textAlign:'center'}}>{props?.name}</h3>
 
                     <div  style={{marginTop:'0px', marginBottom:'30px', justifyContent:'left'}}>
 

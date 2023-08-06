@@ -3,8 +3,11 @@ import StrategyService from "../services/StrategyService";
 import {dataGetObjFromArray} from "../bmfunctions";
 
 export default class StrategyStore {
-    allStrategy    = []   // Список стратегий
-    bestStrategyRF = []   // Список стратегий
+    allStrategy      = []   // Список всех стратегий
+    allStrategyRF    = []   // Список стратегий РФ
+    allStrategyUSA   = []   // Список стратегий США
+    bestStrategyRF   = []   // Список лучших стратегий РФ
+    bestStrategyUSA  = []   // Список лучших стратегий США
     errorMessage = null
     isNew = false
     selectedOne = {}
@@ -155,24 +158,31 @@ export default class StrategyStore {
 
     async getBestStrategyData(){
         try {
-            // TODO: Выделить акции РФ и США и потом выделить списки лучших
+            // Сортируем на акции РФ и США
             for (let i = 0; i < this.allStrategy.length; i++) {
                 const dealData = dataGetObjFromArray(this.allStrategy[i].points)
                 this.allStrategy[i].currProfit = 1
                 this.allStrategy[i].dealCount  = 0
-                if (dealData.nowProfit)  this.allStrategy[i].currProfit = parseFloat(dealData.nowProfit)
+                if (dealData.profit)  this.allStrategy[i].currProfit = parseFloat(dealData.profit)
                 if (dealData.dealCount)  this.allStrategy[i].dealCount  = parseFloat(dealData.dealCount)
+                if (dealData.marketTicket){
+                    if (dealData.marketTicket === 'USA') this.allStrategyUSA.push(this.allStrategy[i])
+                    if (dealData.marketTicket === 'RF')  this.allStrategyRF.push(this.allStrategy[i])
+                }
+
             }
-            this.allStrategy.sort((a, b) => a.currProfit > b.currProfit ? -1 : 1)
+            this.allStrategyUSA.sort((a, b) => a.currProfit > b.currProfit ? -1 : 1)
+            this.allStrategyRF.sort((a, b) => a.currProfit > b.currProfit ? -1 : 1)
 
             // Соберем массив на отображение нужного коллличества лучших стратегий на главной странице
             const showStrategyCount = 4
             for (let i = 0; i < showStrategyCount; i++){
-                if (i<this.allStrategy.length) this.bestStrategyRF.push(this.allStrategy[i])
-
+                if (i<this.allStrategyRF.length) this.bestStrategyRF.push(this.allStrategyRF[i])
+                if (i<this.allStrategyUSA.length) this.bestStrategyUSA.push(this.allStrategyUSA[i])
             }
 
-                } catch (e) {
+
+        } catch (e) {
             this.setErrorMessage(e.response?.data?.message)
             console.log(e.response?.data?.message);
         }
@@ -221,6 +231,28 @@ export default class StrategyStore {
 
         return res
     }
+
+    getStrategyByID(id){
+        let res = {}
+        if (this.allStrategy.length)
+            for (let i = 0; i < this.allStrategy.length; i++) {
+                if (this.allStrategy[i].id === id){
+                    res = this.allStrategy[i]
+                    break
+                }
+            }
+        return res
+    }
+
+    // Загружаем данные по списку стратегий - используется для расчета портфеля
+    async  getStrategyDataByArray(strategyArray, idx){
+        for (let i = idx; i < strategyArray.length; i++){
+            const strategyName = strategyArray[i].strategy
+            await this.getStrategyData(strategyName).then(() => {
+            })
+        }
+    }
+    // Загружаем данные для стратегии - тикеты, сделки, профиты и ендпоинты, для каждого года отдельный наобор данных
     async  getStrategyData(strategyName){
         try{
             let needI = -1
