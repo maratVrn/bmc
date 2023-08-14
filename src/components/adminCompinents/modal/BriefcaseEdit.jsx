@@ -204,7 +204,6 @@ const BriefcaseEdit = ({show, onHide}) => {
                 // Потом добавляем в цикле остальные данные
                 // Загрузим все данные
                 strategyStore.getStrategyDataByArray(strategyArray,1).then(() => {
-                    console.log('tuta');
 
                 // Произведем рассчет и обьединим данные
                     for (let i = 1; i < strategyArray.length; i++){
@@ -274,7 +273,6 @@ const BriefcaseEdit = ({show, onHide}) => {
             setStrategyArray([])
             setSelectedNum(-1)
         } else {   setName(briefcaseStore.selectedOne.name);
-            console.log(briefcaseStore.selectedOne.aboutData);
             setPoints(dataToStr(briefcaseStore.selectedOne.aboutData))
             const stArray = dataGetBriefcaseParam(briefcaseStore.selectedOne.strategyIn)
             setStrategyArray(stArray)

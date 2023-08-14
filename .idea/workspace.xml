@@ -7,33 +7,11 @@
     <option name="rewriteBookmarkType" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0acd7c56-3109-4553-abe5-6a02aea33c4c" name="Changes" comment="Обновил внешний вид">
+    <list default="true" id="0acd7c56-3109-4553-abe5-6a02aea33c4c" name="Changes" comment="Добавлено грамотное сохранение цен и сделок с перасчетом всего">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bmfunctions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/bmfunctions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BriefCaseChart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BriefCaseChart.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BriefcaseCurrDeal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BriefcaseCurrDeal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/StrategyChart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StrategyChart.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/StrategyCurrDeal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StrategyCurrDeal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/adminCompinents/StrategySettings.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/adminCompinents/StrategySettings.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/adminCompinents/modal/BriefcaseEdit.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/adminCompinents/modal/BriefcaseEdit.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/adminCompinents/modal/StrategyDataEdit.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/adminCompinents/modal/StrategyDataEdit.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/adminCompinents/modal/StrategyEdit.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/adminCompinents/modal/StrategyEdit.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/adminCompinents/modal/UserEdit.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/adminCompinents/modal/UserEdit.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/http/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/http/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/mainPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/mainPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/bcChartParam.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/bcChartParam.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/briefcaseStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/briefcaseStore.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/strategyStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/strategyStore.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/AllStrategy.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/AllStrategy.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/Briefcase.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Briefcase.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/MainStrategy.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/MainStrategy.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/widgets/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Navbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/Questions.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Questions.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/Strategy.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Strategy.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/Training.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Training.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,14 +104,16 @@
       <workItem from="1690958596364" duration="9569000" />
       <workItem from="1691048098930" duration="2723000" />
       <workItem from="1691236072886" duration="617000" />
-      <workItem from="1691313126328" duration="1006000" />
-    </task>
-    <task id="LOCAL-00013" summary="ушли от куки совсем">
-      <created>1684757733017</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1684757733017</updated>
+      <workItem from="1691313126328" duration="1618000" />
+      <workItem from="1691393785155" duration="1334000" />
+      <workItem from="1691424285889" duration="1128000" />
+      <workItem from="1691477737125" duration="600000" />
+      <workItem from="1691498406229" duration="702000" />
+      <workItem from="1691520388702" duration="607000" />
+      <workItem from="1691564011474" duration="604000" />
+      <workItem from="1691743123484" duration="625000" />
+      <workItem from="1691836444364" duration="1209000" />
+      <workItem from="1691996120850" duration="717000" />
     </task>
     <task id="LOCAL-00014" summary="ушли от куки совсем">
       <created>1684758115727</created>
@@ -471,7 +451,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690270072519</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="Добавлено грамотное сохранение цен и сделок с перасчетом всего">
+      <created>1691318580005</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1691318580005</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -499,6 +486,7 @@
     <MESSAGE value="Обновление параметров пользователя" />
     <MESSAGE value="Проверка авторизованного пользователя на отображение данных" />
     <MESSAGE value="Обновил внешний вид" />
-    <option name="LAST_COMMIT_MESSAGE" value="Обновил внешний вид" />
+    <MESSAGE value="Добавлено грамотное сохранение цен и сделок с перасчетом всего" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлено грамотное сохранение цен и сделок с перасчетом всего" />
   </component>
 </project>

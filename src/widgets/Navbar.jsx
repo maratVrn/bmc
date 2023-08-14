@@ -1,4 +1,4 @@
-import React, {useContext, useRef, useState} from "react";
+import React, {useContext, useState} from "react";
 import "../styles/navbar.css";
 import { GiHamburgerMenu } from "react-icons/gi";
 import {Link, useNavigate} from "react-router-dom";
@@ -20,7 +20,7 @@ const Navbar = (questRef) => {
 
 
     const questClick = () => {
-        // questRef.current?.scrollIntoView({behavior:'smooth'})
+        window.scrollTo(0, 4000)
     }
     return (
 
