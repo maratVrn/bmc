@@ -909,11 +909,12 @@ export function  imageSrc  (strategyName)  {
     if (strategyName)
         switch (strategyName) {
             // Акции РФ
-            case  'Сбербанк' : res = '/assets/str/sber_rf.jpg'; break
-            case  'Газпром'  : res = '/assets/str/gazp_rf.jpg'; break
-            case  'Лукойл'   : res = '/assets/str/luk_rf.jpg'; break
-            case  'Роснефть' : res = '/assets/str/rosn_rf.jpg'; break
-            case  'Аэрофлот' : res = '/assets/str/aflt_rf.jpg'; break
+            case  'Сбербанк'    : res = '/assets/str/sber_rf.jpg'; break
+            case  'Сбербанк-п'  : res = '/assets/str/sber_p_rf.jpg'; break
+            case  'Газпром'     : res = '/assets/str/gazp_rf.jpg'; break
+            case  'Лукойл'      : res = '/assets/str/luk_rf.jpg'; break
+            case  'Роснефть'    : res = '/assets/str/rosn_rf.jpg'; break
+            case  'Аэрофлот'    : res = '/assets/str/aflt_rf.jpg'; break
             // Акции США
             case  'ExxonMobil' : res = '/assets/str/exmob_usa.jpg'; break
             case  'Tesla'      : res = '/assets/str/tesla_usa.jpg'; break

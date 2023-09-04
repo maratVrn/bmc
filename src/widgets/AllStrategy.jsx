@@ -38,17 +38,17 @@ const AllStrategy = () => {
 
 
         {/*АКЦИИ США*/}
-        <h3 className='text-center' style={{fontSize: '36px', fontWeight: '900', paddingTop: '150px'}}>Список всех стратегий и результаты за 2023 г. акции США</h3>
-        <div className='row' style={{paddingTop:'10px'}}>
-            {
-                strategyStore?.allStrategyUSA?.map((strategy,idx) =>
-                    <div key = {idx} className={allClass2} style={{paddingTop:'30px', marginTop:'30px'}}>
-                        <img className='img_str' onClick={() => navigate('/strategy', { state: { id: strategy.id} })} src={imageSrc(strategy.name)} alt='' />
-                        <h2 style={{color:'green', marginTop:'-10px'}}>{strategy.currProfit} %</h2>
-                        <h5 style={{color:'green'}}>{strategy.dealCount} сделок</h5>
-                    </div>)
-            }
-        </div>
+        {/*<h3 className='text-center' style={{fontSize: '36px', fontWeight: '900', paddingTop: '150px'}}>Список всех стратегий и результаты за 2023 г. акции США</h3>*/}
+        {/*<div className='row' style={{paddingTop:'10px'}}>*/}
+        {/*    {*/}
+        {/*        strategyStore?.allStrategyUSA?.map((strategy,idx) =>*/}
+        {/*            <div key = {idx} className={allClass2} style={{paddingTop:'30px', marginTop:'30px'}}>*/}
+        {/*                <img className='img_str' onClick={() => navigate('/strategy', { state: { id: strategy.id} })} src={imageSrc(strategy.name)} alt='' />*/}
+        {/*                <h2 style={{color:'green', marginTop:'-10px'}}>{strategy.currProfit} %</h2>*/}
+        {/*                <h5 style={{color:'green'}}>{strategy.dealCount} сделок</h5>*/}
+        {/*            </div>)*/}
+        {/*    }*/}
+        {/*</div>*/}
 
 
         {/*ПОРТФЕЛИ*/}
