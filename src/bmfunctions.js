@@ -468,154 +468,114 @@ export function dataGetDeals(data){
     return newDealStory
 }
 
-// Формируем график изменения приыбли за период - для каждого дня находим значения (сейчас линейно)
+// Формируем график изменения приыбли за период
 // чтобы потом обьединять с данными других стратегйи
 export function dataGetNewProfitData (strategyDataOne,capital) {
 
+    // Старый вариант расчета с линейным графиком
+    // const newProfitData = []
+    // let predDay = 0
+    // let predProfit = 0
+    // let start_x = 0
+    // // Смотрим какой капитал от общего депозита используется в расчете исходя из этого график прибыли меняется
+    // const capitalX= rounded2(capital/100)
+    // console.log(strategyDataOne.year);
+    //
+    // for (let j = 0; j < strategyDataOne.ticketData.length; j++) {
+    //     const k = []
+    //
+    //     Object.assign(k,strategyDataOne.ticketData[j])
+    //
+    //     const day = new Date(k[0]).getDate()
+    //     if (j===0) predDay = day
+    //
+    //     if (predDay !== day){
+    //
+    //         Object.assign(k,strategyDataOne.ticketData[j-1])
+    //         const date = new Date(k[0]).getDate()
+    //         const month = new Date(k[0]).getMonth()
+    //         let prof = 0
+    //         if (newProfitData.length>0) prof = newProfitData[newProfitData.length-1][1] // Чтобы полсдение элементы были не нулевыми
+    //         // Если нашлись данные прибыли на этот день то заполняем предыдущие данныме по профиту
+    //         for (let i = 0; i < strategyDataOne.profitData.length; i++){
+    //
+    //             const crProf = strategyDataOne.profitData[i]
+    //             const dateProf = new Date(crProf[0]).getDate()
+    //             const monthProf = new Date(crProf[0]).getMonth()
+    //
+    //
+    //
+    //             if ((date === dateProf) && (month === monthProf)){
+    //
+    //                 prof =  capitalX*crProf[1]
+    //
+    //                 //  Заполняем предыдущие значения по равномерному изменению
+    //                 // TODO: ВАЖНО сейчас график изменения прибыли линейный, идеально если он привязан к изменению цену
+    //                 let dayCount = newProfitData.length - start_x
+    //                 if (dayCount<1) dayCount = 1
+    //                 let profAdd = (parseFloat(prof)-predProfit)/dayCount
+    //
+    //                 for (let x = start_x+1; x < newProfitData.length; x++){
+    //
+    //                     const a = newProfitData[x]
+    //                     const curProf = predProfit + profAdd*(x-start_x)
+    //
+    //                     a[1] = rounded2( curProf)
+    //                     newProfitData[x] = a
+    //                 }
+    //                 start_x = newProfitData.length
+    //                 predProfit = parseFloat(prof)
+    //
+    //             }
+    //
+    //
+    //         }
+    //
+    //         k[1] = parseFloat(prof)
+    //
+    //
+    //         newProfitData.push(k)
+    //         predDay = day
+    //     }
+    // }
+    //
+    // // Заполняем данные за посоледний профит
+    // if (strategyDataOne.profitData.length>0){
+    //     const crProf = strategyDataOne.profitData[strategyDataOne.profitData.length-1]
+    //     const prof =  capitalX*crProf[1]
+    //     let dayCount = newProfitData.length - start_x
+    //     if (dayCount<1) dayCount = 1
+    //     let profAdd = (parseFloat(prof)-predProfit)/dayCount
+    //
+    //     for (let x = start_x+1; x < newProfitData.length; x++){
+    //
+    //         const a = newProfitData[x]
+    //         const curProf = predProfit + profAdd*(x-start_x)
+    //
+    //         a[1] = rounded2( curProf)
+    //         newProfitData[x] = a
+    //     }
+    //     // Добавляем последний день
+    //     const k = []
+    //
+    //     Object.assign(k,crProf)
+    //     k[1]=rounded2(parseFloat(capitalX*crProf[1]))
+    //     newProfitData.push(k)
+    //
+    //
+    // }
+
     const newProfitData = []
-    let predDay = 0
-    let predProfit = 0
-    let start_x = 0
+
     // Смотрим какой капитал от общего депозита используется в расчете исходя из этого график прибыли меняется
     const capitalX= rounded2(capital/100)
 
-
-    for (let j = 0; j < strategyDataOne.ticketData.length; j++) {
+    for (let j = 0; j < strategyDataOne.profitData.length; j++) {
         const k = []
-
-        Object.assign(k,strategyDataOne.ticketData[j])
-
-        const day = new Date(k[0]).getDate()
-        if (j===0) predDay = day
-
-        if (predDay !== day){
-
-            Object.assign(k,strategyDataOne.ticketData[j-1])
-            const date = new Date(k[0]).getDate()
-            const month = new Date(k[0]).getMonth()
-            let prof = 0
-            if (newProfitData.length>0) prof = newProfitData[newProfitData.length-1][1] // Чтобы полсдение элементы были не нулевыми
-            // Если нашлись данные прибыли на этот день то заполняем предыдущие данныме по профиту
-             for (let i = 0; i < strategyDataOne.profitData.length; i++){
-
-                 const crProf = strategyDataOne.profitData[i]
-                 const dateProf = new Date(crProf[0]).getDate()
-                 const monthProf = new Date(crProf[0]).getMonth()
-
-
-
-                 if ((date === dateProf) && (month === monthProf)){
-
-                     prof =  capitalX*crProf[1]
-
-                     //  Заполняем предыдущие значения по равномерному изменению
-                     // TODO: ВАЖНО сейчас график изменения прибыли линейный, идеально если он привязан к изменению цену
-                     let dayCount = newProfitData.length - start_x
-                     if (dayCount<1) dayCount = 1
-                     let profAdd = (parseFloat(prof)-predProfit)/dayCount
-
-                     for (let x = start_x+1; x < newProfitData.length; x++){
-
-                         const a = newProfitData[x]
-                         const curProf = predProfit + profAdd*(x-start_x)
-
-                         a[1] = rounded2( curProf)
-                         newProfitData[x] = a
-                     }
-                     start_x = newProfitData.length
-                     predProfit = parseFloat(prof)
-
-                 }
-
-
-             }
-
-            k[1] = parseFloat(prof)
-
-
-            newProfitData.push(k)
-            predDay = day
-        }
-    }
-
-    // Заполняем данные за посоледний профит
-    if (strategyDataOne.profitData.length>0){
-        const crProf = strategyDataOne.profitData[strategyDataOne.profitData.length-1]
-        const prof =  capitalX*crProf[1]
-        let dayCount = newProfitData.length - start_x
-        if (dayCount<1) dayCount = 1
-        let profAdd = (parseFloat(prof)-predProfit)/dayCount
-
-        for (let x = start_x+1; x < newProfitData.length; x++){
-
-            const a = newProfitData[x]
-            const curProf = predProfit + profAdd*(x-start_x)
-
-            a[1] = rounded2( curProf)
-            newProfitData[x] = a
-        }
-        // Добавляем последний день
-        const k = []
-
-        Object.assign(k,crProf)
-        k[1]=rounded2(parseFloat(capitalX*crProf[1]))
+        Object.assign(k,strategyDataOne.profitData[j])
+        const prof =  rounded2(capitalX*parseFloat(k[1]))
+        k[1] = parseFloat(prof)
         newProfitData.push(k)
-
-
-    }
-
-
-    return newProfitData
-}
-
-// Формируем график изменения приыбли за период - для каждого дня находим значения (сейчас линейно)
-// чтобы потом обьединять с данными других стратегйи
-export function dataGetNewProfitData2 (strategyDataOne,capital) {
-
-    const newProfitData = []
-    let predDay = 0              // Предудыщий день используем чтобы понять когда произошла смена дня для расчета прибыль на конец дня
-    let closePrisePredDay = 0;   // цена закрытия перудыдущего дня для расчета изменения % цены за день
-
-    let dealType = 'none' //Типа текуще сделки - для расчета кривой прибыли
-
-    // Смотрим какой капитал от общего депозита используется в расчете исходя из этого график прибыли меняется
-    const capitalX= rounded2(capital/100)
-
-    ;
-    console.log(strategyDataOne.dealsData);
-
-    for (let j = 0; j < strategyDataOne.ticketData.length; j++) {
-
-        const day = new Date(strategyDataOne.ticketData[j][0]).getDate()
-        if (j===0) { predDay = day; closePrisePredDay = parseFloat(strategyDataOne.ticketData[j][1])}
-
-        if ((predDay !== day) && (j>0)) {
-            const crRes = []
-            Object.assign(crRes,strategyDataOne.ticketData[j-1])
-            const endPriseCurDay = parseFloat(crRes[1])
-            if (closePrisePredDay===0) closePrisePredDay = 0.001 // Фич
-            const dayProfit = 100*((endPriseCurDay-closePrisePredDay)/closePrisePredDay)
-
-            crRes[1] = rounded2(dayProfit);
-            crRes[2] = closePrisePredDay
-            crRes[3] = endPriseCurDay
-
-
-            closePrisePredDay = endPriseCurDay
-
-            // const date = new Date(k[0]).getDate()
-            // const month = new Date(k[0]).getMonth()
-
-            for (let i = 0; i < strategyDataOne.dealsData.length; i++){
-                // TODO: Доделать алгоритм расчета прибыли - т.е. найти сделку и относительно нее перерасчитать прибыль
-
-            }
-
-
-
-            newProfitData.push(crRes)
-            predDay = day
-        }
     }
 
 
@@ -760,16 +720,13 @@ export function dataToDelphiDataStr(dt){
 export function dataCalcStrategyPoints (strategyData) {
 
     const dataInfo = dataGetObjFromArray(strategyData?.aboutData)
+    console.log(dataInfo);
     const endTicket = strategyData?.ticketData.at(-1);
     const endDeal = strategyData?.dealsData.at(-1);
     const endProfit = strategyData?.profitData.at(-1);
-    const endProfit2 = strategyData?.profitData.at(-2);
 
-    let nowProfit = endProfit[1] ? endProfit[1] : 0
 
-    if (endProfit2[1]) {
-        nowProfit = endProfit[1] - endProfit2[1]
-    }
+    let nowProfit = endProfit[1] ? endProfit[1] - dataInfo.addProfit : 0
 
     const data = {
         nowProfit : nowProfit,
@@ -793,30 +750,30 @@ export function dataCalcStrategyPoints (strategyData) {
     res += 'dateDealStart#'+data.dateDealStart+'*\n'
     res += 'priseDealStart#'+data.priseDealStart+'*\n'
     res += 'curPrise#'+data.curPrise+'*\n'
-    res += 'marketTicket#NO*\n'
+    res += 'marketTicket#RF*\n'
     res += 'endTicketDataDate#'+data.endTicketDataDate+'*\n'
     return res
 }
 
 // Расчет ендпоинтов портфеля
 export function dataCalcBriefcasePoints (briefcaseAboutData) {
-    let res = 'nowProfit#'+parseFloat(briefcaseAboutData[0][1])*2+' %*\n'
+    let res = 'nowProfit#'+parseFloat(briefcaseAboutData[0][1])+' %*\n'
     res += 'dealCount#'+briefcaseAboutData[1][1]+'*\n'
-    res += 'maxMinus#'+parseFloat(briefcaseAboutData[2][1])*2+' %*\n'
-    res += 'finLevel#2*\n'
+    res += 'maxMinus#'+parseFloat(briefcaseAboutData[2][1])+' %*\n'
+    res += 'finLevel#1*\n'
     return res
 }
 // Расчет параметров данных стратегии
-export function dataCalcStrategyDataParam (strategyData) {
+export function dataCalcStrategyDataParam (strategyData, addProfit) {
 
 
     const data = {
-        profit : 0,
-        dealCount : strategyData.dealsData.length,
+        profit        : 0,
+        dealCount     : strategyData.dealsData.length,
         maxStartMinus : 0,
-        middleDeal : 0,
-        plusDeal : 0,
-        maxMinus : 0
+        middleDeal    : 0,
+        plusDeal      : 0,
+        maxMinus      : 0
     }
 
     data.maxStartMinus = Math.min(...strategyData.profitData.map(o => o[1]))
@@ -853,13 +810,14 @@ export function dataCalcStrategyDataParam (strategyData) {
     })
 
     if (data.maxMinus>0) data.maxMinus= -1*data.maxMinus
-
+    if (data.middleDeal<1) data.middleDeal = 1
     let res = 'profit#'+rounded2(data.profit)+' %*\n'
     res += 'dealCount#'+data.dealCount+'*\n'
     res += 'maxStartMinus#'+rounded2(data.maxStartMinus)+' %*\n'
     res += 'middleDeal#'+Math.ceil(data.middleDeal)+'*\n'
-    res += 'plusDeal#'+Math.ceil(data.plusDeal)+'*\n'
-    res += 'maxMinus#'+rounded2(data.maxMinus)+' %'
+    res += 'plusDeal#'+Math.ceil(data.plusDeal/data.middleDeal)+'*\n'
+    res += 'maxMinus#'+rounded2(data.maxMinus)+' %*\n'
+    res += 'addProfit#'+rounded2(addProfit)+''
 
 
     return res
@@ -925,9 +883,9 @@ export function  imageSrc  (strategyName)  {
 
             // Портфели
             case  'САЛРГ' : res = '/assets/str/a_g_s_l_r_rf.jpg'; break
-            case  'СГ' : res = '/assets/str/gzp_sb_rf.jpg'; break
-            case  'СА' : res = '/assets/str/sb_ae_rf.jpg'; break
-
+            case  'СГ' : res = '/assets/str/luk_sb_rf.jpg'; break
+            case  'ССА' : res = '/assets/str/sb_ae_rf.jpg'; break
+            case  'СГА' : res = '/assets/str/sbp_gaz_ae_rf.jpg'; break
 
             default: break;
 

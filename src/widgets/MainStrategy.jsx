@@ -19,7 +19,7 @@ const MainStrategy = () => {
     return (
     <>
         <div className='container text-center' style={{paddingTop:'50px', marginBottom:'70px'}} >
-        <h3> Мы разработали сигналы для торговли акцииями на фондовом рынке России и США. Все стратегии являются результатом алгоритмического анализа исторических данных</h3>
+        <h3> Мы разработали стратегии для торговли акцииями на фондовом рынке России. Все стратегии являются результатом алгоритмического анализа исторических данных</h3>
         <div className='row' style={{marginTop:'70px'}}>
             <div className= {allClass} >
                 <img className='img_K' src='/assets/1.jpg' alt='' />

@@ -7,12 +7,10 @@ import {
     dataBriefcaseParamToStr,
     dataCalcBriefcaseParam,
     dataCalcBriefcasePoints,
-    dataCalcStrategyParam,
-    dataCalcStrategyPoints,
     dataGetAboutData,
     dataGetBriefcaseParam,
     dataGetNewProfitData,
-    dataGetNewProfitData2, dataToStr,
+    dataToStr,
     rounded2
 } from "../../../bmfunctions";
 
@@ -108,9 +106,7 @@ const BriefcaseEdit = ({show, onHide}) => {
                 newData.dealsData[k].strategyName = strategyData[i].strategyName
             }
             newData.profitData   = dataGetNewProfitData(strategyData[i], capital)
-            // console.log(newData.profitData);
             newData.aboutData    = dataGetAboutData(dataCalcBriefcaseParam(newData))
-
             tmpBriefcaseDataArray.push(newData)
         }
 
@@ -197,8 +193,8 @@ const BriefcaseEdit = ({show, onHide}) => {
             if (strategyName) strategyStore.getStrategyData(strategyName).then(() => {
 
                 strategyArray[0].capital ? capital = strategyArray[0].capital : capital = 100
+                // Берем стартовый вариант расчета из первой стратегии
                 const data = strategyStore.getStrategyDataByName(strategyName)
-
                 addStartBriefcaseData(data, capital)
 
                 // Потом добавляем в цикле остальные данные

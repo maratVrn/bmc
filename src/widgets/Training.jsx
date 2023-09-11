@@ -97,7 +97,7 @@ const Training = () => {
                             </div>
                             <div className='row'  style={{paddingTop:'50px'}}>
                                 <div className='col-md-6 col-sm-6'>
-                                    <p>Online сигналы акции РФ и США</p>
+                                    <p>Online сигналы акции РФ + фьючерсы</p>
                                 </div>
                                 <div className='col-md-6 col-sm-6' style={{display:"inline-block", textAlign:'right'}}>
                                     <span className='spanInfo'>1690 / месяц</span>

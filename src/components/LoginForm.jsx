@@ -18,8 +18,8 @@ const LoginForm = observer(() => {
     const {userStore} = useContext(Context)
 
     useEffect(() => {
-         setEmail('begisgevmr@mail.ru')
-            setPassword('12345')
+       //  setEmail('begisgevmr@mail.ru')
+       //     setPassword('12345')
             window.scrollTo(0, 0)
 
     },[]);

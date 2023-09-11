@@ -30,7 +30,11 @@ const StrategyChart =  observer((props) =>{
 
     const {userStore} = useContext(Context)
 
-    useEffect(() =>{ SetChartData(buttonKey)
+    useEffect(() =>{ //SetChartData(buttonKey)
+        if (props.data.length)
+            if (props.data.length>2) SetChartData(props.data.length-3)
+
+
         if (!userStore.isAuth)  setShowPointsChecked(false)
 
     },[showPriseChecked,showProfitChecked, showPointsChecked])

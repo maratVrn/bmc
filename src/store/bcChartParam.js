@@ -9,7 +9,7 @@ export function getBOpt (briefcaseName) {
             curve: 'straight',
             lineCap: 'butt',
             colors: undefined,
-            width: 3,
+            width: 1,
             dashArray: 0,
         },
 
@@ -88,7 +88,7 @@ class BcChartParam {
             curve: 'straight',
             lineCap: 'butt',
             colors: undefined,
-            width: 3,
+            width: 2,
             dashArray: 0,
         },
 

@@ -96,7 +96,7 @@ class ChartParam {
             curve: 'straight',
             lineCap: 'butt',
             colors: undefined,
-            width: [1,3],
+            width: [1,1],
             dashArray: 0,
         },
 
@@ -176,11 +176,11 @@ class ChartParam {
     setColors (isTwo) {
         if (isTwo){
             this.main_options.stroke.colors = ['#837e7e','#48aca6']
-            this.main_options.stroke.width = [1,3]
+            this.main_options.stroke.width = [1,2]
         }
         else {
             this.main_options.stroke.colors = ['#48aca6']
-            this.main_options.stroke.width = [3]
+            this.main_options.stroke.width = [2]
         }
     }
 

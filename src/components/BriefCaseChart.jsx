@@ -21,7 +21,7 @@ const BriefCaseChart =  observer((props) =>{
     const [buttonKey, setButtonKey] = useState(0);                        // какая конопка нажата за тот период отображаем данные
     const [showData, setShowData]= useState([])                           // Отображаемые данные
     const [capitalizationCalc, setCapitalizationCalc] = useState(false);  // Расчет с учетом капиализации
-    const [levelCalc, setLevelCalc] = useState(true);                    // Расчет с учетом торгового плеча
+    const [levelCalc, setLevelCalc] = useState(false);                    // Расчет с учетом торгового плеча
     const [level, setLevel] = useState(2);                                // Торговое плечо
     const [briefcaseInfoOpt, setBriefcaseInfo] = useState(0);             // Информация о портфеле
     const [briefcasePoints, setBriefcasePoints] = useState({})            // Данные для отображения на графике
