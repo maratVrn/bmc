@@ -472,103 +472,11 @@ export function dataGetDeals(data){
 // чтобы потом обьединять с данными других стратегйи
 export function dataGetNewProfitData (strategyDataOne,capital) {
 
-    // Старый вариант расчета с линейным графиком
-    // const newProfitData = []
-    // let predDay = 0
-    // let predProfit = 0
-    // let start_x = 0
-    // // Смотрим какой капитал от общего депозита используется в расчете исходя из этого график прибыли меняется
-    // const capitalX= rounded2(capital/100)
-    // console.log(strategyDataOne.year);
-    //
-    // for (let j = 0; j < strategyDataOne.ticketData.length; j++) {
-    //     const k = []
-    //
-    //     Object.assign(k,strategyDataOne.ticketData[j])
-    //
-    //     const day = new Date(k[0]).getDate()
-    //     if (j===0) predDay = day
-    //
-    //     if (predDay !== day){
-    //
-    //         Object.assign(k,strategyDataOne.ticketData[j-1])
-    //         const date = new Date(k[0]).getDate()
-    //         const month = new Date(k[0]).getMonth()
-    //         let prof = 0
-    //         if (newProfitData.length>0) prof = newProfitData[newProfitData.length-1][1] // Чтобы полсдение элементы были не нулевыми
-    //         // Если нашлись данные прибыли на этот день то заполняем предыдущие данныме по профиту
-    //         for (let i = 0; i < strategyDataOne.profitData.length; i++){
-    //
-    //             const crProf = strategyDataOne.profitData[i]
-    //             const dateProf = new Date(crProf[0]).getDate()
-    //             const monthProf = new Date(crProf[0]).getMonth()
-    //
-    //
-    //
-    //             if ((date === dateProf) && (month === monthProf)){
-    //
-    //                 prof =  capitalX*crProf[1]
-    //
-    //                 //  Заполняем предыдущие значения по равномерному изменению
-    //                 // TODO: ВАЖНО сейчас график изменения прибыли линейный, идеально если он привязан к изменению цену
-    //                 let dayCount = newProfitData.length - start_x
-    //                 if (dayCount<1) dayCount = 1
-    //                 let profAdd = (parseFloat(prof)-predProfit)/dayCount
-    //
-    //                 for (let x = start_x+1; x < newProfitData.length; x++){
-    //
-    //                     const a = newProfitData[x]
-    //                     const curProf = predProfit + profAdd*(x-start_x)
-    //
-    //                     a[1] = rounded2( curProf)
-    //                     newProfitData[x] = a
-    //                 }
-    //                 start_x = newProfitData.length
-    //                 predProfit = parseFloat(prof)
-    //
-    //             }
-    //
-    //
-    //         }
-    //
-    //         k[1] = parseFloat(prof)
-    //
-    //
-    //         newProfitData.push(k)
-    //         predDay = day
-    //     }
-    // }
-    //
-    // // Заполняем данные за посоледний профит
-    // if (strategyDataOne.profitData.length>0){
-    //     const crProf = strategyDataOne.profitData[strategyDataOne.profitData.length-1]
-    //     const prof =  capitalX*crProf[1]
-    //     let dayCount = newProfitData.length - start_x
-    //     if (dayCount<1) dayCount = 1
-    //     let profAdd = (parseFloat(prof)-predProfit)/dayCount
-    //
-    //     for (let x = start_x+1; x < newProfitData.length; x++){
-    //
-    //         const a = newProfitData[x]
-    //         const curProf = predProfit + profAdd*(x-start_x)
-    //
-    //         a[1] = rounded2( curProf)
-    //         newProfitData[x] = a
-    //     }
-    //     // Добавляем последний день
-    //     const k = []
-    //
-    //     Object.assign(k,crProf)
-    //     k[1]=rounded2(parseFloat(capitalX*crProf[1]))
-    //     newProfitData.push(k)
-    //
-    //
-    // }
-
     const newProfitData = []
 
     // Смотрим какой капитал от общего депозита используется в расчете исходя из этого график прибыли меняется
-    const capitalX= rounded2(capital/100)
+    const capitalX= capital/100
+    console.log(capitalX);
 
     for (let j = 0; j < strategyDataOne.profitData.length; j++) {
         const k = []
@@ -583,7 +491,8 @@ export function dataGetNewProfitData (strategyDataOne,capital) {
 }
 
 // Готовим данные ддля отображения с учетом финансового плеча
-export function dataGetViewOneBriefcaseDataLevel (profitData, level, needCapital) {
+export function dataGetViewOneBriefcaseDataLevel (profitData, level, needCapital, capitalParam) {
+
 
     const res = [
         {
@@ -591,6 +500,7 @@ export function dataGetViewOneBriefcaseDataLevel (profitData, level, needCapital
             data: []
         }
     ]
+
     // Сначала сделаем расчет с учетом плеча
     for (let j = 0; j < profitData.data.length; j++){
         const crProfit = profitData.data[j].slice(0)
@@ -598,23 +508,44 @@ export function dataGetViewOneBriefcaseDataLevel (profitData, level, needCapital
         res[0].data.push(crProfit)
     }
     // Далее расчетом с капитализацией
+    console.log('start');
     let capitalLevel = 1
-    let capitalParam = 10 // насколько в % должна вырасти прибыль чтобы учитывать капитализацию
+    let addProfit = 0
     let startProfit = 0
+    // console.log('startProfit  '+startProfit);
+
     if (needCapital){
         for (let j = 0; j < res[0].data.length; j++){
 
             const crProfit = res[0].data[j]
-            if (j===0) startProfit = crProfit[1]
+
             if (crProfit[1] - startProfit >= capitalParam){
-                capitalLevel = capitalLevel*(1+capitalParam/100)
-                crProfit[1] = rounded2(capitalLevel*parseFloat(crProfit[1]))
-                startProfit = crProfit[1]
-            } else crProfit[1] = rounded2(capitalLevel*parseFloat(crProfit[1]))
+                startProfit += parseFloat(capitalParam)
+
+                addProfit += capitalParam*capitalLevel
+                capitalLevel += capitalLevel*capitalParam/100
+                // console.log(crProfit[0])
+                // console.log('capitalLevel  '+capitalLevel)
+                // console.log('addProfit  ' + addProfit)
+                // console.log('startProfit  ' + startProfit)
+
+            }
+
+            let rise = parseFloat(crProfit[1])-startProfit
+            const newProfit = rounded2(addProfit+ capitalLevel*rise)
+            // console.log(crProfit[0])
+            // console.log('rise  '+rise)
+            // console.log('newProfit  ' + newProfit)
+
+            crProfit[1] = newProfit
+
+
+
 
         }
 
     }
+
     return res
 }
 

@@ -23,6 +23,7 @@ const BriefCaseChart =  observer((props) =>{
     const [capitalizationCalc, setCapitalizationCalc] = useState(false);  // Расчет с учетом капиализации
     const [levelCalc, setLevelCalc] = useState(false);                    // Расчет с учетом торгового плеча
     const [level, setLevel] = useState(2);                                // Торговое плечо
+    const [capitalLevel, setCapitalLevel] = useState(10);                 // Для расчета капитализации
     const [briefcaseInfoOpt, setBriefcaseInfo] = useState(0);             // Информация о портфеле
     const [briefcasePoints, setBriefcasePoints] = useState({})            // Данные для отображения на графике
     const [strategyArray, setStrategyArray] = useState([])                // Стратегия в списке в портфелей
@@ -32,7 +33,7 @@ const BriefCaseChart =  observer((props) =>{
     useEffect(() =>{ SetChartData(buttonKey)
 
         // Расчет массива последних сделок
-    },[levelCalc, level, capitalizationCalc])
+    },[levelCalc, level, capitalizationCalc, capitalLevel])
 
     const SetChartData = (id) => {
 
@@ -47,7 +48,7 @@ const BriefCaseChart =  observer((props) =>{
             let calcLevel = 1;
             levelCalc ? calcLevel = level : calcLevel = 1
 
-            const newShowData = dataGetViewOneBriefcaseDataLevel(props.data[id].profitData[0],calcLevel,capitalizationCalc)
+            const newShowData = dataGetViewOneBriefcaseDataLevel(props.data[id].profitData[0],calcLevel,capitalizationCalc,capitalLevel )
 
             let profit = 0
             // TODO: переделать по факт данным
@@ -106,8 +107,12 @@ const BriefCaseChart =  observer((props) =>{
                     <div className='col-md-6 px-4 text-center flex align-items-center' >
                         <label>
                             <input type="checkbox" checked={capitalizationCalc}  onChange={handleChangeCapital}  />
-                            Расчет с учетом капитализации каждые 10 %
+                            Расчет с учетом капитализации каждые
                         </label>
+                        <Form.Control  type="number" className="m-1" style={{width : '70px'}}
+
+                                       value = {capitalLevel} onChange={e=>setCapitalLevel(e.target.value)}
+                        /> %
                     </div>
                 </div>
            </div>

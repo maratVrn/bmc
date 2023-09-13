@@ -7,7 +7,13 @@
     <option name="rewriteBookmarkType" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0acd7c56-3109-4553-abe5-6a02aea33c4c" name="Changes" comment="добавлен сбер-п" />
+    <list default="true" id="0acd7c56-3109-4553-abe5-6a02aea33c4c" name="Changes" comment="доработан механизм обновления портфелей">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bmfunctions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/bmfunctions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BriefCaseChart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BriefCaseChart.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/adminCompinents/modal/BriefcaseEdit.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/adminCompinents/modal/BriefcaseEdit.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/http/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/http/index.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -110,35 +116,14 @@
       <workItem from="1691836444364" duration="1209000" />
       <workItem from="1691996120850" duration="2085000" />
       <workItem from="1693248210499" duration="616000" />
-      <workItem from="1693826797523" duration="605000" />
-    </task>
-    <task id="LOCAL-00016" summary="Добавид таблицу с пользователями">
-      <created>1684770574341</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1684770574341</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Добавид таблицу с пользователями">
-      <created>1684770793985</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1684770793985</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Добавид таблицу с пользователями">
-      <created>1684774299786</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1684774299786</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Обновление параметров пользователя">
-      <created>1684784620465</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1684784620465</updated>
+      <workItem from="1693826797523" duration="1542000" />
+      <workItem from="1693980157865" duration="4085000" />
+      <workItem from="1694065227184" duration="10689000" />
+      <workItem from="1694255205409" duration="4523000" />
+      <workItem from="1694337558036" duration="3250000" />
+      <workItem from="1694422477088" duration="4041000" />
+      <workItem from="1694443203168" duration="1351000" />
+      <workItem from="1694590535346" duration="11259000" />
     </task>
     <task id="LOCAL-00020" summary="Обновление параметров пользователя">
       <created>1684784848420</created>
@@ -455,7 +440,35 @@
       <option name="project" value="LOCAL" />
       <updated>1693827367337</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="добавлен сбер-п">
+      <created>1693827453064</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1693827453064</updated>
+    </task>
+    <task id="LOCAL-00066" summary="добавлен сбер-п">
+      <created>1693829499639</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1693829499639</updated>
+    </task>
+    <task id="LOCAL-00067" summary="доработан механизм обновления портфелей">
+      <created>1694430987755</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1694430987756</updated>
+    </task>
+    <task id="LOCAL-00068" summary="доработан механизм обновления портфелей">
+      <created>1694443355116</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1694443355116</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -486,6 +499,7 @@
     <MESSAGE value="Добавлено грамотное сохранение цен и сделок с перасчетом всего" />
     <MESSAGE value="Добавлен телеграмм бот и обновление ошибок" />
     <MESSAGE value="добавлен сбер-п" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавлен сбер-п" />
+    <MESSAGE value="доработан механизм обновления портфелей" />
+    <option name="LAST_COMMIT_MESSAGE" value="доработан механизм обновления портфелей" />
   </component>
 </project>
