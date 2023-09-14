@@ -4,7 +4,8 @@ import axios from "axios"; // Библиотека для запросов на 
 
 // На деплое
 
-export const API_URL='http://194.67.111.13:5000/api'
+// export const API_URL='http://194.67.111.13:5000/api'
+export const API_URL='server.bm-algoritmik.ru/api'
 // На локальном сервере
 // export const API_URL='http://localhost:5000/api'
 
