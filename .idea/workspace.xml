@@ -7,12 +7,18 @@
     <option name="rewriteBookmarkType" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0acd7c56-3109-4553-abe5-6a02aea33c4c" name="Changes" comment="доработан механизм обновления портфелей">
+    <list default="true" id="0acd7c56-3109-4553-abe5-6a02aea33c4c" name="Changes" comment="исправлен API_URL">
+      <change afterPath="$PROJECT_DIR$/src/components/Metrika.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bmfunctions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/bmfunctions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BriefCaseChart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BriefCaseChart.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/adminCompinents/modal/BriefcaseEdit.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/adminCompinents/modal/BriefcaseEdit.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/http/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/http/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/AuthService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/AuthService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/userStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/userStore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/AllStrategy.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/AllStrategy.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/Questions.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Questions.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/Strategy.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Strategy.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/mainInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/mainInfo.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,28 +129,10 @@
       <workItem from="1694337558036" duration="3250000" />
       <workItem from="1694422477088" duration="4041000" />
       <workItem from="1694443203168" duration="1351000" />
-      <workItem from="1694590535346" duration="11259000" />
-    </task>
-    <task id="LOCAL-00020" summary="Обновление параметров пользователя">
-      <created>1684784848420</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1684784848420</updated>
-    </task>
-    <task id="LOCAL-00021" summary="Проверка авторизованного пользователя на отображение данных">
-      <created>1687332164581</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1687332164581</updated>
-    </task>
-    <task id="LOCAL-00022" summary="Обновил внешний вид">
-      <created>1689857615539</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1689857615539</updated>
+      <workItem from="1694590535346" duration="12478000" />
+      <workItem from="1694702055501" duration="2912000" />
+      <workItem from="1695044120182" duration="7399000" />
+      <workItem from="1695129089060" duration="3450000" />
     </task>
     <task id="LOCAL-00023" summary="Обновил внешний вид">
       <created>1689860718271</created>
@@ -468,7 +456,28 @@
       <option name="project" value="LOCAL" />
       <updated>1694443355116</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="исправлены ошибки в расчете прибыли">
+      <created>1694610437001</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1694610437001</updated>
+    </task>
+    <task id="LOCAL-00070" summary="исправлен API_URL">
+      <created>1694702123645</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1694702123645</updated>
+    </task>
+    <task id="LOCAL-00071" summary="исправлен API_URL">
+      <created>1694703387262</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1694703387262</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -500,6 +509,8 @@
     <MESSAGE value="Добавлен телеграмм бот и обновление ошибок" />
     <MESSAGE value="добавлен сбер-п" />
     <MESSAGE value="доработан механизм обновления портфелей" />
-    <option name="LAST_COMMIT_MESSAGE" value="доработан механизм обновления портфелей" />
+    <MESSAGE value="исправлены ошибки в расчете прибыли" />
+    <MESSAGE value="исправлен API_URL" />
+    <option name="LAST_COMMIT_MESSAGE" value="исправлен API_URL" />
   </component>
 </project>

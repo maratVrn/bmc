@@ -4,6 +4,7 @@ import StrategyChart from "../components/StrategyChart";
 import {Context} from "../index";
 import {observer} from "mobx-react-lite";
 import {dataAllViewOneData} from "../bmfunctions";
+import Metrika from '../components/Metrika'
 
 const Strategy = () => {
     const {state} = useLocation();
@@ -55,6 +56,7 @@ const Strategy = () => {
         <div className='text-center'>
             <button  className='btn-a_blue mt-5' >Получать сигналы на телефон</button>
         </div>
+            <Metrika />
         </div>
     );
 };

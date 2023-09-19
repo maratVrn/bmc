@@ -1,10 +1,36 @@
-import React from 'react';
+import React, {useContext, useState} from 'react';
 
 import ImageFaq from "./img/faq-img.svg";
 import Accordion from 'react-bootstrap/Accordion';
+import {Form} from "react-bootstrap";
+import {Context} from "../index";
+
+
 
 const Questions = () => {
+    const {userStore} = useContext(Context)
+    const [message, setMessage] = useState('')
+
+    async function sendTelegramQuestion(){
+        try{
+
+            if (message!=='') {
+                await userStore.sendTelegramQuestion(message).then( () => {
+                    setMessage('')
+                    alert('Ваше сообщение отправлено!')
+                })
+            } else alert('Необходимо ввести сообщение!')
+
+        } catch (e) {
+            console.log(e)
+        }
+
+    }
+
     return (
+
+
+
         <div className='container' style={{paddingTop:'80px'}}>
             <h3  style={{fontSize: '36px', fontWeight: '900', paddingTop: '30px'}}>Частые вопросы</h3>
 
@@ -69,6 +95,25 @@ const Questions = () => {
                     </Accordion>
                 </div>
             </div>
+
+            <h3 style={{fontSize: '36px', fontWeight: '900', paddingTop: '100px'}}>Остались вопросы? </h3>
+            <h4 style={{paddingTop: '30px'}}> Напишите нам. Ответы мы пришлем на email указанный при регистрации</h4>
+            <div className='row' style={{paddingTop: '30px'}}>
+
+                <div className='col-md-8 p-2'>
+                    <Form.Control as="textarea" rows={4}
+                         value = {message}
+                         onChange={e=>setMessage(e.target.value)}
+                    />
+                </div>
+                <div className='col-md-4 text-center'>
+
+                    <button onClick={sendTelegramQuestion} className='btn-a_blue mt-5'>Отправить вопрос</button>
+
+
+                </div>
+            </div>
+
 
         </div>
     );

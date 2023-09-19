@@ -1,6 +1,6 @@
 import './App.css';
-import React, {useContext, useEffect, useRef} from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import React, {useContext, useEffect} from "react";
+import { BrowserRouter, Routes, Route  } from "react-router-dom"
 import AllStrategy from "./widgets/AllStrategy";
 import AllBriefcase from "./widgets/AllBriefcase";
 import "./styles/styles.css"
@@ -14,6 +14,7 @@ import LoginForm from "./components/LoginForm";
 import {Context} from "./index";
 import UserSettings from "./widgets/UserSettings";
 import Admin from "./widgets/Admin";
+import Metrika from './components/Metrika'
 
 
 
@@ -48,7 +49,7 @@ function App() {
             userStore.checkAuth()
         }
 
-    },[])
+    })
 
 
     return (
@@ -71,8 +72,10 @@ function App() {
               </Routes>
 
                 <Footer/>
+                  <Metrika />
               </div>
           </BrowserRouter>
+
       </>
           );
 }

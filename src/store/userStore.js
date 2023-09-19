@@ -80,6 +80,17 @@ export default class UserStore {
         }
     }
 
+    async sendTelegramQuestion(message){
+        try {
+
+            const email = this.user.email? this.user.email : 'no email'
+            const response = await AuthService.sendTelegramQuestion(message, email)
+
+        } catch (e) {
+            console.log(e.response?.data?.message);
+        }
+    }
+
     async registration(email, password){
         try {
             this.setErrorMessage(null)

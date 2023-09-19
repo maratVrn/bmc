@@ -16,6 +16,10 @@ export default class AuthService{
         return $api.post('/registration', {email, password})
     }
 
+    static async sendTelegramQuestion(message, email):Promise{
+        return $api.post('/sendtelquestion', {message, email})
+    }
+
     static async logout(refreshToken):Promise{
         return $api.post('/logout',{refreshToken})
     }
@@ -24,5 +28,7 @@ export default class AuthService{
     static async getUsers():Promise{
         return $api.get('/users')
     }
+
+
 
 }
