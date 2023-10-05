@@ -11,8 +11,9 @@ const MainInfo = () => {
                   <div className= {'col-md-7 col-sm-7 pt-5 '} >
 
                       <h1 id='m2'  className='pt-5' >
-                          Зарабатывайте на акциях <br />
-                          до 100 % годовых
+                          Инвестиционные стратегии <br />
+                          прибыль 37 % годовых <br />
+                          с 2017 года
                       </h1>
                       <p id='m2' className='pt-5'>Торговые стратегии проверенные с 2017 года</p>
                       <button onClick={() => navigate('/allStrategy')}  className='btn-a_blue mt-5'>Результаты за 2023 год</button>

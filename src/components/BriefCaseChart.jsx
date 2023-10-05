@@ -27,10 +27,16 @@ const BriefCaseChart =  observer((props) =>{
     const [briefcaseInfoOpt, setBriefcaseInfo] = useState(0);             // Информация о портфеле
     const [briefcasePoints, setBriefcasePoints] = useState({})            // Данные для отображения на графике
     const [strategyArray, setStrategyArray] = useState([])                // Стратегия в списке в портфелей
-
+    const [startOpen, setStartOpen] = useState(true);
     const {userStore} = useContext(Context)
 
     useEffect(() =>{ SetChartData(buttonKey)
+        if (startOpen) {
+            if (props.data.length)
+                if (props.data.length > 2) SetChartData(props.data.length - 3)
+            setStartOpen(false)
+        } else SetChartData(buttonKey)
+
 
         // Расчет массива последних сделок
     },[levelCalc, level, capitalizationCalc, capitalLevel])

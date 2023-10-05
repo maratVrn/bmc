@@ -40,7 +40,7 @@ const StrategyInfo = (props) => {
                 <div className={allClass} >
 
                     <img className='img_l' src='./assets/ico/icons6.png' alt='' />
-                    <p>    Просадка от максимальных значений </p>
+                    <p>    Максимальные риски </p>
                     <h1> {props.opt ? props.opt.maxMinus ? props.opt.maxMinus : '' : ''}  </h1>
                 </div>
             </div>

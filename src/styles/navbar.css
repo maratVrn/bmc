@@ -26,7 +26,7 @@
     width: 28px;
     height: 28px;
 
-    color: #1969b9;
+    color: #1e4ff3;
 }
 
 .nmy ul {
@@ -41,10 +41,12 @@
     text-decoration: none;
     color: #332f2f;
     cursor: pointer;
-    font-weight: 700;
-    font-size: 20.5px;
+    font-weight: 600;
+    font-size: 18.5px;
     line-height: normal;
+    /*font-family: "stolzl", -apple-system, blinkmacsystemfont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "open sans", "helvetica neue", sans-serif;*/
     display: block;
+    margin-top: -25px;
 }
 
 .nmy ul li  {

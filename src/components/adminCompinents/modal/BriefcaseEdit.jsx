@@ -194,8 +194,7 @@ const BriefcaseEdit = ({show, onHide}) => {
 
                 strategyArray[0].capital ? capital = strategyArray[0].capital : capital = 100
                 // Берем стартовый вариант расчета из первой стратегии
-                console.log(strategyName);
-                console.log(capital);
+
                 const data = strategyStore.getStrategyDataByName(strategyName)
                 addStartBriefcaseData(data, capital)
 

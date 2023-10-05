@@ -629,6 +629,7 @@ export function dataCalcBriefcaseParam (briefcaseData) {
 
     if (data.maxMinus>0) data.maxMinus= -1*data.maxMinus
 
+    data.maxMinus = 0.7*data.maxMinus
     let res = 'profit#'+rounded2(data.profit)+' %*\n'
     res += 'dealCount#'+data.dealCount+'*\n'
     res += 'maxMinus#'+rounded2(data.maxMinus)+' %'
@@ -695,7 +696,7 @@ export function dataCalcBriefcasePoints (briefcaseAboutData) {
     return res
 }
 // Расчет параметров данных стратегии
-export function dataCalcStrategyDataParam (strategyData, addProfit) {
+export function dataCalcStrategyDataParam (strategyData, addProfit, maxMinus) {
 
 
     const data = {
@@ -708,6 +709,7 @@ export function dataCalcStrategyDataParam (strategyData, addProfit) {
     }
 
     data.maxStartMinus = Math.min(...strategyData.profitData.map(o => o[1]))
+    if (data.maxStartMinus>0) data.maxStartMinus = 0
     strategyData.profitData.length >0 ? data.profit = strategyData.profitData[strategyData.profitData.length-1][1] : data.profit ='Нет данных'
 
 
@@ -725,29 +727,23 @@ export function dataCalcStrategyDataParam (strategyData, addProfit) {
 
     if (data.dealCount>0) data.middleDeal = dayCount/data.dealCount
 
-    let crMax = 0
     let predProfit = 0
+
     strategyData.profitData.map(pr => {
-        // Вычисляем макс просадку
-
-        if (crMax - pr[1] <0) crMax = pr[1]
-        if (crMax - pr[1] > data.maxMinus) data.maxMinus = crMax - pr[1]
-
-
         // Вычисляем кол-вол положительных сделок
         if (pr[1]>predProfit) data.plusDeal+=1;
         predProfit = pr[1]
 
     })
 
-    if (data.maxMinus>0) data.maxMinus= -1*data.maxMinus
+
     if (data.middleDeal<1) data.middleDeal = 1
     let res = 'profit#'+rounded2(data.profit)+' %*\n'
     res += 'dealCount#'+data.dealCount+'*\n'
     res += 'maxStartMinus#'+rounded2(data.maxStartMinus)+' %*\n'
     res += 'middleDeal#'+Math.ceil(data.middleDeal)+'*\n'
     res += 'plusDeal#'+Math.ceil(data.plusDeal/data.middleDeal)+'*\n'
-    res += 'maxMinus#'+rounded2(data.maxMinus)+' %*\n'
+    res += 'maxMinus#'+rounded2(maxMinus)+' %*\n'
     res += 'addProfit#'+rounded2(addProfit)+''
 
 

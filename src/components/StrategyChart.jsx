@@ -27,14 +27,16 @@ const StrategyChart =  observer((props) =>{
     const [dealStory, setDealStory]= useState([])                       // История сделок на отображение
     const [strategyInfoOpt, setStrategyInfo] = useState(0);             // Информация о стратегии
     const [strategyCurDeal, setStrategyDeal] = useState('');            // Информация о текущей сделке
+    const [startOpen, setStartOpen] = useState(true);
 
     const {userStore} = useContext(Context)
 
     useEffect(() =>{ //SetChartData(buttonKey)
-        if (props.data.length)
-            if (props.data.length>2) SetChartData(props.data.length-3)
-
-
+        if (startOpen) {
+            if (props.data.length)
+                if (props.data.length > 2) SetChartData(props.data.length - 3)
+            setStartOpen(false)
+        } else SetChartData(buttonKey)
         if (!userStore.isAuth)  setShowPointsChecked(false)
 
     },[showPriseChecked,showProfitChecked, showPointsChecked])

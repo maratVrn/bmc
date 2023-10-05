@@ -18,12 +18,19 @@ const StrategyDataEdit = ({show, onHide}) => {
     const [profitData, setProfitData] = useState('')
     const [aboutData, setAboutData] = useState('')
     const [addProfitGlobal, setAddProfitGlobal] = useState(0)
+    const [maxMinusGlobal, setMaxMinusGlobal] = useState(0)
 
 
     const {strategyStore} = useContext(Context)
     // Строим график прибыли
     // В конце каждого дня смотрим цену и считаем как изменилась текущая прибыль исходя из сделки
     const calcStrategyProfit = () => {
+        setMaxMinusGlobal(0)
+        // Переменные для расчета максимальной просадки
+        let maxMinus     = 0  // максимальный возможный минус по стратегии
+        let endDealMinus = 0  // Минус по окончании сделки учитываем для общей просадки если идет по сделкам
+        let curMinus     = 0  // текущий минус
+        // Основные переменные
         let predDay = 0
         let needDealI = -1
         let curDeal = {}
@@ -53,6 +60,7 @@ const StrategyDataEdit = ({show, onHide}) => {
             }
             // Если нашли послденюю цену дня то считаем прибыль и добавляем в расчет
             if (needCalc){
+
                 const t2 = ticketDataIn[needJ]
                 let t2DT = new Date(t2[0])
                 // Опрределяем текущую сделку. Если нашли новую то меняем расчетные параметры
@@ -61,33 +69,56 @@ const StrategyDataEdit = ({show, onHide}) => {
                     const deal = dealsDataIn[i]
                     let dealDT = new Date(deal.x)
                     if (dealDT<=t2DT) dealI = i
+
                 }
                 if ((dealI > -1) && (dealI !==needDealI)) {
+                    // console.log('Нашли сделку');
                     needDealI = dealI
                     // Делаем завершающий расчет прибыли и меняем сделку
+
+
+
+
                     if (curDeal.y){
                         let endDealProfit  = 100*(( dealsDataIn[needDealI].y-curDeal.y)/curDeal.y)
                         if (curDeal.isLong === false) endDealProfit *= -1
+
                         addProfit += endDealProfit
                         addProfit = rounded2(addProfit)
+
+                        endDealMinus += endDealProfit
+                        if (endDealMinus>0) endDealMinus = 0
+
                         if (itogProfitData !== '') itogProfitData += '*\n'
                         itogProfitData += dealsDataIn[needDealI].x+'#'+addProfit
+                        // console.log('Пред результат  '+rounded2(endDealProfit));
                     }
+
+                    // console.log('Текущий максмин  '+rounded2(maxMinus));
                     curDeal   = dealsDataIn[needDealI]
                 }
                 // Делаем расчет прибыли
                 if (dealI > -1){
                     let dayProfit =  100*(( parseFloat(t2[1])-curDeal.y)/curDeal.y)
                     if (curDeal.isLong === false) dayProfit *= -1
+                    // console.log(rounded2(dayProfit));
+                    // Считыаем минус
+                    curMinus = endDealMinus + dayProfit
+                    if (maxMinus>curMinus) maxMinus = curMinus
+                    //
                     dayProfit +=  addProfit
                     dayProfit = rounded2(dayProfit)
+
+
                     if (itogProfitData !== '') itogProfitData += '*\n'
                     itogProfitData += t2[0]+'#'+dayProfit
                 }
             }
         }
+
         setAddProfitGlobal(addProfit)
         setProfitData(itogProfitData)
+        setMaxMinusGlobal(rounded2(maxMinus))
     }
 
     const calcStrategyParam = () => {
@@ -95,8 +126,8 @@ const StrategyDataEdit = ({show, onHide}) => {
         strategyData.ticketData   = dataGetTicketData(ticketData)
         strategyData.dealsData    = dataGetDealsData(dealsData)
         strategyData.profitData   = dataGetProfitData(profitData)
-        const strategyParam       = dataCalcStrategyDataParam(strategyData,addProfitGlobal)
-        console.log(strategyParam);
+        const strategyParam       = dataCalcStrategyDataParam(strategyData,addProfitGlobal, maxMinusGlobal)
+        // console.log(strategyParam);
         setAboutData(strategyParam)
     }
 

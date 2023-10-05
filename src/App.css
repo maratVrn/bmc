@@ -10,8 +10,8 @@ a {
 
 
 .m2 h1 {
-  font-weight: 700;
-  font-size: 44px;
+  font-weight: 600;
+  font-size: 40px;
   line-height: 60px;
   color: #000000;
   margin-bottom: 15px;
@@ -93,7 +93,7 @@ a {
 }
 
 .img_container{
-  height: 500px;
+  height: 700px;
   display: flex;
   justify-content: center;
   align-items: center;

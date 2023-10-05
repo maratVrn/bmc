@@ -29,7 +29,7 @@ const Navbar = (questRef) => {
 
 
             <div className="nmy container ">
-                <div className='col-md-2 '> <img onClick={() => navigate('/')}  style={{cursor:'pointer'}} src='/assets/logo.png' alt=''  /> </div>
+                <div className='col-md-2 '> <img onClick={() => navigate('/')}  style={{cursor:'pointer'}} src='/assets/logo_png.png' alt=''  /> </div>
                 <div className='col-md-8 ' >
                     <ul >
                         <li>
